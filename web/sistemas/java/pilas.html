@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+    <head id="head">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109043245-1');
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ochoscar - pilas</title>
+        <link rel="stylesheet" href="../../../resources/css/home/index.css" />
+        <link rel="stylesheet" href="../../../resources/css/sistemas/java/pilas.css" />
+        <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    </head>
+    <body>
+        <header>
+            Páginas Web de Ochoscar - Sistemas - Pilas
+        </header>
+        <nav id="navigator-bar"></nav>
+        <article id="main-article">
+            <link rel="stylesheet" href="../../sistemas/java/pilas.css" />
+            <p align="justify"><center><strong><h1>PILAS EN JAVA</h1></strong></center></p>
+
+            <br/>
+            <h3>CONTENIDO</h3>
+            <a href="#T1">1. ¿Qué es una pila?</a><br/>
+            <a href="#T2">2. Implementación de una pila</a><br/>
+            <br/>
+
+            <strong><h2 id="T1">1. ¿Qué es una pila?</h2></strong>
+
+            <p align="justify">Una pila es una estructura de datos enlazada que sigue una disciplina LIFO (Last In, First Out - Último en entrar, Primero en salir) en la cual el ultimo elemento que entra es el primero en ser retirado, adicionalmente la estructura, aunque continua siendo una estructura lineal no se puede manipular cualquier elemento como sucedia con las listas, en las pilas solamente se puede acceder al elemento que esta en la cima, de manera que si se quiere alcanzar el elemento de la base, primero se requerira desapilar todos los elementos. La siguiente figura muestra graficamente una pila.</p>
+
+            <center>
+                <figure>
+                    <br/>
+                    <figcaption><strong>Figura 1.</strong> Pilas</figcaption>
+                    <br/>
+                    <img src="../../../resources/img/sistemas/java/pila.svg" alt="Pilas" height="550px">
+                </figure>
+            </center>
+
+            <p align="justify">Las pilas tienen muchos usos en informática, un ejemplo sencillo consiste en la pila de llamados al sistema, en la cual se apilan y desapilan los llamados a los métodos a medida que se invocan los métodos o se retorna de ellos, respectivamente.</p>
+
+            <strong><h2 id="T2">2. Implementación de una pila</h2></strong>
+
+            <p align="justify">La implementación de una pila enlazada utiliza la misma clase <a href="listas.html#node">Node</a> que se utilizó en las listas enlazadas, la diferencia radica que en los métodos que se utilizan para manipular la pila y que se resumen a continuación:</p>
+
+            <ul>
+                <li>push: este método se encarga de agregar un nuevo elemento a la cima de la pila.</li>
+                <li>pop: este método remueve el elemento de la cima y lo retorna.</li>
+                <li>peek: este método se encarga de retornar el elemento de la cima sin eliminarlo de la pila.</li>
+            </ul>
+
+            <strong><h3>Interface</h3></strong>
+
+            <p align="justify">A continuación se muestra el código correspondiente a las operaciones de una pila con su respectiva documentación.</p>
+
+            <br/>
+            <center>
+                <strong>Código 1.</strong> Interface de la pila
+                <pre class="prettyprint linenums" style="width: 850px; text-align: left"><code class="language-java">package stacks;
+
+/**
+ * Provee las acciones que se pueden realizar con una pila
+ * @author ochoscar
+ * @param <T> Tipo generico de los cuales se almacenaran elementos dentro de la pila
+ */
+public interface IStack<T> {
+
+    /**
+     * Metodo que verifica si la pila esta vacia
+     * @return Devuelve true si la pila esta
+     * vacia y false en caso contrario
+     */
+    public boolean isEmpty();
+
+    /**
+     * Metodo que determina el tamaño de la pila
+     * @return Devuelve un entero que indica el tamaño de la pila
+     */
+    public int size();
+
+    /**
+     * Agrega un elemento en la cima de la pila
+     * @param item Item de tipo generico a ser agregado a la pila
+     * @return Devuelve la misma pila que llamo al metodo
+     */
+    public IStack push(T item);
+
+    /**
+     * Remueve un elemento de la cima de la pila y lo devuelve para su manipulación
+     * @return El elemento que se encontraba en la cima de pila
+     */
+    public T pop();
+
+    /**
+     * Devuelve un elemento de la cima de la pila sin removerlo
+     * @return El elemento que se encontraba en la cima de pila
+     */
+    public T peek();
+
+}
+</code></pre></center>
+
+            <strong><h3>Pila</h3></strong>
+
+            <p align="justify">La implementación de la interface anterior se encuentra e   n el siguiente código. Observe que solamente es necesario referenciar al elemento top o de la cima de la pila para realizar todas las operaciones. Algo importante también es que las operaciones de la pila no requieren de ciclos, por lo tanto la estructura se vuelve supremente eficiente y así mismo no aporta mayor valor realizar una Pila con arreglos, aunque es perfectamente posible.<p>
+
+            <br/>
+            <center>
+                <strong>Código 2.</strong> Implementación de una pila
+                <pre class="prettyprint linenums" style="width: 850px; text-align: left"><code class="language-java">package stacks;
+
+/**
+ * Clase que encapsula las diferentes acciones de una pila enlazada
+ * @author ochoscar
+ * @param <T> Tipo generico que contra los item de la pila
+ */
+public class Stack<T> implements IStack<T> {
+
+    ////////////////////
+    // Atributos
+    ////////////////////
+
+    /** Referencia a la cima de la pila */
+    private Node<T> top;
+
+    /** Tamaño de la cola */
+    private int stackSize = 0;
+
+    ////////////////////
+    // Metodos
+    ////////////////////
+
+    /**
+     * Metodo que verifica si la pila esta vacia
+     * @return Devuelve true si la pila esta
+     * vacia y false en caso contrario
+     */
+    @Override
+    public boolean isEmpty() {
+        return stackSize == 0;
+    }
+
+    /**
+     * Metodo que determina el tamaño de la pila
+     * @return Devuelve un entero que indica el tamaño de la pila
+     */
+    @Override
+    public int size() {
+        return stackSize;
+    }
+
+    /**
+     * Agrega un elemento en la cima de la pila
+     * @param item Item de tipo generico a ser agregado a la pila
+     * @return Devuelve la misma pila que llamo al metodo
+     */
+    @Override
+    public IStack push(T item) {
+        top = new Node<>(item, top);
+        stackSize++;
+        return this;
+    }
+
+    /**
+     * Remueve un elemento de la cima de la pila y lo devuelve para su manipulación
+     * @return El elemento que se encontraba en la cima de pila
+     */
+    @Override
+    public T pop() {
+        if(stackSize == 0) return null;
+        T item = top.getItem();
+        top = top.getNext();
+        stackSize--;
+        return item;
+    }
+
+    /**
+     * Devuelve un elemento de la cima de la pila sin removerlo
+     * @return El elemento que se encontraba en la cima de pila
+     */
+    @Override
+    public T peek() {
+        return top != null ? top.getItem() : null;
+    }
+
+}
+</code></pre></center>
+        </article>
+        <footer id="footer"></footer>
+    </body>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../"></script>
+    <script type="text/javascript">
+        PR.prettyPrint();
+    </script>
+</html>

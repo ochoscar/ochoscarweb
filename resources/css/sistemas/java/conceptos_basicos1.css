@@ -1,0 +1,32 @@
+#tableReservedWords {
+    width: 500px;
+    text-align: center;
+}
+
+#tableVariableInitialValues, #tableNativeTypes {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 400px;
+}
+}
+
+#tableVariableInitialValues td, #tableVariableInitialValues th, #tableNativeTypes td, #tableNativeTypes, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#tableVariableInitialValues tr:nth-child(even), #tableNativeTypes tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tableVariableInitialValues tr:hover, #tableNativeTypes tr:hover {
+    background-color: #ddd;
+}
+
+#tableVariableInitialValues th, #tableNativeTypes th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}

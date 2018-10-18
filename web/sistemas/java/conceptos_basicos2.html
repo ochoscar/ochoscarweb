@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+    <head id="head">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109043245-1');
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ochoscar - conceptos basicos 2</title>
+        <link rel="stylesheet" href="../../../resources/css/home/index.css" />
+        <link rel="stylesheet" href="../../../resources/css/sistemas/java/conceptos_basicos2.css" />
+        <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    </head>
+    <body>
+        <header>
+            Páginas Web de Ochoscar - Sistemas - Java Básico 2
+        </header>
+        <nav id="navigator-bar"></nav>
+        <article id="main-article">
+            <link rel="stylesheet" href="../../sistemas/java/conceptos_basicos2.css" />
+            <p align="justify"><center><strong><h1>CONCEPTOS BÁSICOS DE JAVA II</h1></strong></center></p>
+
+            <br/>
+            <h3>CONTENIDO</h3>
+            <a href="#T1">1. Precedencia de operadores</a><br/>
+            <a href="#T2">2. Promoción y casting de tipos</a><br/>
+            <a href="#T3">3. Control de flujo: instrucciónes condicionales</a><br/>
+            <a href="#T4">4. Control de flujo: ciclos</a><br/>
+            <a href="#T5">5. Etiquetas, continue y break</a><br/>
+            <a href="#T6">6. Encapsulamiento</a><br/>
+            <br/>
+
+            <strong><h2 id="T1">1. Precedencia de operadores</h2></strong>
+
+            <p align="justify">En todo lenguaje de programación existe una tabla de precedencia de operadores que indica el orden en el cual se evaluan los mismos, el programador de Java de reconocer y aprender a manejar la tabla de forma que pueda leer y escribir expresiones. Como nota acerca de la mantenibilidad del software, debe tratarse de escribir expresiones no muy complejas o cripticas puesto que las mismas aunque pueden funcionar dificultan el entendimiento y el cambio. La tabla siguiente muestra la tabla de precedencia de operadores.</p>
+
+            <center>
+                <table id="tableOperators">
+                    <tr>
+                        <th><center>Simbolo</center></th>
+                        <th><center>Operador</center></th>
+                        <th><center>Ejemplo</center></th>
+                    </tr>
+                    <tr>
+                        <td><code>()</code></td>
+                        <td>Parentesis</td>
+                        <td><code>(i + 2) * y</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>++, --</code></td>
+                        <td>Operadores unarios post</td>
+                        <td><code>i++, i--</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>++, --</code></td>
+                        <td>Operadores unarios pre</td>
+                        <td><code>++i, --i</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>+, -, !</code></td>
+                        <td>Operadores unarios (positivo, negativo, negación)</td>
+                        <td><code>-3, !true</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>*, /, %</code></td>
+                        <td>Operadores binarios (multiplicación, división, módulo)</td>
+                        <td><code>5 % 2</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>+, -</code></td>
+                        <td>Operadores binarios (suma y resta)</td>
+                        <td><code>6 - 8</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;&lt;, &gt;&gt;, &gt;&gt;&gt;</code></td>
+                        <td>Operadores de desplazamiento (a la izquierda, a la derecha con signo, a la derecha sin signo)</td>
+                        <td><code>2 &lt;&lt; 1</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&lt;, &lt;=, &gt;, &gt;=, instanceof</code></td>
+                        <td>Operadores relacionales (menor, menor igual, mayor, mayor igual, instanceof</td>
+                        <td><code>obj instanceof String</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>==, !=</code></td>
+                        <td>Operadores de igualdad (igual, diferente)</td>
+                        <td><code>i == 5</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;, ^, |</code></td>
+                        <td>Operadores lógicos (y lógico, or exclusivo lógico, o lógico a nivel de bit)</td>
+                        <td><code>true | false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>&amp;&amp;, ||</code></td>
+                        <td>Operadores lógicos booleanos (y en cortocircuito, o en cortocircuito</td>
+                        <td><code>true || false</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>? :</code></td>
+                        <td>Operadores ternario</td>
+                        <td><code>i > 5 ? "mayor" : "menor"</code></td>
+                    </tr>
+                    <tr>
+                        <td><code>=, +=, -=, *=, /=, %=, &amp;=, ^=, !=, &lt;&lt;=, &gt;&gt;=, &gt;&gt;&gt;= </code></td>
+                        <td>Operadores de asignación</td>
+                        <td><code>i += 2;</code></td>
+                    </tr>
+                </table>
+            </center>
+
+            <p align="justify">Como punto a recalcar puede notar que esta lista esta ordenada siendo más prioritario los parentesis, es decir, es la primera operación que se realiza, de otra parte las asignaciones son la última operación que se realiza, también es importante anotar que las asignaciones son la única operación que se agrupa de derecha a izquierda, el resto de operadores se evalua de izquierda a derecha.</p>
+            <p align="justify">Algúnos puntos interesantes a tener en mente respecto de los operadores y operandos son:</p>
+
+            <ul>
+                <li>Tenga en cuenta los literales en Java siguen reglas, de manera que debe también tener presente en aplicar los operadores en valores correctos, por ejemplo la expresión <code>!0</code> es un error puesto que el número cero en Java no tiene nignuna relación con el valor booleano falso, como ocurre en otros lenguajes de programación</li>
+                <li>El operador de preincremento o predecremento se ejecutan al final de la expresión, por lo tanto estos dos operadores no siguen el orden de evaluación tradicional</li>
+                <li>Los operadores de asignación compuestos como <code>*=</code> solo funcionan si la variable del lado izquierdo ha sido inicializada previamente. Es también importante anotar que el compilador automáticamente realiza un casting de las expresiones que tienen usan operadores de asignación compuestos</li>
+                <li>Los operadores de comparación son usados para comparar literales y variables nativas en cuyo caso aplican los conceptos de promoción de tipos, tambien se pueden comparar valores booleanos y finalmente se pueden comparar valores <code>null</code> o <code>String</code></li>
+            </ul>
+
+            <strong><h2 id="T2">2. Promoción y casting de tipos</h2></strong>
+
+            <p align="justify">La promoción de tipos ocurre para los tipos nativos cuando los mismos o sus literales estan presentes en expresiones, las siguientes cuatro son las reglas que debe considerar respecto a la promoción de tipos:</p>
+
+            <ol>
+                <li>Si dos operandos tienen diferentes tipos, Java realiza una promoción automática del tipo más pequeño al más grande</li>
+                <li>Si uno de los operandos es un entero y el otro es de punto flotante, Java promueve el entero a punto flotante</li>
+                <li>Los operandos más pequeños que un <code>int</code> son promovidos primero a <code>int</code> antes de ser evaluados en la expresión incluso si ninguno de los dos operandos es <code>int</code>. Esta regla exlcuye los operadores unarios.</li>
+                <li>Despúes de las promociones todos los operandos tienen el mismo tipo de dato y así mismo el resultado tendrá el mismo tipo de dato que los operandos.</li>
+            </ol>
+
+            <p align="justify">Las valores pueden ser sujetos a conversiones de tipo forzadas, estas conversiones pueden eventualmente conllevar perdida de datos, sin embargo es una forma de decirle al compilador que sabemos que estamos haciendo, los casting se realizan con el uso de parentesis y entre ellos el tipo de dato al cual se quiere hacer la conversión, en el siguiente ejemplo se muestra un casting d euna expresión que de otra manera arrojaría error, note además como se esta aplicando la tercera regla de promoción en este ejemplo.</p>
+
+            <br/>
+            <center>
+                <strong>Código 1.</strong> Promoción de tipos
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">public static void main(String... args) {
+    short a = 3;
+    short b = 4;
+    short c = (short) (a * b);
+}
+</code></pre></center>
+
+            <p align="justify">En las ocasiones en las que existan perdidas de datos puede ser o bien por que se trunca la parte decimal de un número en punto flotante o por que se desborda un número, el desborde es conocido como overflow o underflow y ocurre cuando un valor supera el máximo que puede ser representado por su tipo, por ejemplo los <code>byte</code> pueden almacenar desde -128 hasta 127, si una variable de este tipo se le asigna el número 127 y a continuación se le suma 3, no podrá almacenar el número 130 ya que este último valor no cabe en un <code>byte</code>, en su lugar hay un desbordamiento y el valor resultante de esta operación termina siendo -126.</p>
+
+            <strong><h2 id="T3">3. Control de flujo: instrucciones condicionales</h2></strong>
+
+            <p align="justify">En Java las instrucciones de la programación estructurada están disponibles para controlar el flujo y determinar que instrucciones ejecutar o cuantas veces repetirlas. La primera isntrucción de control es el condicial cuya forma compuesta se muestra a continuación:</p>
+
+            <br/>
+            <center>
+                <strong>Código 2.</strong> Condicionales i
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">// Forma simple del condicional
+if(expresión booleana) {
+    // Bloque en caso que la expresión sea verdadera
+}
+
+// Forma compuesta del condicional
+if(expresión booleana) {
+    // Bloque en caso que la expresión sea verdadera
+} else {
+    // Bloque en caso que la expresión sea verdadera
+}
+
+// Condicional en escalera
+if(expresión booleana 1) {
+    // Bloque en caso que la expresión 1 sea verdadera
+} else if(expresión booleana 2) {
+    // Bloque en caso que la expresión 2 sea verdadera
+} else if(expresión booleana 3) {
+    // Bloque en caso que la expresión 3 sea verdadera
+} else{
+    // Bloque en caso que ninguna expresion sea verdadera
+}
+</code></pre></center>
+
+            <p align="justify">Los puntos clave a resaltar sobre la instrucción condicional son los siguiente:</p>
+
+            <ul>
+                <li>Los parentesis en la expresión booleana son obligatorios</li>
+                <li>No es requerido el uso de la parte del <code>else</code> en el código</li>
+                <li>Es supremamente importante tener en cuenta que el código dentro de un bloque debe tener sangría aplicada</li>
+                <li>En la tercera forma del condicional (en escalera) aunque varias expresiones booleanas sean verdaderas solamente se ejecuta el bloque correspondiente a la primera expresión booleana verdadera, así mismo puede haber un número indifinico de segmentos <code>else if</code></li>
+                <li>Tenga presente que en muchas ocasiones el operador ternario simplifica la escritura del código, sin embargo, debe balancear dicha simplicidad con la dificultad de leer expresiones muy cripticas y entreversadas</li>
+                <li>En caso que los bloques tengan una sola instrucción no es necesario usar llaves, no obstante lo anterior es muy recomendado por legibilidad siempre usar llaves</li>
+            </ul>
+
+            <p align="justify">Otra instrucción condicional es <code>switch</code> cuya sintáxis se puede apreciar en el siguiente segmento de código</p>
+
+            <br/>
+            <center>
+                <strong>Código 3.</strong> Condicionales ii
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">switch(variable) {
+    case CONSTANTE1:
+        // codigo 1
+        break;
+    case CONSTATE2:
+        // codigo 2
+        break;
+    default:
+        // codigo por defecto
+}
+</code></pre></center>
+
+            <p align="justify">En el caso de la instrucción <code>switch</code> se puede apreciar que la misma es utilizada de forma similar a un <code>if</code> en escalera. Hay que recordar que las instrucciones que se ejecutaran corresponden a la primera comparación verdadera de la variable con las diferentes constantes, igualmente solo se ejecuta un bloque de código que esta marcado desde los dos puntos y hasta el siguiente <code>break</code>, en ocasiones y dado que la instrucción <code>break</code> es opcional, se pueden juntar varios segmenteos <code>case</code> para ejecutar un mismo codigo para cualquiera de las constantes que acompañen dichos segmentos <code>case</code>. Note también que hay un segmento por defecto y es opcional, este se ejecuta cuando ninguna de las comparaciones con las constantes arrojo un resultado verdadero. Los tipos de datos soportados para la variable son: <code>int, Integer, byte, Byte, short, Short, char, Character, String, y enum</code>. De otra parte las constantes, deben ser o bien literales o variables marcadas con la palabra reservada <code>final</code>, el tipo de dato de las constantes debe coincidir con el tipo de dato de la variable, además observe que <code>final</code> hace que la variable se convierta en constante y unicamente pueda recibir valor en el momento de su creación, sin emabrgo el código no compilara si usa una variable como constante y la misma es un parametro de una función, así esta última este marcada como <code>final</code>.</p>
+
+            <strong><h2 id="T4">4. Control de flujo: ciclos</h2></strong>
+
+            <p align="justify">El ciclo más sencillo y fácil de utilizar es el <code>while</code>, el cual repite las instrucciones mientras una condición sea verdader, en este sentido observe que en sintáxis se parece mucho al condicional <code>if</code>. A continuación, se presenta su sintáxis:</p>
+
+            <br/>
+            <center>
+                <strong>Código 4.</strong> Ciclos i
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">while(condición booleana) {
+    // Código
+}
+</code></pre></center>
+
+            <p align="justify">De forma similar, se encuentra el ciclo <code>do - while</code> el cual es similar al anterior, excepto que este se repite al menos una vez ya que la condición se evalua al final del ciclo y no al principio. Su sintáxis se muestra a continuación:</p>
+
+            <br/>
+            <center>
+                <strong>Código 5.</strong> Ciclos ii
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">do {
+    // Código
+} while(condición booleana);
+</code></pre></center>
+
+            <p align="justify">El tercer ciclo y de hecho uno de los más comunes es el ciclo <code>for</code> el cual en su presentación básica se muestra a continuación</p>
+
+            <br/>
+            <center>
+                <strong>Código 6.</strong> Ciclos iii
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">for(inicializacion, expresión booleana, actualización) {
+    // Código
+}
+</code></pre></center>
+
+            <p align="justify">Las tres partes del ciclo <code>for</code> son opcionales y si todas se omiten el ciclo sería un ciclo infinito. También es posible separar múltiples sentencias de incialización o actualización utilizando comas. Es importante recordar que la inicialización no puede realizar ocultamiento de variables, es decir, si la variable declarada en la inicialización ya fue declarada antes del ciclo <code>for</code> el compilador arrojará un error indicando que se tiene una doble declaración de la variable, de esta manera las variables declaradas en la inicialización perteneceran al ámbito del cuerpo del ciclo y no se podrán usar por fuera de este. El último ciclo disponible en Java es el ciclo <code>for - each</code> el cual se muestra a continaución:</p>
+
+            <br/>
+            <center>
+                <strong>Código 7.</strong> Ciclos vi
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">for(TipoDato variable : colección) {
+    // Código
+}
+</code></pre></center>
+
+            <p align="justify">En este caso la colección debe ser una implementación de <code>java.lang.Iterable</code> y el ciclo se ejecuta una vez por cada ítem de la colección, asignando en cada repetición un valor de la colección.</p>
+
+            <p align="justify">Algo importante a tener en cuenta con los diferentes ciclos es que los bloques de código pueden omitir las llaves cuando solo se trate de una sola línea, en estos casos es importante mantener la identación o poner la línea de código al frente de la estructura de control. En cualquier caso esta práctica no es muy recomendable puesto que es más propensa a introducir errores en el código.</p>
+
+            <strong><h2 id="T5">5. Etiquetas, continue y break</h2></strong>
+
+            <p align="justify">Las sentencias (<code>if, while, do while, for, switch</code>) de Java pueden ser iniciadas con una etiqueta, normalmente escrita en mayusculas y terminada en dos puntos. Estas etiquetas sirven para marcar los puntos donde se puede devolver el código mediante una sentencia <code>break</code> o <code>continue</code>, estas dos instrucciones permiten o romer un ciclo con la finalidad de salirse del mismo y no continuar su ejecución o en el caso de <code>continue</code> continuar de inmediato con la siguiente iteracción del ciclo sin importar que falten instrucciones por ejecutar. La sintaxis de estas etiquetas es:</p>
+
+            <br/>
+            <center>
+                <strong>Código 8.</strong> Break y Continue
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">break etiquetaOpcional;
+    continue etiquetaOpcional;
+}
+</code></pre></center>
+
+            <p align="justify">Estas instrucciones estan disponibles para los ciclos, adicionalmente las sentencia <code>switch</code> soporta el uso de <code>break</code>. El uso de estas instrucciones es particularmente útil cuando en un ciclo se detecta que no se requiere seguir ejecutando, por ejemplo, si se esta realizando una búsqueda y se encuentra el ítem deseado no se requeriría seguir iterando para buscar, en este caso se puede recurrir a la instrucción <code>break</code> o si la iteracción ya no se requiere hacer se usaría <code>continue.</code>. Un ejemplo del uso de etiquetas junto con una sentencia <code>break</code> y <code>continue</code> se muestra a continuación:</p>
+
+
+            <br/>
+            <center>
+                <strong>Código 9.</strong> Etiquetas
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">PRIMERO: for( ... ) {
+    SEGUNDO: for( ... ) {
+        if( ... ) {
+            // Rompe el ciclo actual terminandolo y haciendo
+            // un salto a la etiqueta PRIMERO
+            break PRIMERO;
+        }
+        if( ... ) {
+            // Deja de ejecutar la iteracción actual del ciclo
+            // interno y brinca a la etiqueta SEGUNDO,
+            // en este caso no es necesario el uso de etiquetas
+            // puesto que la instrucción continue esta en el
+            // cuerpo del segundo ciclo
+            continue SEGUNDO;
+        }
+        // ... código ...
+    }
+}
+</code></pre></center>
+
+          <strong><h2 id="T6">6. Encapsulamiento</h2></strong>
+
+          <p align="justify">El encapsulamiento es uno de los pilares de la programacion orientada a objetos que establece la posibilidad de ocultar la información de las propiedades de un objeto de forma que las mismas no se accedan directamente. Hasta este momento ya se conoce acerca de la forma de escribir clases y crear objetos, admás se ha vínculado la sintáxis de la programación esctructurada en el sentido que se cuenta con estructuras para controlar el flujo de un algoritmo, ahora entenderemos como las propiedades (recuerde que también se llaman atributos o campos) pueden ser ocultados para que los objetos no puedan modificarlos directamente. El objetivo entonces será ocultar la información de la implementación de forma que los usuarios programadores que utilicen la clase no puedan acceder a estos detalles, lo anterior mejorará la abstracción permitiendo que los progamadores se enfoquen en usar atributos y métodos seguros con los cuales no puedan generar inadvertidamente daños. Para comprender estos conceptos consideremos la clase <code>Tiempo</code>:</p>
+
+          <center>
+              <strong>Código 10.</strong> Encapsulamiento<pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">class Tiempo {
+
+    //////////////////////////
+    // Atributos
+    //////////////////////////
+
+    private int hora;
+
+    private int minutos;
+
+    //////////////////////////
+    // Metodos
+    //////////////////////////
+
+    public int getHora() {
+        return hora;
+    }
+
+    public void setHora(int hora) {
+        hora = this.hora;
+    }
+
+    public int getMinutos() {
+        return minutos;
+    }
+
+    public void setHora(int minutos) {
+        minutos = this.minutos();
+    }
+
+}
+</code></pre></center>
+
+          <p align="justify">En esta clase se puede apreciar como los atributos son privados, lo cual indica que los objetos que creemos de dicha clase no podrán acceder directamente a los atributos, estos objetos aunque si contienen los atributos (hora y minutos) no podrán utilizarlos ya que al ser privados solamente se podrán usar en el mismo archivo y más concretamente en la misma clase donde fueron declarados. Al parecer no existiría ninguna ventaja al tener los atributos privados puesto que seríia mejor tenerlos públicos y evitarse el paso por un método para establecerlo (set) y obtenerlo (get) compare las siguientes dos líneas de código que muestran estas dos posibilidades.</p>
+
+					<center>
+							<strong>Código 11.</strong> Encapsulamiento<pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">Tiempo t = new Tiempo();
+t.setHora(20);
+t.hora = 40;</code></pre></center>
+
+					  <p align="justify">El primer seteo de la variable Hora se realiza con el atributo encapsulado y privado mientras que el segundo se realiza con el atributo público, observe que en el segundo caso no existe ninguna forma de evitar asignar un valor inválido tal como esta sucediendo con el valor 40, de esta forma el encapsulamiento ayuda a evitar que los objetos tengan valores inconsistentes. Algo adicional que debe conservar en mente y que es algo escencial del encapsulamiento es el hecho de que aisla la representación interna del objeto de su interface, en palabras más sencillas la representación interna dada por los atributos, sus valores y estados están tras una capa de métodos getter y setter, de forma que en una aplicación podría pensar en cambiar la forma como se guarda internamente las horas y decidir, por ejemplo, guardarlo con un solo entero, este cambio mejoraría el desemepeño de la memoria afectando el desemepeño en tiempos, sin embargo quienes hayan usado las clase Tiempo no se veran afectados y seguiran utilizando los mismos métodos getter y setter sin importar que internamente se guarden dos enteros para representar la hora y los minutos o un solo atributo para guardar, por ejemplo la cantidad de minutos que hayan pasado desde la media noche.</p>
+
+        </article>
+        <footer id="footer"></footer>
+    </body>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../"></script>
+    <script type="text/javascript">
+        PR.prettyPrint();
+    </script>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+    <head id="head">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109043245-1');
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ochoscar - colas</title>
+        <link rel="stylesheet" href="../../../resources/css/home/index.css" />
+        <link rel="stylesheet" href="../../../resources/css/sistemas/java/colas.css" />
+        <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    </head>
+    <body>
+        <header>
+            Páginas Web de Ochoscar - Sistemas - Colas
+        </header>
+        <nav id="navigator-bar"></nav>
+        <article id="main-article">
+            <link rel="stylesheet" href="../../sistemas/java/colas.css" />
+            <p align="justify"><center><strong><h1>COLAS EN JAVA</h1></strong></center></p>
+
+            <br/>
+            <h3>CONTENIDO</h3>
+            <a href="#T1">1. ¿Qué es una cola?</a><br/>
+            <a href="#T2">2. Implementación de una cola</a><br/>
+            <br/>
+
+            <strong><h2 id="T1">1. ¿Qué es una cola?</h2></strong>
+
+            <p align="justify">Una cola es una estructura de datos enlazada que sigue una disciplina FIFO (First In, First Out - Primero en entrar, Primero en salir) en la cual el primer elemento que entra es el primero en ser retirado, adicionalmente la estructura, aunque continua siendo una estructura lineal no se puede manipular cualquier elemento como sucedia con las listas, en las colas solamente se puede acceder al elemento que esta en la parte frontal, de manera que si se quiere alcanzar el último elemento, primero se requerira desencolar todos los otros elementos. La siguiente figura muestra graficamente una cola.</p>
+
+            <center>
+                <figure>
+                    <br/>
+                    <figcaption><strong>Figura 1.</strong> Colas</figcaption>
+                    <br/>
+                    <img src="../../../resources/img/sistemas/java/cola.svg" alt="Colas" height="100px">
+                </figure>
+            </center>
+
+            <p align="justify">Las colas tienen muchos usos en informática, un ejemplo sencillo consiste en la representación de una fila de un banco o el procesamiento secuencial de una serie de actividades, por ejemplo el envío de notificaciones de correo electrónico en una aplicación transaccional.</p>
+
+            <strong><h2 id="T2">2. Implementación de una cola</h2></strong>
+
+            <p align="justify">La implementación de una cola enlazada utiliza la misma clase <a href="listas.html#node">Node</a> que se utilizó en las listas enlazadas, la diferencia radica que en los métodos que se utilizan para manipular la cola y que se resumen a continuación:</p>
+
+            <ul>
+                <li>add: este método se encarga de agregar un nuevo elemento en la parte de atrás (último) de la cola.</li>
+                <li>remove: este método remueve el elemento del frente de la cola (primer elemento) y lo devuelve.</li>
+            </ul>
+
+            <strong><h3>Interface</h3></strong>
+
+            <p align="justify">A continuación se muestra el código correspondiente a las operaciones de una cola con su respectiva documentación.</p>
+
+            <br/>
+            <center>
+                <strong>Código 1.</strong> Interface de la cola
+                <pre class="prettyprint linenums" style="width: 850px; text-align: left"><code class="language-java">package queues;
+
+/**
+ * Provee las acciones que se pueden realizar con una cola
+ * @author ochoscar
+ * @param <T> Tipo generico de los cuales se almacenaran elementos dentro de la cola
+ */
+public interface IQueue<T> {
+
+    /**
+     * Metodo que verifica si la cola esta vacia
+     * @return Devuelve true si la cola esta
+     * vacia y false en caso contrario
+     */
+    public boolean isEmpty();
+
+    /**
+     * Metodo que determina el tamaño de la cola
+     * @return Devuelve un entero que indica el tamaño de la cola
+     */
+    public int size();
+
+    /**
+     * Agrega un elemento al final de la cola
+     * @param item Item de tipo generico a ser agregado a la cola
+     * @return Devuelve la misma cola que llamo al metodo
+     */
+    public IQueue add(T item);
+
+    /**
+     * Remueve un elemento del frente de la cola y lo devuelve para su manipulación
+     * @return El elemento que se encontraba al frente de la cola
+     */
+    public T remove();
+
+}
+</code></pre></center>
+
+            <strong><h3>Cola</h3></strong>
+
+            <p align="justify">La implementación de la interface anterior se encuentra en el siguiente código. Observe que se referencia tanto el primer como el último elemento a fin de realizar las operaciones de agregado y eliminación de forma óptima en cuanto a rendimiento se refiere. Algo importante también es que las operaciones de la cola no requieren de ciclos, por lo tanto la estructura se vuelve supremente eficiente y así mismo no aporta mayor valor realizar una cola con arreglos, aunque es perfectamente posible.</p>
+
+            <br/>
+            <center>
+                <strong>Código 2.</strong> Implementación de la cola
+                <pre class="prettyprint linenums" style="width: 850px; text-align: left"><code class="language-java">package queues;
+
+            /**
+             * Clase que encapsula las diferentes acciones de una cola enlazada
+             * @author ochoscar
+             * @param <T> Tipo generico que contra los item de la cola
+             */
+            public class Queue<T> implements IQueue<T> {
+
+                ////////////////////
+                // Atributos
+                ////////////////////
+
+                /** Referencia al primer nodo de la cola */
+                private Node<T> front;
+
+                /** Referencia al ultimo elemento de la cola */
+                private Node<T> back;
+
+                /** Tamaño de la cola */
+                private int queueSize = 0;
+
+                ////////////////////
+                // Metodos
+                ////////////////////
+
+                /**
+                 * Metodo que verifica si la cola esta vacia
+                 * @return Devuelve true si la cola esta
+                 * vacia y false en caso contrario
+                 */
+                @Override
+                public boolean isEmpty() {
+                    return queueSize == 0;
+                }
+
+                /**
+                 * Metodo que determina el tamaño de la cola
+                 * @return Devuelve un entero que indica el tamaño de la cola
+                 */
+                @Override
+                public int size() {
+                    return queueSize;
+                }
+
+                /**
+                 * Agrega un elemento al final de la cola
+                 * @param item Item de tipo generico a ser agregado a la cola
+                 * @return Devuelve la misma cola que llamo al metodo
+                 */
+                @Override
+                public IQueue add(T item) {
+                    Node<T> newNode = new Node(item, null);
+                    if(queueSize == 0) {
+                        front = back = newNode;
+                    } else {
+                        back.setNext(newNode);
+                        back = newNode;
+                    }
+                    queueSize++;
+                    return this;
+                }
+
+                /**
+                 * Remueve un elemento del frente de la cola y lo devuelve para su manipulación
+                 * @return El elemento que se encontraba al frente de la cola
+                 */
+                public T remove() {
+                    if(queueSize == 0) return null;
+                    T item = front.getItem();
+                    front = front.getNext();
+                    if(front == null) back = null;
+                    queueSize--;
+                    return item;
+                }
+
+            }
+            </code></pre></center>
+        </article>
+        <footer id="footer"></footer>
+    </body>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../"></script>
+    <script type="text/javascript">
+        PR.prettyPrint();
+    </script>
+</html>
