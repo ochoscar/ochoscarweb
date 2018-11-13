@@ -1,255 +1,293 @@
 <!DOCTYPE html>
 <html lang="es-CO">
-<head id="head">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-109043245-1');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ochoscar - Matemáticas</title>
-    <link rel="stylesheet" href="../../../resources/css/home/index.css" />
-    <link rel="stylesheet" href="../../../resources/css/matematicas/basica/operativas.css" />
-    <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</head>
-<body>
-<header>
-    Páginas Web de Ochoscar - Matemáticas
-</header>
-<nav id="navigator-bar"></nav>
-<article id="main-article">
-    <p align="justify"><center><strong><h1>MATEMÁTICAS</h1></strong></center></p>
-    <br/>
-    ====== Matemáticas Operativas ======
+    <head id="head">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109043245-1');
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ochoscar - Matemáticas</title>
+        <link rel="icon" type="image/png" href="../../../resources/img/fav-icon.png">
+        <link rel="stylesheet" href="../../../resources/css/home/index.css" />
+        <link rel="stylesheet" href="../../../resources/css/matematicas/basica/operativas.css" />
+        <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    </head>
+    <body>
+        <header>
+            PÁGINAS WEB DE OCHOSCAR
+        </header>
+        <nav id="navigator-bar"></nav>
+        <article id="main-article">
+            <p><strong><h1 class="centerText">MATEMÁTICAS OPERATIVAS</h1></strong></p>
 
-    ===== Trigonometría =====
+            <br/>
+            <h3>CONTENIDO</h3>
+            <a href="#T1">1. Trigonometría</a><br/>
+            <a href="#T2">2. Ley de senos y cosenos</a><br/>
+            <a href="#T3">3. Logaritmos y exponenciales</a><br/>
+            <a href="#T4">4. Funciones</a><br/>
+            <a href="#T5">4.1. Simetría</a><br/>
+            <a href="#T6">4.2. Funciones crecientes y decrecientes</a><br/>
+            <a href="#T7">4.3. Construcción de funciones</a><br/>
+            <a href="#T8">4.4. Combinación de funciones</a><br/>
+            <a href="#T9">4.5. Curvas paramétricas</a><br/>
+            <a href="#T10">4.6. Funciones inversas</a><br/>
+            <a href="#T11">4.7. Correspondencia de funciones</a><br/>
+            <a href="#T15">5. Fracciones parciales</a><br/>
+            <a href="#T16">5.1. Caso 1</a><br/>
+            <a href="#T17">5.2. Caso 2</a><br/>
+            <a href="#T18">5.3. Caso 3</a><br/>
+            <a href="#T19">5.4. Caso 4</a><br/>
+            <br/>
 
-    Algunas de las relaciones trigonométricas mas útiles, relacionadas con las funciones trigonometricas básicas como el seno, el coseno y la tangente se listan a continuación:
+            <strong><h2 id="T1">1. Trigonometría</h2></strong>
 
-    $$\sin\theta=\frac{1}{\csc\theta}\text{ ; }\cos\theta=\frac{1}{\sec\theta}\text{ ; }\tan\theta=\frac{1}{\cot\theta}$$
+            Algunas de las relaciones trigonométricas mas útiles, relacionadas con las funciones trigonométricas básicas como el seno, el coseno y la tangente se listan a continuación:
 
-    Las relaciones en un triangulo rectangulo donde $h$ representa la hipotenusa, $co$ el cateto opuesto y $ca$ el cateto adyacente del ángulo $\theta$ están dadas por las siguientes relaciones
+            $$\sin\theta=\frac{1}{\csc\theta}\text{ ; }\cos\theta=\frac{1}{\sec\theta}\text{ ; }\tan\theta=\frac{1}{\cot\theta}$$
 
-    $$\sin\theta=\frac{co}{h}\text{ ; }\cos\theta=\frac{ca}{h}\text{ ; }\tan\theta=\frac{co}{ca}=\frac{\sin\theta}{\cos\theta}$$
+            Las relaciones en un triangulo rectángulo donde `h` representa la hipotenusa, `co` el cateto opuesto y `ca` el cateto adyacente del ángulo `\theta` están dadas por las siguientes relaciones
 
-    $$\sin^2\theta + \cos^2\theta = 1$$
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 1.</strong> Triangulo rectángulo</figcaption>
+                <img src="../../../resources/img/matematicas/basica/triangulo.png" alt="triangulo rectangulo.png" height="250px">
+            </figure>
 
-    $$\tan^2\theta + 1 = \sec^2\theta$$
+            $$\sin\theta=\frac{co}{h}\text{ ; }\cos\theta=\frac{ca}{h}\text{ ; }\tan\theta=\frac{co}{ca}=\frac{\sin\theta}{\cos\theta}$$
 
-    $$\cot^2\theta + 1 = \csc^2\theta$$
+            Algunas otras identidades trigonométricas útiles se muestran en el siguiente resumen.
 
-    $$\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\sin\beta\cos\alpha$$
+            $$\sin^2\theta + \cos^2\theta = 1$$
 
-    $$\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta$$
+            $$\tan^2\theta + 1 = \sec^2\theta$$
 
-    $$\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}$$
+            $$\cot^2\theta + 1 = \csc^2\theta$$
 
-    $$\sin(2\theta)=2\sin\theta\cos\theta$$
+            $$\sin(\alpha\pm\beta)=\sin\alpha\cos\beta\pm\sin\beta\cos\alpha$$
 
-    $$\cos(2\theta)=\cos^2\theta-\sin^2\theta$$
+            $$\cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta$$
 
-    $$\tan(2\theta)=\frac{2\tan\theta}{1-\tan^2\theta}$$
+            $$\tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}$$
 
-    $$\sin\biggl(\frac{\theta}{2}\biggr)=\pm\sqrt{\frac{1-\cos\theta}{2}}$$
+            $$\sin(2\theta)=2\sin\theta\cos\theta$$
 
-    $$\cos\biggl(\frac{\theta}{2}\biggr)=\pm\sqrt{\frac{1+\cos\theta}{2}}$$
+            $$\cos(2\theta)=\cos^2\theta-\sin^2\theta$$
 
-    $$\tan\biggl(\frac{\theta}{2}\biggr)=\csc\theta-\cot\theta=\pm\sqrt{\frac{1-\cos\theta}{1+\cos\theta}}=\frac{\sin\theta}{1+\cos\theta}$$
+            $$\tan(2\theta)=\frac{2\tan\theta}{1-\tan^2\theta}$$
 
+            $$\sin\biggl(\frac{\theta}{2}\biggr)=\pm\sqrt{\frac{1-\cos\theta}{2}}$$
 
+            $$\cos\biggl(\frac{\theta}{2}\biggr)=\pm\sqrt{\frac{1+\cos\theta}{2}}$$
 
-    ====Ley de senos y cosenos====
+            $$\tan\biggl(\frac{\theta}{2}\biggr)=\csc\theta-\cot\theta=\pm\sqrt{\frac{1-\cos\theta}{1+\cos\theta}}=\frac{\sin\theta}{1+\cos\theta}$$
 
-    Dado el siguiente gráfico:
+            <strong><h2 id="T2">2. Ley de senos y cosenos</h2></strong>
 
-    {{ :matematicas:leysenocoseno.jpg?400 |}}
+            Dado el siguiente gráfico:
 
-    La ley de senos establece que:
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 2.</strong> Ley de senos y cosenos</figcaption>
+                <img src="../../../resources/img/matematicas/basica/leysenoscosenos.png" alt="triangulo rectangulo.png" height="250px">
+            </figure>
 
-    $$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}$$
+            La ley de senos establece que:
 
-    La ley de cosenos establece que:
+            $$\frac{a}{\sin A}=\frac{b}{\sin B}=\frac{c}{\sin C}$$
 
-    $$c^2=a^2+b^2-2ab\cos C$$
+            La ley de cosenos establece que:
 
-    ===== Logaritmos y exponenciales=====
+            $$c^2=a^2+b^2-2ab\cos C$$
 
-    Las siguientes son las leyes más representativas para el manejo de logaritmos y funciones exponenciales
+            <strong><h2 id="T3">3. Logaritmos y exponenciales</h2></strong>
 
-    * $\log_a(xy)=\log_a(x)+\log_a(y)$
-    * $\log_a(\frac{x}{y})=\log_a(x)-\log_a(y)$
-    * $\log_a(x^r)=r\log_a(x)$
-    * $\log_a(x)=\frac{\ln x}{\ln a}$
-    * $a^{x+y}=a^xa^y$
-    * $a^{x-y}=\frac{a^x}{a^y}$
-    * $(a^x)^y=a^{xy}$
-    * $(ab)^x=a^xb^x$
+            Las siguientes son las leyes más representativas para el manejo de logaritmos y funciones exponenciales
 
-    ===== Funciones =====
+            $$\log_a(xy)=\log_a(x)+\log_a(y)$$
+            $$\log_a(\frac{x}{y})=\log_a(x)-\log_a(y)$$
+            $$\log_a(x^r)=r\log_a(x)$$
+            $$\log_a(x)=\frac{\ln x}{\ln a}$$
+            $$a^{x+y}=a^xa^y$$
+            $$a^{x-y}=\frac{a^x}{a^y}$$
+            $$(a^x)^y=a^{xy}$$
+            $$(ab)^x=a^xb^x$$
 
-    Regla que asigna a cada elemento $x$ de un conjunto $A$ exactamente un elemento, llamado $f(x)$ de un conjunto $B$.
-    $A$ se denomina **dominio** de la función y $B$ se denomina **rango** o **codominio** de la función. Formalmente una función se denota como:
+            <strong><h2 id="T4">4. Funciones</h2></strong>
 
-    $$f\text{ }:A\text{ }\rightarrow\text{ }B$$
+            Regla que asigna a cada elemento `x` de un conjunto `A` exactamente un elemento, llamado `f(x)` de un conjunto `B`.<br/>
+            `A` se denomina <strong>dominio</strong> de la función y `B` se denomina <strong>rango</strong> o <strong>codominio</strong> de la función. Formalmente una función se denota como:
 
-    ====Simetría====
+            $$f\text{ }:A\text{ }\rightarrow\text{ }B$$
 
-    * Función par es aquella que cumple que $f(x)=f(-x)$
-    * Función impar es aquella que cumple que $f(-x)=-f(x)$
+            <strong><h2 id="T5">4.1. Simetría</h2></strong>
 
-    ====Funciones crecientes y decrecientes====
+            <ul>
+                <li>Función par es aquella que cumple que `f(x)=f(-x)`</li>
+                <li>Función impar es aquella que cumple que `f(-x)=-f(x)`</li>
+            </ul>
 
-    * La función creciente en un intervalo $I$ cumple que $f(x_1)<f(x_2) \text{siempre que }x_1<x_2 \text{ en } I$
-                                                                                                    * La función decreciente en un intervalo $I$ cumple que $f(x_1)>f(x_2) \text{siempre que }x_1>x_2 \text{ en } I$
+            <strong><h2 id="T6">4.2. Funciones crecientes y decrecientes</h2></strong>
 
-    ====Construcciones de funciones====
+            <ul>
+                <li>La función creciente en un intervalo `I` cumple que `f(x_1)\lt f(x_2) \text{ siempre que }x_1\lt x_2 \text{ en } I`</li>
+                <li>La función decreciente en un intervalo `I` cumple que `f(x_1)\gt f(x_2) \text{ siempre que }x_1\gt x_2 \text{ en } I`</li>
+            </ul>
 
-    Sea $f(x)$ una función y $c$ una constantes mayor que 1, se pueden obtener funciones nuevas utilizando las siguientes construcciones
+            <strong><h2 id="T7">4.3. Construcción de funciones</h2></strong>
 
-    - Desplazamiento hacia arriba: $f(x)+c$
-    - Desplazamiento hacia abajo: $f(x)-c$
-    - Desplazamiento a la derecha: $f(x-c)$
-    - Desplazamiento a la izquierda: $f(x+c)$
-    - Alargamiento vertical: $cf(x)$
-    - Compresión vertical: $\frac{1}{c}f(x)$
-    - Compresión horizontal: $f(cx)$
-    - Alargamiento horizontal: $f(\frac{x}{c})$
-    - Reflexión respecto al eje $x$: $-f(x)$
-    - Reflexión respecto al eje $y$: $f(-x)$
+            Sea `f(x)` una función y `c` una constantes mayor que `1`, se pueden obtener funciones nuevas utilizando las siguientes construcciones:
 
-    ====Combinación de funciones====
+            <ul>
+                <li>Desplazamiento hacia arriba: `f(x)+c`</li>
+                <li>Desplazamiento hacia abajo: `f(x)-c`</li>
+                <li>Desplazamiento a la derecha: `f(x-c)`</li>
+                <li>Desplazamiento a la izquierda: `f(x+c)`</li>
+                <li>Alargamiento vertical: `cf(x)`</li>
+                <li>Compresión vertical: `\frac{1}{c}f(x)`</li>
+                <li>Compresión horizontal: `f(cx)`</li>
+                <li>Alargamiento horizontal: `f(\frac{x}{c})`</li>
+                <li>Reflexión respecto al eje `x`: `-f(x)`</li>
+                <li>Reflexión respecto al eje `y`: `f(-x)`</li>
+            </ul>
 
-    Sean dos funciones $f$ y $g$ en la variable $x$ y con dominios $A$ y $B$ respectivamente, se pueden combinar de las siguientes maneras:
+            <strong><h2 id="T8">4.4. Combinación de funciones</h2></strong>
 
-    - $(f+g)(x)=f(x)+g(x) \text{ dominio: }A \cap B$
-    - $(f-g)(x)=f(x)-g(x) \text{ dominio: }A \cap B$
-    - $(fg)(x)=f(x)g(x) \text{ dominio: }A \cap B$
-    - $(\frac{f}{g})(x)=\frac{f(x)}{g(x)} \text{ dominio: }\lbrace x \in A \cap B|g(x) \neq 0\rbrace$
-    - Composición: $(f \circ g)(x)=f(g(x)) \text{ dominio: }\lbrace x \in g(x) \in A \rbrace$
+            Sean dos funciones `f` y `g` en la variable `x` y con dominios `A` y `B` respectivamente, se pueden combinar de las siguientes maneras:
 
-    Note que el dominio de las funciones combinadas puede cambiar como resultado de la propia combinación.
+            <ul>
+                <li>`(f+g)(x)=f(x)+g(x) \text{ dominio: }A \cap B`</li>
+                <li>`(f-g)(x)=f(x)-g(x) \text{ dominio: }A \cap B`</li>
+                <li>`(fg)(x)=f(x)g(x) \text{ dominio: }A \cap B`</li>
+                <li>`(\frac{f}{g})(x)=\frac{f(x)}{g(x)} \text{ dominio: } \{ x \in A \cap B|g(x) \neq 0\}`</li>
+                <li>Composición: `(f \circ g)(x)=f(g(x)) \text{ dominio: }\{ x \in g(x) \in A \}`</li>
+            </ul>
 
-    ====Curvas paramétricas====
+            Note que el dominio de las funciones combinadas puede cambiar como resultado de la propia combinación.
 
-    En ocasiones las funciones pueden escribirse en términos de sus componentes en los ejes $x$ e $y$, para ellos se expresan en dos ecuaciones como sigue:
+            <strong><h2 id="T9">4.5. Curvas paramétricas</h2></strong>
 
-    $x=f(t) \text{  ;  } y=g(t)$
+            En ocasiones las funciones pueden escribirse en términos de sus componentes en los ejes `x` e `y`, para ellos se expresan en dos ecuaciones como sigue:
 
-    La variable $t$ se conoce como parámetro. Es importante notar que estas expresiones pueden dar lugar a un concepto más general que el de función
-    debido a que si se despeja $t$ en las ecuaciones anteriores y se igualan el resultado puede no superar la prueba de la línea vertical y como
-    consecuencia obtener una relación, para ello se utiliza el termino más general curva. Considere como ejemplo el caso de las curvas paramétricas
-    de un circulo de centro $(h,k)$ y radio $r$:
+            $$x=f(t) \text{  ;  } y=g(t)$$
 
-    $x=h+r\sin(t) \text{  ;  } y=k+r\cos(t)$
+            La variable `t` se conoce como parámetro. Es importante notar que estas expresiones pueden dar lugar a un concepto más general que el de función
+            debido a que si se despeja `t` en las ecuaciones anteriores y se igualan el resultado puede no superar la prueba de la línea vertical y como
+            consecuencia obtener una relación, para ello se utiliza el termino más general curva. Considere como ejemplo el caso de las curvas paramétricas
+            de un circulo de centro `(h,k)` y radio `r`:
 
-    ====Funciones inversas====
+            $$x=h+r\sin(t) \text{  ;  } y=k+r\cos(t)$$
 
-    Antes de definir la función inversa, definamos una función uno a uno (ver correspondencia de funciones) como aquella función que nunca
-    adopta el mismo valor dos veces:
+            <strong><h2 id="T10">4.6. Funciones inversas</h2></strong>
 
-    $$f(x_1) \neq f(x_2) \text{ siempre que } x_1 \neq x_2$$
+            Antes de definir la función inversa, definamos una función uno a uno (ver correspondencia de funciones) como aquella función que nunca
+            adopta el mismo valor dos veces:
 
-    Las funciones uno a uno se pueden comprobar gráficamente si al trazar una línea horizontal esta sólo interseca la gráfica de de la curva una sola vez.
+            $$f(x_1) \neq f(x_2) \text{ siempre que } x_1 \neq x_2$$
 
-    Se define la función inversa siendo $f$ una función uno a uno con dominio $A$ y rango $B$, luego la función
-    inversa $f^{-1}$ tiene rango $A$ y dominio $A$ y se define mediante:
+            Las funciones uno a uno se pueden comprobar gráficamente si al trazar una línea horizontal esta sólo interseca la gráfica de de la curva una sola vez.
 
-    $$f^{-1}(y)=x \Leftrightarrow f(x)=y$$
+            Se define la función inversa siendo `f` una función uno a uno con dominio `A` y rango `B`, luego la función
+            inversa `f^{-1}` tiene rango `A` y dominio `B` y se define mediante:
 
-    La función inversa implica las siguientes expresiones:
+            $$f^{-1}(y)=x \Leftrightarrow f(x)=y$$
 
-    * $f^{-1}(f(x))=x \text{ ; }\forall x \in A$
-    * $f(f^{-1}(x))=x \text{ ; }\forall x \in B$
+            La función inversa implica las siguientes expresiones:
 
-    ====Correspondencia de funciones====
+            $$f^{-1}(f(x))=x \text{ ; }\forall x \in A$$
+            $$f(f^{-1}(x))=x \text{ ; }\forall x \in B$$
 
-    A continuación se estudia las principales correspondencias de funciones, como son: univoca, biunivoca, inyectiva, biyectiva, sobreyectiva; las primeras correspondencias entre funciones (unívoca, biunivoca) tratan los conceptos más generales aplicados a conjuntos, pero también pueden entenderse desde el punto de vista de las funciones y en este caso las correspondencias se denominan aplicaciones, teniendo los casos inyectiva, biyectiva y sobreyectiva que se resumen a continuación.
-    Considere $A$ el dominio de una función $f$ cuyo rango es $B$
+            <strong><h2 id="T11">4.7. Correspondencia de funciones</h2></strong>
 
-    ===Funciones inyectivas===
+            A continuación se estudia las principales correspondencias de funciones, como son: univoca, biunivoca, inyectiva, biyectiva, sobreyectiva;
+            las primeras correspondencias entre funciones (unívoca, biunivoca) tratan los conceptos más generales aplicados a conjuntos, pero también pueden
+            entenderse desde el punto de vista de las funciones y en este caso las correspondencias se denominan aplicaciones, teniendo los casos inyectiva,
+            biyectiva y sobreyectiva que se resumen a continuación.
+            Considere `A` el dominio de una función `f` cuyo rango es `B`
 
-    Una función es inyectiva si a elementos diferentes del dominio asigna elementos diferentes del rango, formalmente las funciones inyectivas se definen como:
+            <br/><br/><strong>Funciones inyectivas</strong><br/>
 
-    $$a\text{ , }a' \in A\text{ y }a \neq a'\text{ entonces }f(a) \neq f(a')$$
+            Una función es inyectiva si a elementos diferentes del dominio asigna elementos diferentes del rango, formalmente las funciones inyectivas se definen como:
 
-    ===Funciones sobreyectiva===
+            $$a\text{ , }a' \in A\text{ y }a \neq a'\text{ entonces }f(a) \neq f(a')$$
 
-    Las funciones sobreyectivas también son denominadas funciones suprayectivas, epiyectivas, suryectiva, exhaustiva o subyectivas y se definen como aquellas funciones que para todo número en el rango tienen un correspondiente valor en el dominio, formalmente se define como:
+            <br/><strong>Funciones sobreyectivas</strong><br/>
 
-    $$\forall b \in B \text{ } \exists \text{ } a \in A \text{ con }f(a)=b$$
+            Las funciones sobreyectivas también son denominadas funciones suprayectivas, epiyectivas, suryectiva, exhaustiva o subyectivas y se definen como
+            aquellas funciones que para todo número en el rango tienen un correspondiente valor en el dominio, formalmente se define como:
 
-    La función también puede ser no sobreyectiva si la anterior premisa no se cumple.
+            $$\forall b \in B \text{ } \exists \text{ } a \in A \text{ con }f(a)=b$$
 
-    ===Funciones biyectivas===
+            La función también puede ser no sobreyectiva si la anterior premisa no se cumple.
 
-    Estas funciones también se denominan uno a uno, y son aquellas que son inyectivas y sobreyectivas al mismo tiempo.
+            <br/><br/><strong>Funciones biyectivas</strong><br/>
 
-    ===Ejemplos===
+            Estas funciones también se denominan uno a uno, y son aquellas que son inyectivas y sobreyectivas al mismo tiempo.
+            A continuación se muestran ejemplos de los diferentes tipos de funciones.
 
-    A continuación se muestran ejemplos de los diferentes tipos de funciones.
+            ^  Tipos de funciones  ^^^
+            | |  Inyectiva  |  No inyectiva  |
+            | Sobreyectiva | {{:matematicas:biyectiva.png?100|}} \\ Este caso también se \\ conoce biyectiva o \\ uno a uno | {{:matematicas:noinyec_sobreyec.png?100|}} |
+            | No sobreyectiva | {{:matematicas:inyecnosobre.png?100|}} | {{:matematicas:noinyec_nosobreyec.png?100|}} |
 
-    ^  Tipos de funciones  ^^^
-    | |  Inyectiva  |  No inyectiva  |
-    | Sobreyectiva | {{:matematicas:biyectiva.png?100|}} \\ Este caso también se \\ conoce biyectiva o \\ uno a uno | {{:matematicas:noinyec_sobreyec.png?100|}} |
-    | No sobreyectiva | {{:matematicas:inyecnosobre.png?100|}} | {{:matematicas:noinyec_nosobreyec.png?100|}} |
+            <strong><h2 id="T12">5. Fracciones parciales</h2></strong>
 
-    ===== Fracciones parciales =====
+            La expansión por fracciones parciales es una técnica muy útil para simplificar un cociente de polinomios como la combinación lineal de cocientes de
+            polinomios más simples. Pueden analizarse la expansión en fracciones parciales utilizando los siguientes casos.
 
-    La expansión por fracciones parciales es una técnica muy útil para simplificar un cociente de polinomios como la combinación lineal de cocientes de polinomios más simples. Pueden analizarse la expansión en fracciones parciales utilizando los siguientes casos.
+            <strong><h2 id="T13">5.1. Caso 1</h2></strong>
 
-    ==== Caso 1 ====
+            Caso en el cual el grado del numerador sea un grado más pequeño que el denominador.
+            El siguiente ejemplo ilustra el proceso:
 
-    Caso en el cual el grado del numerador sea un grado más pequeño que el denominador.
-    El siguiente ejemplo ilustra el proceso:
+            $$\frac{5x-4}{2x^2+x-1}$$
 
-    $$\frac{5x-4}{2x^2+x-1}$$
+            Se pude expresar como:
 
-    Se pude expresar como:
+            $$\frac{5x-4}{(x+1)(2x-1)}=\frac{A}{x+1}+\frac{B}{2x-1}$$
 
-    $$\frac{5x-4}{(x+1)(2x-1)}=\frac{A}{x+1}+\frac{B}{2x-1}$$
+            Donde `A` y `B` son constantes que se puede hallar al multiplicar ambos lados de la expresión por el denominador factorizado para obtener:
 
-    Donde $A$ y $B$ son constantes que se puede hallar al multiplicar ambos lados de la expresión por el denominador factorizado para obtener:
+            $$5x-4=A(2x-1)+B(x+1)$$
+            $$5x-4=(2A+B)x+(-A+B)$$
 
-    $$5x-4=A(2x-1)+B(x+1)$$
-    $$5x-4=(2A+B)x+(-A+B)$$
+            Lo cual conduce a dos ecuaciones simultáneas: `5=2A+B` y `-4=-A+B`
 
-    Lo cual conduce a dos ecuaciones simultáneas:
+            De allí se obtiene la solución y la expansión por fracciones parciales resulta ser:
 
-    $5=2A+B$ y $-4=-A+B$
+            $$\frac{5x-4}{(x+1)(2x-1)}=\frac{3}{x+1}-\frac{1}{2x-1}$$
 
-    De allí se obtiene la solución y la expansión por fracciones parciales resulta ser:
+            <strong><h2 id="T14">5.2. Caso 2</h2></strong>
 
-    $$\frac{5x-4}{(x+1)(2x-1)}=\frac{3}{x+1}-\frac{1}{2x-1}$$
+            Si el grado del numerador es mayor o igual que el denominador es necesario realizar la división de polinomios para luego aplicar las mismas
+            consideraciones del caso 1.
 
-    ==== Caso 2 ====
+            <strong><h2 id="T15">5.3. Caso 3</h2></strong>
 
-    Si el grado del numerador es mayor o igual que el denominador es necesario realizar la división de polinomios para luego aplicar las mismas consideraciones del caso 1.
+            Si el denominador tiene más de un factor lineal es necesario incluir un término correspondiente por cada factor. Por ejemplo:
 
-    ==== Caso 3 ====
+            $$\frac{x+6}{x(x-3)(4x+5)}=\frac{A}{x}+\frac{B}{x-3}+\frac{C}{4x+5}$$
 
-    Si el denominador tiene más de un factor lineal es necesario incluir un término correspondiente por cada factor.
-    Por ejemplo:
+            Lo cual conduce a un sistema con tres incógnitas y tres ecuaciones.
 
-    $$\frac{x+6}{x(x-3)(4x+5)}=\frac{A}{x}+\frac{B}{x-3}+\frac{C}{4x+5}$$
+            <strong><h2 id="T16">5.4. Caso 4</h2></strong>
 
-    Lo cual conduce a un sistema con tres incógnitas y tres ecuaciones.
+            En el caso en que el denominador posea un factor cuadrático irreducible `ax^2+bx+c` donde el discriminante `b^2-4ac` sea negativo entonces la
+            fracción parcial corresponde de la siguiente manera:
 
-    ==== Caso 4 ====
+            $$\frac{Ax+B}{ax^2+bx+c}$$
 
-    En el caso en que el denominador posea un factor cuadrático irreducible $ax^2+bx+c$ donde el discriminante $b^2-4ac$ sea negativo entonces la fracción parcial corresponde de la siguiente manera:
-
-    $$\frac{Ax+B}{ax^2+bx+c}$$
-
-</article>
-<footer id="footer"></footer>
-</body>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-<script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
-<script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../"></script>
+        </article>
+        <footer id="footer"></footer>
+    </body>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../" currentElement="#a_math_operativas"></script>
 </html>

@@ -1,34 +1,75 @@
-/*
-*****************************************
-*    General section
-*****************************************
-*/
+/******************************************
+* Generic classes
+******************************************/
+
+.centerText {
+    text-align: center;
+}
+
+.mathAjaxLeftAlign {
+    text-align: left !important;
+    display: inline !important;
+}
+
+/******************************************
+* Custom page elements
+******************************************/
+
+#main-article-index {
+    background-image: url(../../img/home/home_bg.jpg), url(../../img/home/home_bg.jpg);
+    background-size: cover;
+}
+
+#title1 {
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#title2, #title3 {
+    margin: 0px;
+    text-align: center;
+}
+
+#navigator-bar, #main-article-index, #main-article {
+    height: calc(100% - 100px);
+}
+
+#menu-navbar {
+    padding-left: 5px;
+}
+
+/******************************************
+* HTML Elements
+******************************************/
 
 header {
-    padding: 15px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     color: white;
-    background-color: black;
+    background-color: #333333;
     clear: left;
     text-align: center;
 }
 
 footer {
-    padding: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
     color: white;
-    background-color: black;
+    background-color: #333333;
     clear: left;
     text-align: center;
 }
 
 nav {
     float: left;
-    max-width: 180px;
-    min-width: 180px;
+    max-width: 200px;
+    min-width: 200px;
     margin: 0;
     padding: 1em;
     border-right: 1px solid gray;
-    padding: 1em;
     overflow: auto;
+    background: #333333;
 }
 
 nav ul {
@@ -38,6 +79,8 @@ nav ul {
    
 nav ul a {
     text-decoration: none;
+    background: #333333;
+    color: #F1F2F3;
 }
 
 article {
@@ -51,12 +94,8 @@ html {
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 100;
-	line-height: 20px;
-}
-
-html {
-    height: calc(100% - 10px);
-    margin: 5px;
+    height: calc(100%);
+    margin: 0px;
 }
 
 body {
@@ -64,26 +103,19 @@ body {
     margin: 0px;
 }
 
-#navigator-bar, #main-article {
-    height: calc(100% - 107px);
-}
 
-/*
-*****************************************
+/******************************************
 *    Linkedin section
-*****************************************
-*/
+*******************************************/
 
 
 #linkedin > div > div {
     width: 450px !important;
 }
 
-/*
-*****************************************
+/******************************************
 *    Tree core styles
-*****************************************
-*/
+*******************************************/
 
 .tree { 
     margin: 1em; 
@@ -102,11 +134,10 @@ body {
     display: block; 
 }
 
-/*
-*****************************************
+/******************************************
 *    Tree rows
-*****************************************
-*/
+******************************************/
+
 .tree li {
     line-height: 1.2;
     position: relative;
@@ -121,11 +152,10 @@ body {
     padding-bottom: 0; 
 }
 
-/*
-*****************************************
+/******************************************
 *    Tree labels
-*****************************************
-*/
+*******************************************/
+
 .tree_label {
     position: relative;
     display: inline-block;
@@ -140,11 +170,10 @@ label.tree_label:hover {
     color: #666; 
 }
 
-/*
-*****************************************
+/******************************************
 *    Tree expanded icon
-*****************************************
-*/
+*******************************************/
+
 label.tree_label:before {
     background: #000;
     color: #fff;
@@ -164,11 +193,10 @@ label.tree_label:before {
     content: '–'; 
 }
 
-/*
-*****************************************
+/******************************************
 *   Tree branches
-*****************************************
-*/
+******************************************/
+
 .tree li:before {
     position: absolute;
     top: 0;

@@ -1,4 +1,5 @@
 var relative = document.currentScript.getAttribute('relative');
+var currentElement = document.currentScript.getAttribute('currentElement');
 
 $(function() {
     // Set containers
@@ -20,6 +21,7 @@ $(function() {
         $('#a_math_series').attr("href", relative + 'web/matematicas/calculo/series.html');
         $('#a_math_vectorial').attr("href", relative + 'web/matematicas/geometria/vectorial.html');
         $('#a_math_matrices').attr("href", relative + 'web/matematicas/lineal/matrices.html');
+        $(currentElement).css("line-height", "20px");
     });
     $('#footer').load(relative + 'footer.html');
 });

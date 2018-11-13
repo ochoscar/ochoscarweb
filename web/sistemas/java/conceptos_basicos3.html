@@ -11,7 +11,8 @@
         </script>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ochoscar - conceptos basicos 2</title>
+        <title>ochoscar - conceptos básicos 3</title>
+        <link rel="icon" type="image/png" href="../../../resources/img/fav-icon.png">
         <link rel="stylesheet" href="../../../resources/css/home/index.css" />
         <link rel="stylesheet" href="../../../resources/css/sistemas/java/conceptos_basicos3.css" />
         <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
@@ -33,8 +34,43 @@
 
             <strong><h2 id="T1">1. Ejecución de programas Java</h2></strong>
 
-            <p align="justify">.</p>
+            <p align="justify">Cuando pensamos en ejecutar programas Java para el escritorio requerimos hacerlo desde una consola o terminal, es importante para el ambiente cuente con el comando <code>java</code> instalado y sea accesible desde el lugar o directorio donde se ejecute el comando. En la figura 1 se muestra un ejemplo de ejecución del comando <code>java -version</code> que muestra la versión de la máquina virtual de Java que ejecutará el comando. Es importante reconocer que también existen otros comandos para compilar como <code>javac</code> o algunas utilidades para revisar la carga de memoria o el comportamiento del procesador y que estas utilidades estan disponibles en la carpeta bin de la instalación. Para este punto lo más normal es compilar y ejecutar los archivos java utilizando un Entorno Inetgrado de Desarrollo o IDE como Eclipse, NetBeans o IntelliJ.</p>
 
+            <center>
+                <br/>
+                <figure>
+                    <figcaption><strong>Figura 1.</strong> Ejecución de Java</figcaption>
+                    <img src="../../../resources/img/sistemas/java/javaversion.png" alt="Ejecución de java.png" height="100px">
+                </figure>
+                <br/>
+            </center>
+
+            <p>Ahora, una vez que el comando java se encuentra disponible se podrán ejecutar programas java simplemente pasando el archivo <code>.class</code> como paramentro de Java y teniendo presente la jerarquia de paquetes donde se almaceno nuestra clase, por ejemplo la figura 2 muestra la ejecución del programa HolaMundo mostrado en el listado de código 1.</p>
+
+            <center>
+                <br/>
+                <figure>
+                    <figcaption><strong>Figura 1.</strong> Ejecución de Java</figcaption>
+                    <img src="../../../resources/img/sistemas/java/javaexecute.png" alt="Ejecución de java.png" height="85px">
+                </figure>
+                <br/>
+            </center>
+
+
+            <center>
+                <strong>Código 1.</strong> Estructura de una clase
+                <pre class="prettyprint linenums" style="width: 600px; text-align: left"><code class="language-java">public class HolaMundo {
+
+    public static void main(String args[]) {
+        System.out.println("Hola mundo");
+    }
+
+}</code></pre>
+            </center>
+
+            <p>Aquí se puede comprender el método main que es el punto de entrada para la ejecución de instrucciones en Java y el mismo debe ser estático para que la JVM pueda llamar el método sin necesidad de instanciar la clase HolaMundo, también debe ser público para que la JVM pueda ver el método, debe llamarse main especificamente puesto que con este nombre lo buscará la JVM y finalmente pueden pasarse una serie de parametros a manera de arreglo de <code>String</code>, estos parametros son enviados en el momento de la ejecución en la línea de comandos, y simplemente mencionar que si se envían parametros que contengan espacios y estos van a ser interpretados como un solo ítem en el arreglo <code>args</code> debera escribirse entre comillas dobles.</p>
+
+            <p>Alternativamente se pueden ejecutar los programa java si el proyecto es empaquetado como un <code>jar</code>, es decir, como un archivo comprimido java el cual contiene un conjunto de archivos <code>.class</code> y un archivo manifiesto que indica cual de las clases es la principal y que a su vez contiene un método main que será utilizado para iniciar la ejecución de instrucciones. El comando necesario para ejecutar un jar es el siguiente: <code>java -jar ArchivoJAVAJAR.jar</code>. Si el archivo jar no contiene un manifiesto o la clase pirincipal no contiene un main con las consideraciones descritas nos será posible ejecutarlo.</p>
 
         </article>
         <footer id="footer"></footer>
@@ -42,7 +78,7 @@
     <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
     <script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
-    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../"></script>
+    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../" currentElement="#a_java_basics3"></script>
     <script type="text/javascript">
         PR.prettyPrint();
     </script>
