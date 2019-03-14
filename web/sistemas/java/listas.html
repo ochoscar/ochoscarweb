@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-            Páginas Web de Ochoscar - Sistemas - Listas
+            Páginas Web de Ochoscar - Programación - Listas
         </header>
         <nav id="navigator-bar"></nav>
         <article id="main-article">
@@ -38,7 +38,7 @@
 
             <strong><h2 id="T1">1. Necesidad</h2></strong>
 
-            <p align="justify">Las listas enlazadas surgen de la necesidad de manejar de forma más eficiente la memoria, debido a que los arreglos nativos, si bien proporcionan toda la funcionalidad requerida respecto al manejo de listas tiene un gran inconveniente y es que todas sus posiciones se encuentran contiguas (juntas) en memoria, una a continuación de la otra. Suponga entonces que se crea un arreglo de gran tamaño, afortunadamente en Java cada casilla contendrá una referencia a un objeto, es decir cada casilla tiene un tamaño de 32 o 64 bits dependiendo de la arquitectura de la máquina, sin embargo, si el arreglo es muy grande es posible que no se disponga de un gran bloque de memoria contigua para albergar el arreglo. El problema de encontrar este espacio de memoria disponible empeora con el tiempo que lleve ejutandose el programa, puesto que la creación de objetos y su recolección ocasionan huecos en la memoria en un fenómeno conocido como fragmentación de la memoria (muy parecido al que sucede en el disco duro, conocido como fragmentación del disco). La Figura 1. muestra un ejemplo de items almacenados en casillas de un arrelgo.</p>
+            <p align="justify">Las listas enlazadas surgen de la necesidad de manejar de forma más eficiente la memoria, debido a que los arreglos nativos, si bien proporcionan toda la funcionalidad requerida respecto al manejo de listas tiene un gran inconveniente y es que todas sus posiciones se encuentran contiguas (juntas) en memoria, una a continuación de la otra. Suponga entonces que se crea un arreglo de gran tamaño, afortunadamente en Java cada casilla contendrá una referencia a un objeto, es decir cada casilla tiene un tamaño de 32 o 64 bits dependiendo de la arquitectura de la máquina, sin embargo, si el arreglo es muy grande es posible que no se disponga de un gran bloque de memoria contigua para albergar el arreglo. El problema de encontrar este espacio de memoria disponible empeora con el tiempo que lleve ejecutándose el programa, puesto que la creación de objetos y su recolección ocasionan huecos en la memoria en un fenómeno conocido como fragmentación de la memoria (muy parecido al que sucede en el disco duro, conocido como fragmentación del disco). La Figura 1. muestra un ejemplo de items almacenados en casillas de un arreglo.</p>
 
             <center>
                 <figure>
@@ -53,7 +53,7 @@
 
             <strong><h2 id="T2">2. Clases autoreferencias</h2></strong>
 
-            <p align="justify">Las listas enlazadas y muchas otras estructuras de datos se forman utilizando clases autoreferenciadas que no es otra cosa que una clase que contiene al menos un atributo cuyo tipo coincide con la misma clase, en otras palabras una clase autoreferenciada tiene una referencia a un objeto del mismo tipo de la clase. En la Figura 2, se muestra un ejemplo de una clase autoreferenicada denominada <code>Node</code> que representa una casilla de una lista enlazada, observe como el nodo tiene un espacio de memoria para referenicar el objeto contenido en la casilla y una referencia al nodo siguiente.</p>
+            <p align="justify">Las listas enlazadas y muchas otras estructuras de datos se forman utilizando clases autoreferenciadas que no es otra cosa que una clase que contiene al menos un atributo cuyo tipo coincide con la misma clase, en otras palabras una clase autoreferenciada tiene una referencia a un objeto del mismo tipo de la clase. En la Figura 2, se muestra un ejemplo de una clase autoreferenciada denominada <code>Node</code> que representa una casilla de una lista enlazada, observe como el nodo tiene un espacio de memoria para referenciar el objeto contenido en la casilla y una referencia al nodo siguiente.</p>
 
             <center>
                 <figure>
@@ -66,9 +66,9 @@
 
             <strong><h2 id="T3">3. Estructura de una Lista Enlazada</h2></strong>
 
-            <p align="justify">Las listas enlazadas aprovechan el concepto de clases autoreferenciadas para encadenar nodos y permitir armar una lista, observe que unicamente se requiere saber cual es el primer nodo de la lista, puesto que avanzando a través de la referencias <code>next</code> de cada nodo se puede llegar a cualquier otro nodo en la lista. El hecho de conocer la primera posición de la lista es algo que nos es familiar, ya que en el caso de los arreglos el nombre del arreglo realmente es un apuntador al primer elemento de la lista.</p>
+            <p align="justify">Las listas enlazadas aprovechan el concepto de clases autoreferenciadas para encadenar nodos y permitir armar una lista, observe que únicamente se requiere saber cual es el primer nodo de la lista, puesto que avanzando a través de la referencias <code>next</code> de cada nodo se puede llegar a cualquier otro nodo en la lista. El hecho de conocer la primera posición de la lista es algo que nos es familiar, ya que en el caso de los arreglos el nombre del arreglo realmente es un apuntador al primer elemento de la lista.</p>
 
-            <p align="justify">Observe que la lista tal como se plantea resuleve el problema de memoria mencionado anteriormente, es decir, al estar los nodos desligados los unos de los otros ya no es necesario para grandes arreglos encontrar un bloque contiguo de memoria, infortundamente esta solución genera un nuevo inconveniente y es el desplazamiento por la lista, supongamos que se desea acceder a la casilla tercera de la lista, será necesario entonces a partir de la primera casilla iterar para posicionar una referencia que termine apuntando a la tercera casilla, esta iteración toma tiempo y empeora con el tamaño de la lista, situación que no sucede con los arreglos puesto que ubicarse en una posición cualquiera es simplemente una operación aritmetica, por lo anterior indexar una posición en la lista enlazada es una operación de tiempo lineal con el tamaño de la lista, en cambio en el arreglo es una operación de tiempo constante.</p>
+            <p align="justify">Observe que la lista tal como se plantea resuelve el problema de memoria mencionado anteriormente, es decir, al estar los nodos desligados los unos de los otros ya no es necesario para grandes arreglos encontrar un bloque contiguo de memoria, infortunadamente esta solución genera un nuevo inconveniente y es el desplazamiento por la lista, supongamos que se desea acceder a la casilla tercera de la lista, será necesario entonces a partir de la primera casilla iterar para posicionar una referencia que termine apuntando a la tercera casilla, esta iteración toma tiempo y empeora con el tamaño de la lista, situación que no sucede con los arreglos puesto que ubicarse en una posición cualquiera es simplemente una operación aritmética, por lo anterior indexar una posición en la lista enlazada es una operación de tiempo lineal con el tamaño de la lista, en cambio en el arreglo es una operación de tiempo constante.</p>
 
             <p align="justify">El programador debe elegir adecuadamente su estructura de datos de tal manera que supla las necesidades del algoritmo, teniendo en cuenta también aspectos de rendimiento.</p>
 
@@ -91,11 +91,11 @@
                 <li>Lista: implementación de todos los métodos y utilidades de la lista enlazada.</li>
             </ul>
 
-            <p align="justify">El código que se muestra a continuación implementa las tres clases anteriores. Note que la implemenación de la interface pude darse con diversas ténicas y formas, no solo con clases autoreferenciadas, de tal manera que para la misma interface se puede terner diferentes implementaciones, la primera que se mostrará es la lista enlazada, y la segunda la lista implementada con arrays.</p>
+            <p align="justify">El código que se muestra a continuación implementa las tres clases anteriores. Note que la implementación de la interface pude darse con diversas técnicas y formas, no solo con clases autoreferenciadas, de tal manera que para la misma interface se puede tener diferentes implementaciones, la primera que se mostrará es la lista enlazada, y la segunda la lista implementada con arrays.</p>
 
             <strong><h3>Interface</h3></strong>
 
-            <p align="justify">Esta interface representa las operaciones habituales con la lista, observe algo interesante en el caso de los métodos add, los cuales devuelven una lista enlazada, esto a primera vista puede parecer extraño, pero realmente la idea es devolver la misma lista que llamo el método add y de esta forma habilitar el encadenamiento de llamados a métodos de la lista, por ejemplo, se puden hacer llamados así <code>list.add(obj1).add(obj2)</code> y asi sucesivamente.</p>
+            <p align="justify">Esta interface representa las operaciones habituales con la lista, observe algo interesante en el caso de los métodos add, los cuales devuelven una lista enlazada, esto a primera vista puede parecer extraño, pero realmente la idea es devolver la misma lista que llamo el método add y de esta forma habilitar el encadenamiento de llamados a métodos de la lista, por ejemplo, se pueden hacer llamados así <code>list.add(obj1).add(obj2)</code> y asi sucesivamente.</p>
 
             <br/>
             <center>
@@ -105,81 +105,81 @@
 /**
  * Provee las acciones que se pueden realizar con una lista
  * @author ochoscar
- * @param <T> Tipo generico de los cuales se almacenaran elementos dentro de la lista
+ * @param < T > Tipo genérico de los cuales se almacenaran elementos dentro de la lista
  */
-public interface IList<T> {
+public interface IList< T > {
 
     /**
-     * Metodo que verifica si la lista esta vacia
+     * Método que verifica si la lista esta vacía
      * @return Devuelve true si la lista esta
-     * vacia y false en caso contrario
+     * vacía y false en caso contrario
      */
     public boolean isEmpty();
 
     /**
      * Obtiene el primer item de la lista
      * @return Devuelve la Clase al principio de la lista
-     * null en caso que la lista este vacia
+     * null en caso que la lista este vacía
      */
     public T getFirst();
 
     /**
      * Obtiene el ultimo elemento de la lista
      * @return Devuelve la ultima Clase en la lista
-     * null si la lista esta vacia
+     * null si la lista esta vacía
      */
     public T getLast();
 
     /**
-     * Devuelve el iesimo elemento de la lista
-     * @param i Posicion del elemento a devolver (comienza en 0)
-     * @return Devuelve la Clase en la posicion i
+     * Devuelve el i - esimo elemento de la lista
+     * @param i Posición del elemento a devolver (comienza en 0)
+     * @return Devuelve la Clase en la posición i
      */
     public T get(int i);
 
     /**
-     * Metodo que establece un item de la lista en una posicion especifica
-     * @param p Objeto que sera establecido en una posicion especifica
+     * Método que establece un item de la lista en una posición especifica
+     * @param p Objeto que sera establecido en una posición especifica
      * @param i Posición a establecer el objeto
      */
     public void set(T p, int i);
 
     /**
-     * Metodo que determina el tamaño de la lista
+     * Método que determina el tamaño de la lista
      * @return Devuelve un entero que indica el tamaño de la lista
      */
     public int size();
 
     /**
-     * Metodo que inserta al final de la lista
+     * Método que inserta al final de la lista
      * @param p Objeto a insertar
      * @return Devuelve la propia lista enlazada
      */
-    public IList<T> addLast(T p);
+    public IList< T > addLast(T p);
 
     /**
-     * Metodo que permite agregar un objeto en un posicion
+     * Método que permite agregar un objeto en un posición
      * arbitraria de la lista
      * @param p Objeto que se quiere agregar a la lista
-     * @param i posicion en la cual se quiere agregar
+     * @param i posición en la cual se quiere agregar
      * @return Devuelve la propia lista enlazada
      */
-    public IList<T> add(T p, int i);
+    public IList< T > add(T p, int i);
 
     /**
-     * Metodo que elimina un elemento dado un objeto
+     * Método que elimina un elemento dado un objeto
      * @param p Objeto a eliminar
      */
     public void remove(T p);
 
     /**
-     * Metodo que remueve un elemento de la lista
-     * @param i Posicion o indice a eliminar de la lista
+     * Método que remueve un elemento de la lista
+     * @param i Posición o índice a eliminar de la lista
      */
     public void remove(int i);
 
     /**
-     * Devuleve si esta o no
+     * Devuelve si esta o no
      * @param p Objeto a verificar si esta en la lista
      * @return Devuelve true si p esta en la lista false sino
      */
@@ -190,7 +190,7 @@ public interface IList<T> {
 
             <strong><h3 id="node">Nodo</h3></strong>
 
-            <p align="justify">La clase que establece la raíz de la autoreferenación es esta y permite además almacenar el objeto que esta contenido en esta casilla de la lista. El código proporcionado muestra que esta clase no ofrece ninguna operación particular, solamente almacena los atributos para enlazar los nodos y así conformar la lista.</p>
+            <p align="justify">La clase que establece la raíz de la auto referenciación es esta y permite además almacenar el objeto que esta contenido en esta casilla de la lista. El código proporcionado muestra que esta clase no ofrece ninguna operación particular, solamente almacena los atributos para enlazar los nodos y así conformar la lista.</p>
 
             <br/>
             <center>
@@ -198,12 +198,12 @@ public interface IList<T> {
                 <pre class="prettyprint linenums" style="width: 850px; text-align: left"><code class="language-java">package linkedlist;
 
 /**
- * Clase autoreferenciada para construir la estructura
- * tipo lista enlazada que contendra tanto el item almacenado
+ * Clase auto referenciada para construir la estructura
+ * tipo lista enlazada que contendrá tanto el item almacenado
  * como la referencia al siguiente elemento de la lista
  * @author ochoscar
  */
-public class Node<T> {
+public class Node< T > {
 
     ////////////////////
     // Atributos
@@ -213,10 +213,10 @@ public class Node<T> {
     private T item;
 
     /** Autoreferencia al siguiente elemento */
-    private Node<T> next;
+    private Node< T > next;
 
     ////////////////////
-    // Metodos
+    // Métodos
     ////////////////////
 
     /**
@@ -227,29 +227,29 @@ public class Node<T> {
     }
 
     /**
-     * Constructor con parametros
+     * Constructor con parámetros
      * @param pItem Item a almacenar en el nodo
      * @param pNext Siguiente elemento en la lista
      */
-    public Node(T pItem, Node<T> pNext) {
+    public Node(T pItem, Node< T > pNext) {
         item = pItem;
         next = pNext;
     }
 
     /**
      * Constructor de copia
-     * @param pNode Objeto que servira para realizar la copia de los
+     * @param pNode Objeto que servirá para realizar la copia de los
      * atributos del nodo
      */
-    public Node(Node<T> pNode) {
+    public Node(Node< T > pNode) {
         item = pNode.getItem();
         next = pNode.getNext();
     }
 
     /**
-     * Metodo que devuelve el nodo en su
-     * representacion de string
-     * @return Devuelve la representacion en String
+     * Método que devuelve el nodo en su
+     * representación de string
+     * @return Devuelve la representación en String
      */
     @Override
     public String toString() {
@@ -273,14 +273,14 @@ public class Node<T> {
     /**
      * @return the next
      */
-    public Node<T> getNext() {
+    public Node< T > getNext() {
         return next;
     }
 
     /**
      * @param next the next to set
      */
-    public void setNext(Node<T> next) {
+    public void setNext(Node< T > next) {
         this.next = next;
     }
 
@@ -289,7 +289,7 @@ public class Node<T> {
 
             <strong><h3>Lista Enlazada</h3></strong>
 
-            <p align="justify">La clase lista implementa no solo la interface de lista sino también la interface iterator que permite devolver un objeto Iterador con el cual se recorrera la lista, este objeto es utiizado automáticamente por java en la instrucción <code>for - each</code> que corresponde a la siguiente sintáxis <code>for(Obj obj : list)</code></p>
+            <p align="justify">La clase lista implementa no solo la interface de lista sino también la interface iterator que permite devolver un objeto Iterador con el cual se recorrerá la lista, este objeto es utilizado automáticamente por java en la instrucción <code>for - each</code> que corresponde a la siguiente sintaxis <code>for(Obj obj : list)</code></p>
 
             <br/>
             <center>
@@ -301,28 +301,28 @@ import java.util.Iterator;
 /**
  * Clase que encapsula las diferentes acciones de una lista enlazada
  * @author ochoscar
- * @param <T> Tipo generico que contra los item de la lista
+ * @param < T > Tipo genérico que contra los item de la lista
  */
-public class LinkedList<T> implements IList<T>, Iterable<T> {
+public class LinkedList< T > implements IList< T >, Iterable< T > {
 
     ////////////////////
     // Atributos
     ////////////////////
 
     /** Referencia al primer nodo de la lista */
-    private Node<T> first;
+    private Node< T > first;
 
     /** Tamaño de la lista */
     private int listSize = 0;
 
     ////////////////////
-    // Metodos
+    // Métodos
     ////////////////////
 
     /**
      * Obtiene el primer item de la lista
      * @return Devuelve la Clase al principio de la lista
-     * null en caso que la lista este vacia
+     * null en caso que la lista este vacía
      */
     @Override
     public T getFirst() {
@@ -332,7 +332,7 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     /**
      * Obtiene el ultimo elemento de la lista
      * @return Devuelve la ultima Clase en la lista
-     * null si la lista esta vacia
+     * null si la lista esta vacía
      */
     @Override
     public T getLast() {
@@ -340,9 +340,9 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Devuelve el iesimo elemento de la lista
-     * @param i Posicion del elemento a devolver (comienza en 0)
-     * @return Devuelve la Clase en la posicion i
+     * Devuelve el i - esimo elemento de la lista
+     * @param i Posición del elemento a devolver (comienza en 0)
+     * @return Devuelve la Clase en la posición i
      */
     @Override
     public T get(int i) {
@@ -353,8 +353,8 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Metodo que establece un item de la lista en una posicion especifica
-     * @param p Objeto que sera establecido en una posicion especifica
+     * Método que establece un item de la lista en una posición especifica
+     * @param p Objeto que sera establecido en una posición especifica
      * @param i Posición a establecer el objeto
      */
     @Override
@@ -365,7 +365,7 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Metodo que determina el tamaño de la lista
+     * Método que determina el tamaño de la lista
      * @return Devuelve un entero que indica el tamaño de la lista
      */
     @Override
@@ -374,44 +374,44 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Metodo que inserta al final de la lista
+     * Método que inserta al final de la lista
      * @param p Objeto a insertar
      * @return Devuelve la propia lista enlazada
      */
     @Override
-    public IList<T> addLast(T p) {
+    public IList< T > addLast(T p) {
         add(p, listSize);
         return this;
     }
 
     /**
-     * Metodo que permite agregar un objeto en un posicion
+     * Método que permite agregar un objeto en un posición
      * arbitraria de la lista
      * @param p Objeto que se quiere agregar a la lista
-     * @param i posicion en la cual se quiere agregar
+     * @param i posición en la cual se quiere agregar
      * @return Devuelve la propia lista enlazada
      */
     @Override
-    public IList<T> add(T p, int i) {
+    public IList< T > add(T p, int i) {
         if(i >= 0 && i <= listSize) {
-            Node<T> newNode = new Node();
+            Node< T > newNode = new Node();
             newNode.setItem(p);
-            // La lista esta vacia
+            // La lista esta vacía
             if(first == null) {
                 first = newNode;
             } else {
-                // La lista no esta vacia, y van a inserta
-                // en la posicion 0
+                // La lista no esta vacía, y van a inserta
+                // en la posición 0
                 if(i == 0) {
                     newNode.setNext(first);
                     first = newNode;
                 } else if(i == listSize) {
                     // Se quiere insertar al final de la lista
-                    Node<T> last = getNode(listSize - 1);
+                    Node< T > last = getNode(listSize - 1);
                     last.setNext(newNode);
                 } else {
-                    Node<T> previous = getNode(i - 1);
-                    Node<T> current = previous.getNext();
+                    Node< T > previous = getNode(i - 1);
+                    Node< T > current = previous.getNext();
                     newNode.setNext(current);
                     previous.setNext(newNode);
                 }
@@ -422,12 +422,12 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Metodo que elimina un elemento dado un objeto
+     * Método que elimina un elemento dado un objeto
      * @param p Objeto a eliminar
      */
     @Override
     public void remove(T p) {
-        Node<T> aux = first;
+        Node< T > aux = first;
         int i = 0;
         boolean find = false;
         if(contains(p)){
@@ -444,17 +444,17 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Metodo que remueve un elemento de la lista
-     * @param i Posicion o indice a eliminar de la lista
+     * Método que remueve un elemento de la lista
+     * @param i Posición o índice a eliminar de la lista
      */
     @Override
     public void remove(int i) {
         if(i >= 0 && i < listSize) {
-            // La posicion a eliminar es valida, se procede a eliminar
+            // La posición a eliminar es valida, se procede a eliminar
             if(i == 0) {
                 first = first.getNext();
             } else {
-                Node<T> previous = getNode(i - 1);
+                Node< T > previous = getNode(i - 1);
                 previous.setNext(previous.getNext().getNext());
             }
             // Disminuye el tamaño de la lista
@@ -463,13 +463,13 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Devuleve si esta o no
+     * Devuelve si esta o no
      * @param p Objeto a verificar si esta en la lista
      * @return Devuelve true si p esta en la lista false sino
      */
     @Override
     public boolean contains(T p) {
-        Node<T> iterator = first;
+        Node< T > iterator = first;
         while(iterator != null) {
             if(iterator.getItem().equals(p)) {
                 return true;
@@ -480,7 +480,7 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Metodo que verifica si la lista esta vacia
+     * Método que verifica si la lista esta vacia
      * @return Devuelve true si la lista esta
      * vacia y false en caso contrario
      */
@@ -490,14 +490,14 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Metodo que devuelve la lista en su
-     * representacion de string
-     * @return Devuelve la representacion en String
+     * Método que devuelve la lista en su
+     * representación de string
+     * @return Devuelve la representación en String
      */
     @Override
     public String toString() {
         String strToReturn = "[ ";
-        Node<T> iterator = first;
+        Node< T > iterator = first;
         while(iterator != null) {
             strToReturn += iterator.toString() + " ";
             iterator = iterator.getNext();
@@ -506,21 +506,21 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Implementacion de la intnerface iterable que permite recorrer la lista
+     * Implementación de la interface iterable que permite recorrer la lista
      * con ciclos estilo for - each
      * @return Devuelve el iterador para recorrer la lista
      */
     @Override
-    public Iterator<T> iterator() {
+    public Iterator< T > iterator() {
 
-        // Creación de un objeto anonimo para retornarlo
-        return new Iterator<T>() {
+        // Creación de un objeto anónimo para retornarlo
+        return new Iterator< T >() {
 
             /** Ubica un puntero en el primer elemento de la lista a retornar */
-            private Node<T> iteratorNode = first;
+            private Node< T > iteratorNode = first;
 
             /**
-             * Metodo que indica si existen mas elementos a recorrer o no
+             * Método que indica si existen mas elementos a recorrer o no
              * @return True si existen mas elementos para recorrer y false en caso contrario
              */
             public boolean hasNext() {
@@ -538,9 +538,9 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
             }
 
             /**
-             * Metodo que le permite al iterador remover un elemento de forma segura
+             * Método que le permite al iterador remover un elemento de forma segura
              * En la lista hay que tener cuidado cuando se remueve mientras se itera puesto
-             * que la eliminacion cambia el tamaño de la lista. Este metodo
+             * que la eliminación cambia el tamaño de la lista. Este método
              * no se encuentra soportado en esta version.
              */
             public void remove() {
@@ -552,13 +552,13 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
     }
 
     /**
-     * Metodo que devuelve un nodo dada una posicion
-     * @param pos Posicion de la lista para retornar el nodo
-     * @return Devuelve el nodo indicado en el parametro pos
+     * Método que devuelve un nodo dada una posición
+     * @param pos Posición de la lista para retornar el nodo
+     * @return Devuelve el nodo indicado en el parámetro pos
      */
-    private Node<T> getNode(int pos) {
+    private Node< T > getNode(int pos) {
         int i = 0;
-        Node<T> iterator = first;
+        Node< T > iterator = first;
         while(iterator != null) {
             if(i == pos) {
                 return iterator;
@@ -572,7 +572,7 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
 }
 </code></pre></center>
 
-            <p align="justify">Las listas enlazadas también se pueden disponer como listas doblemete enlazada, donde cada nodo no solamente mantenga una referencia de su siguiente elemento sino también del elemento anterior. A continuación se muestra la implementación de listas usando nodos doblemente enlazados, note que cada nodo tiene dos referencias una apuntando hacía el elemento siguiente y otra apuntando hacía el elemento anterior.</p>
+            <p align="justify">Las listas enlazadas también se pueden disponer como listas doblemente enlazada, donde cada nodo no solamente mantenga una referencia de su siguiente elemento sino también del elemento anterior. A continuación se muestra la implementación de listas usando nodos doblemente enlazados, note que cada nodo tiene dos referencias una apuntando hacía el elemento siguiente y otra apuntando hacía el elemento anterior.</p>
 
             <center>
                 <figure>
@@ -583,13 +583,13 @@ public class LinkedList<T> implements IList<T>, Iterable<T> {
                 </figure>
             </center>
 
-            <p align="justify">Algunas ventajas de esta lista es que ciertas operaciones de desplazamiento resultan más óptimas al no tener que recorer siempre la lista completa desde el principio para pocisionarse en cualquier elemento, considere en este sentido, por ejemplo, recorrer la lista en orden inverso. Otra lista importante es la <strong>Lista Circular</strong> que simplemente es aquella que se forma uniendo el principio de la lista con el final y en este caso es común utilizar un nodo ficticio oara determinar un primer elemento de la lista</p>
+            <p align="justify">Algunas ventajas de esta lista es que ciertas operaciones de desplazamiento resultan más óptimas al no tener que recorrer siempre la lista completa desde el principio para posicionarse en cualquier elemento, considere en este sentido, por ejemplo, recorrer la lista en orden inverso. Otra lista importante es la <strong>Lista Circular</strong> que simplemente es aquella que se forma uniendo el principio de la lista con el final y en este caso es común utilizar un nodo ficticio para determinar un primer elemento de la lista</p>
 
-            <p align="justify">El programador debe elegir adecuadamente su estructura de datos de acuergo con la naturaleza de los mismos y de esta forma se le facilitaran las operaciones, concentrarse en la lógica de fondo, realizar códigos menos propensos a errores y finalmente con mayor facilidad de mantenimiento.</p>
+            <p align="justify">El programador debe elegir adecuadamente su estructura de datos de acuerdo con la naturaleza de los mismos y de esta forma se le facilitaran las operaciones, concentrarse en la lógica de fondo, realizar códigos menos propensos a errores y finalmente con mayor facilidad de mantenimiento.</p>
 
             <strong><h2 id="T5">5. Lista con arreglos</h2></strong>
 
-            <p align="justify">Como se había mencionado anteriormente la lista con arreglos puede ser una implementación de la misma interface <code>IList</code>. La ventaja en este caso es la facilidad para posicionarse en cualquier punto, sin embargo, al estar la lista conformada con arreglos, tiene las desventajas del uso de arreglos que se menciono al principio de esta sección. El arreglo es muy óptimo para indexarse, pero cuando se acaba el tamaño es necesario crear otro nuevo con más tamaño y hacer un copiado de los elementos del arreglo original en el nuevo con mayor capacidad, esta operación relentiza los métodos de la lista. Por esta razón las listas con arreglos deben tener mínimamente dos conceptos incluidos: el tamaño (que comunmente se refiere al tamaño ocupado) y la capacidad (que es la máxima cantidad de elementos que puede tener el arreglo utilizado en la lista). A continuación, se presenta el código de la lista enlazada usando arreglos.</p>
+            <p align="justify">Como se había mencionado anteriormente la lista con arreglos puede ser una implementación de la misma interface <code>IList</code>. La ventaja en este caso es la facilidad para posicionarse en cualquier punto, sin embargo, al estar la lista conformada con arreglos, tiene las desventajas del uso de arreglos que se menciono al principio de esta sección. El arreglo es muy óptimo para indexare, pero cuando se acaba el tamaño es necesario crear otro nuevo con más tamaño y hacer un copiado de los elementos del arreglo original en el nuevo con mayor capacidad, esta operación ralentiza los métodos de la lista. Por esta razón las listas con arreglos deben tener mínimamente dos conceptos incluidos: el tamaño (que comúnmente se refiere al tamaño ocupado) y la capacidad (que es la máxima cantidad de elementos que puede tener el arreglo utilizado en la lista). A continuación, se presenta el código de la lista enlazada usando arreglos.</p>
 
             <br/>
             <center>
@@ -601,23 +601,23 @@ import java.util.Iterator;
 /**
  * Lista que usa arreglos nativos para implementar las operaciones de una lista
  * @author ochoscar
- * @param <T> Tipo generico que contra los item de la lista
+ * @param < T > Tipo genérico que contra los item de la lista
  */
-public class ArrayList<T> implements IList<T>, Iterable<T>  {
+public class ArrayList< T > implements IList< T >, Iterable< T >  {
 
     ////////////////////
     // Atributos
     ////////////////////
 
-    /** Arreglo nativo de la lista que contiene los elementos y su lonngitud es
-     la capacidad maxima de elementos a almacenar*/
+    /** Arreglo nativo de la lista que contiene los elementos y su longitud es
+     la capacidad máxima de elementos a almacenar*/
     private T array[];
 
     /** Tamaño de la lista que refleja la cantidad de casillas del arreglo usadas */
     private int listSize;
 
     ////////////////////
-    // Metodos
+    // Métodos
     ////////////////////
 
     /**
@@ -638,9 +638,9 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     }
 
     /**
-     * Metodo que verifica si la lista esta vacia
+     * Método que verifica si la lista esta vacía
      * @return Devuelve true si la lista esta
-     * vacia y false en caso contrario
+     * vacía y false en caso contrario
      */
     @Override
     public boolean isEmpty() {
@@ -650,7 +650,7 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     /**
      * Obtiene el primer item de la lista
      * @return Devuelve la Clase al principio de la lista
-     * null en caso que la lista este vacia
+     * null en caso que la lista este vacía
      */
     @Override
     public T getFirst() {
@@ -660,7 +660,7 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     /**
      * Obtiene el ultimo elemento de la lista
      * @return Devuelve la ultima Clase en la lista
-     * null si la lista esta vacia
+     * null si la lista esta vacía
      */
     @Override
     public T getLast() {
@@ -668,9 +668,9 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     }
 
     /**
-     * Devuelve el iesimo elemento de la lista
-     * @param i Posicion del elemento a devolver (comienza en 0)
-     * @return Devuelve la Clase en la posicion i
+     * Devuelve el i - esimo elemento de la lista
+     * @param i Posición del elemento a devolver (comienza en 0)
+     * @return Devuelve la Clase en la posición i
      */
     @Override
     public T get(int i) {
@@ -678,8 +678,8 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     }
 
     /**
-     * Metodo que establece un item de la lista en una posicion especifica
-     * @param p Objeto que sera establecido en una posicion especifica
+     * Método que establece un item de la lista en una posición especifica
+     * @param p Objeto que sera establecido en una posición especifica
      * @param i Posición a establecer el objeto
      */
     @Override
@@ -690,7 +690,7 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     }
 
     /**
-     * Metodo que determina el tamaño de la lista
+     * Método que determina el tamaño de la lista
      * @return Devuelve un entero que indica el tamaño de la lista
      */
     @Override
@@ -699,12 +699,12 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     }
 
     /**
-     * Metodo que inserta al final de la lista
+     * Método que inserta al final de la lista
      * @param p Objeto a insertar
      * @return Devuelve la propia lista enlazada
      */
     @Override
-    public IList<T> addLast(T p) {
+    public IList< T > addLast(T p) {
         if(listSize == array.length) {
             adjustCapacity(2 * listSize);
         }
@@ -714,14 +714,14 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     }
 
     /**
-     * Metodo que permite agregar un objeto en un posicion
+     * Método que permite agregar un objeto en un posición
      * arbitraria de la lista
      * @param p Objeto que se quiere agregar a la lista
-     * @param i posicion en la cual se quiere agregar
+     * @param i posición en la cual se quiere agregar
      * @return Devuelve la propia lista enlazada
      */
     @Override
-    public IList<T> add(T p, int i) {
+    public IList< T > add(T p, int i) {
         if(listSize == array.length) {
             adjustCapacity(2 * listSize);
         }
@@ -733,6 +733,10 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
         return this;
     }
 
+    /**
+     * Método que elimina un elemento dado un objeto
+     * @param p Objeto a eliminar
+     */
     @Override
     public void remove(T p) {
         for(int i = 0; i < listSize; i++) {
@@ -743,6 +747,10 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
         }
     }
 
+    /**
+     * Método que remueve un elemento de la lista
+     * @param i Posición o índice a eliminar de la lista
+     */
     @Override
     public void remove(int i) {
         for(int j = i; j < listSize; j++) {
@@ -751,6 +759,11 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
         listSize--;
     }
 
+    /**
+     * Devuelve si esta o no
+     * @param p Objeto a verificar si esta en la lista
+     * @return Devuelve true si p esta en la lista false sino
+     */
     @Override
     public boolean contains(T p) {
         for(int i = 0; i < listSize; i++) {
@@ -762,21 +775,21 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     }
 
     /**
-     * Implementacion de la intnerface iterable que permite recorrer la lista
+     * Implementación de la interface iterable que permite recorrer la lista
      * con ciclos estilo for - each
      * @return Devuelve el iterador para recorrer la lista
      */
     @Override
-    public Iterator<T> iterator() {
+    public Iterator< T > iterator() {
 
-        // Creación de un objeto anonimo para retornarlo
-        return new Iterator<T>() {
+        // Creación de un objeto anónimo para retornarlo
+        return new Iterator< T >() {
 
             /** Contador para referenciar el elemento que actualmente se itera */
             private int i = 0;
 
             /**
-             * Metodo que indica si existen mas elementos a recorrer o no
+             * Método que indica si existen mas elementos a recorrer o no
              * @return True si existen mas elementos para recorrer y false en caso contrario
              */
             public boolean hasNext() {
@@ -784,7 +797,7 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
             }
 
             /**
-             * Devuelve el elemento dond se encuentra parado el iterador y lo avanza
+             * Devuelve el elemento donde se encuentra parado el iterador y lo avanza
              * @return
              */
             public T next() {
@@ -793,9 +806,9 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
             }
 
             /**
-             * Metodo que le permite al iterador remover un elemento de forma segura
+             * Método que le permite al iterador remover un elemento de forma segura
              * En la lista hay que tener cuidado cuando se remueve mientras se itera puesto
-             * que la eliminacion cambia el tamaño de la lista. Este metodo
+             * que la eliminación cambia el tamaño de la lista. Este método
              * no se encuentra soportado en esta version.
              */
             public void remove() {
@@ -807,7 +820,7 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
     }
 
     /**
-     * Metodo privado utilitario encargado de asegurar una capacidad en el arreglo
+     * Método privado utilitario encargado de asegurar una capacidad en el arreglo
      * haciendo una copia de los elementos del arreglo viejo en el nuevo
      * @param newCapacity Nueva capacidad del arreglo
      */
@@ -834,7 +847,7 @@ public class ArrayList<T> implements IList<T>, Iterable<T>  {
                 </figure>
             </center>
 
-            <p align="justify">Observer que el tamaño del arreglo, es decir, su capacidad puede verse incrementada en la operación add, en la cual se puede dupliar el tamaño del arreglo; una practica común es reducir también el tamaño del arreglo cuando se remueve, y es común disminuir el tamaño del arreglo a un cuarto del mismo si la mitad del arreglo esta libre. Es importante con lo anterior evitar que se hagan secuencias de operaciones que dupliquen - recorren el tamaño del arreglo, es decir add - remove - add - remove y así sucesivamnte decrementando sustancialmente el rendimiento del arreglo.</p>
+            <p align="justify">Observe que el tamaño del arreglo, es decir, su capacidad puede verse incrementada en la operación add, en la cual se puede duplicar el tamaño del arreglo; una practica común es reducir también el tamaño del arreglo cuando se remueve, y es común disminuir el tamaño del arreglo a un cuarto del mismo si la mitad del arreglo esta libre. Es importante con lo anterior evitar que se hagan secuencias de operaciones que dupliquen - recorren el tamaño del arreglo, es decir add - remove - add - remove y así sucesivamente decrementando sustancialmente el rendimiento del arreglo.</p>
         </article>
         <footer id="footer"></footer>
     </body>

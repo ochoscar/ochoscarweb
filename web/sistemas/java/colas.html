@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-            Páginas Web de Ochoscar - Sistemas - Colas
+            Páginas Web de Ochoscar - Programación - Colas
         </header>
         <nav id="navigator-bar"></nav>
         <article id="main-article">
@@ -35,7 +35,7 @@
 
             <strong><h2 id="T1">1. ¿Qué es una cola?</h2></strong>
 
-            <p align="justify">Una cola es una estructura de datos enlazada que sigue una disciplina FIFO (First In, First Out - Primero en entrar, Primero en salir) en la cual el primer elemento que entra es el primero en ser retirado, adicionalmente la estructura, aunque continua siendo una estructura lineal no se puede manipular cualquier elemento como sucedia con las listas, en las colas solamente se puede acceder al elemento que esta en la parte frontal, de manera que si se quiere alcanzar el último elemento, primero se requerira desencolar todos los otros elementos. La siguiente figura muestra graficamente una cola.</p>
+            <p align="justify">Una cola es una estructura de datos enlazada que sigue una disciplina FIFO (First In, First Out - Primero en entrar, Primero en salir) en la cual el primer elemento que entra es el primero en ser retirado, adicionalmente la estructura, aunque continua siendo una estructura lineal no se puede manipular cualquier elemento como sucedía con las listas, en las colas solamente se puede acceder al elemento que esta en la parte frontal, de manera que si se quiere alcanzar el último elemento, primero se requerirá desencolar todos los otros elementos. La siguiente figura muestra gráficamente una cola.</p>
 
             <center>
                 <figure>
@@ -69,27 +69,27 @@
 /**
  * Provee las acciones que se pueden realizar con una cola
  * @author ochoscar
- * @param <T> Tipo generico de los cuales se almacenaran elementos dentro de la cola
+ * @param < T > Tipo genérico de los cuales se almacenaran elementos dentro de la cola
  */
-public interface IQueue<T> {
+public interface IQueue< T > {
 
     /**
-     * Metodo que verifica si la cola esta vacia
+     * Método que verifica si la cola esta vacía
      * @return Devuelve true si la cola esta
-     * vacia y false en caso contrario
+     * vacía y false en caso contrario
      */
     public boolean isEmpty();
 
     /**
-     * Metodo que determina el tamaño de la cola
+     * Método que determina el tamaño de la cola
      * @return Devuelve un entero que indica el tamaño de la cola
      */
     public int size();
 
     /**
      * Agrega un elemento al final de la cola
-     * @param item Item de tipo generico a ser agregado a la cola
-     * @return Devuelve la misma cola que llamo al metodo
+     * @param item Item de tipo genérico a ser agregado a la cola
+     * @return Devuelve la misma cola que llamo al método
      */
     public IQueue add(T item);
 
@@ -104,89 +104,88 @@ public interface IQueue<T> {
 
             <strong><h3>Cola</h3></strong>
 
-            <p align="justify">La implementación de la interface anterior se encuentra en el siguiente código. Observe que se referencia tanto el primer como el último elemento a fin de realizar las operaciones de agregado y eliminación de forma óptima en cuanto a rendimiento se refiere. Algo importante también es que las operaciones de la cola no requieren de ciclos, por lo tanto la estructura se vuelve supremente eficiente y así mismo no aporta mayor valor realizar una cola con arreglos, aunque es perfectamente posible.</p>
+            <p align="justify">La implementación de la interface anterior se encuentra en el siguiente código. Observe que se referencia tanto el primer como el último elemento a fin de realizar las operaciones de agregado y eliminación de forma óptima en cuanto a rendimiento se refiere. Algo importante también es que las operaciones de la cola no requieren de ciclos, por lo tanto la estructura se vuelve supremamente eficiente y así mismo no aporta mayor valor realizar una cola con arreglos, aunque es perfectamente posible.</p>
 
             <br/>
             <center>
                 <strong>Código 2.</strong> Implementación de la cola
                 <pre class="prettyprint linenums" style="width: 850px; text-align: left"><code class="language-java">package queues;
 
-            /**
-             * Clase que encapsula las diferentes acciones de una cola enlazada
-             * @author ochoscar
-             * @param <T> Tipo generico que contra los item de la cola
-             */
-            public class Queue<T> implements IQueue<T> {
+/**
+ * Clase que encapsula las diferentes acciones de una cola enlazada
+ * @author ochoscar
+ * @param < T > Tipo genérico que contra los item de la cola
+ */
+public class Queue< T > implements IQueue< T > {
 
-                ////////////////////
-                // Atributos
-                ////////////////////
+    ////////////////////
+    // Atributos
+    ////////////////////
 
-                /** Referencia al primer nodo de la cola */
-                private Node<T> front;
+    /** Referencia al primer nodo de la cola */
+    private Node< T > front;
 
-                /** Referencia al ultimo elemento de la cola */
-                private Node<T> back;
+    /** Referencia al ultimo elemento de la cola */
+    private Node< T > back;
 
-                /** Tamaño de la cola */
-                private int queueSize = 0;
+    /** Tamaño de la cola */
+    private int queueSize = 0;
 
-                ////////////////////
-                // Metodos
-                ////////////////////
+    ////////////////////
+    // Métodos
+    ////////////////////
 
-                /**
-                 * Metodo que verifica si la cola esta vacia
-                 * @return Devuelve true si la cola esta
-                 * vacia y false en caso contrario
-                 */
-                @Override
-                public boolean isEmpty() {
-                    return queueSize == 0;
-                }
+    /**
+     * Método que verifica si la cola esta vacía
+     * @return Devuelve true si la cola esta
+     * vacía y false en caso contrario
+     */
+    @Override
+    public boolean isEmpty() {
+        return queueSize == 0;
+    }
 
-                /**
-                 * Metodo que determina el tamaño de la cola
-                 * @return Devuelve un entero que indica el tamaño de la cola
-                 */
-                @Override
-                public int size() {
-                    return queueSize;
-                }
+    /**
+     * Método que determina el tamaño de la cola
+     * @return Devuelve un entero que indica el tamaño de la cola
+     */
+    @Override
+    public int size() {
+        return queueSize;
+    }
 
-                /**
-                 * Agrega un elemento al final de la cola
-                 * @param item Item de tipo generico a ser agregado a la cola
-                 * @return Devuelve la misma cola que llamo al metodo
-                 */
-                @Override
-                public IQueue add(T item) {
-                    Node<T> newNode = new Node(item, null);
-                    if(queueSize == 0) {
-                        front = back = newNode;
-                    } else {
-                        back.setNext(newNode);
-                        back = newNode;
-                    }
-                    queueSize++;
-                    return this;
-                }
+    /**
+     * Agrega un elemento al final de la cola
+     * @param item Item de tipo genérico a ser agregado a la cola
+     * @return Devuelve la misma cola que llamo al método
+     */
+    @Override
+    public IQueue add(T item) {
+        Node< T > newNode = new Node(item, null);
+        if(queueSize == 0) {
+            front = back = newNode;
+        } else {
+            back.setNext(newNode);
+            back = newNode;
+        }
+        queueSize++;
+        return this;
+    }
 
-                /**
-                 * Remueve un elemento del frente de la cola y lo devuelve para su manipulación
-                 * @return El elemento que se encontraba al frente de la cola
-                 */
-                public T remove() {
-                    if(queueSize == 0) return null;
-                    T item = front.getItem();
-                    front = front.getNext();
-                    if(front == null) back = null;
-                    queueSize--;
-                    return item;
-                }
+    /**
+     * Remueve un elemento del frente de la cola y lo devuelve para su manipulación
+     * @return El elemento que se encontraba al frente de la cola
+     */
+    public T remove() {
+        if(queueSize == 0) return null;
+        T item = front.getItem();
+        front = front.getNext();
+        if(front == null) back = null;
+        queueSize--;
+        return item;
+    }
 
-            }
-            </code></pre></center>
+}</code></pre></center>
         </article>
         <footer id="footer"></footer>
     </body>

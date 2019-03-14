@@ -20,7 +20,7 @@
     </head>
     <body>
         <header>
-            Páginas Web de Ochoscar - Sistemas - Pilas
+            Páginas Web de Ochoscar - Programación - Pilas
         </header>
         <nav id="navigator-bar"></nav>
         <article id="main-article">
@@ -35,7 +35,7 @@
 
             <strong><h2 id="T1">1. ¿Qué es una pila?</h2></strong>
 
-            <p align="justify">Una pila es una estructura de datos enlazada que sigue una disciplina LIFO (Last In, First Out - Último en entrar, Primero en salir) en la cual el ultimo elemento que entra es el primero en ser retirado, adicionalmente la estructura, aunque continua siendo una estructura lineal no se puede manipular cualquier elemento como sucedia con las listas, en las pilas solamente se puede acceder al elemento que esta en la cima, de manera que si se quiere alcanzar el elemento de la base, primero se requerira desapilar todos los elementos. La siguiente figura muestra graficamente una pila.</p>
+            <p align="justify">Una pila es una estructura de datos enlazada que sigue una disciplina LIFO (Last In, First Out - Último en entrar, Primero en salir) en la cual el ultimo elemento que entra es el primero en ser retirado, adicionalmente la estructura, aunque continua siendo una estructura lineal no se puede manipular cualquier elemento como sucedía con las listas, en las pilas solamente se puede acceder al elemento que esta en la cima, de manera que si se quiere alcanzar el elemento de la base, primero se requerirá desapilar todos los elementos. La siguiente figura muestra gráficamente una pila.</p>
 
             <center>
                 <figure>
@@ -70,27 +70,27 @@
 /**
  * Provee las acciones que se pueden realizar con una pila
  * @author ochoscar
- * @param <T> Tipo generico de los cuales se almacenaran elementos dentro de la pila
+ * @param< T > Tipo genérico de los cuales se almacenaran elementos dentro de la pila
  */
-public interface IStack<T> {
+public interface IStack< T > {
 
     /**
-     * Metodo que verifica si la pila esta vacia
+     * Método que verifica si la pila esta vacía
      * @return Devuelve true si la pila esta
-     * vacia y false en caso contrario
+     * vacía y false en caso contrario
      */
     public boolean isEmpty();
 
     /**
-     * Metodo que determina el tamaño de la pila
+     * Método que determina el tamaño de la pila
      * @return Devuelve un entero que indica el tamaño de la pila
      */
     public int size();
 
     /**
      * Agrega un elemento en la cima de la pila
-     * @param item Item de tipo generico a ser agregado a la pila
-     * @return Devuelve la misma pila que llamo al metodo
+     * @param item Item de tipo genérico a ser agregado a la pila
+     * @return Devuelve la misma pila que llamo al método
      */
     public IStack push(T item);
 
@@ -111,7 +111,7 @@ public interface IStack<T> {
 
             <strong><h3>Pila</h3></strong>
 
-            <p align="justify">La implementación de la interface anterior se encuentra e   n el siguiente código. Observe que solamente es necesario referenciar al elemento top o de la cima de la pila para realizar todas las operaciones. Algo importante también es que las operaciones de la pila no requieren de ciclos, por lo tanto la estructura se vuelve supremente eficiente y así mismo no aporta mayor valor realizar una Pila con arreglos, aunque es perfectamente posible.<p>
+            <p align="justify">La implementación de la interface anterior se encuentra e   n el siguiente código. Observe que solamente es necesario referenciar al elemento top o de la cima de la pila para realizar todas las operaciones. Algo importante también es que las operaciones de la pila no requieren de ciclos, por lo tanto la estructura se vuelve supremamente eficiente y así mismo no aporta mayor valor realizar una Pila con arreglos, aunque es perfectamente posible.<p>
 
             <br/>
             <center>
@@ -121,28 +121,28 @@ public interface IStack<T> {
 /**
  * Clase que encapsula las diferentes acciones de una pila enlazada
  * @author ochoscar
- * @param <T> Tipo generico que contra los item de la pila
+ * @param< T > Tipo genérico que contra los item de la pila
  */
-public class Stack<T> implements IStack<T> {
+public class Stack< T > implements IStack< T > {
 
     ////////////////////
     // Atributos
     ////////////////////
 
     /** Referencia a la cima de la pila */
-    private Node<T> top;
+    private Node< T > top;
 
     /** Tamaño de la cola */
     private int stackSize = 0;
 
     ////////////////////
-    // Metodos
+    // Métodos
     ////////////////////
 
     /**
-     * Metodo que verifica si la pila esta vacia
+     * Método que verifica si la pila esta vacia
      * @return Devuelve true si la pila esta
-     * vacia y false en caso contrario
+     * vacía y false en caso contrario
      */
     @Override
     public boolean isEmpty() {
@@ -150,7 +150,7 @@ public class Stack<T> implements IStack<T> {
     }
 
     /**
-     * Metodo que determina el tamaño de la pila
+     * Método que determina el tamaño de la pila
      * @return Devuelve un entero que indica el tamaño de la pila
      */
     @Override
@@ -160,8 +160,8 @@ public class Stack<T> implements IStack<T> {
 
     /**
      * Agrega un elemento en la cima de la pila
-     * @param item Item de tipo generico a ser agregado a la pila
-     * @return Devuelve la misma pila que llamo al metodo
+     * @param item Item de tipo genérico a ser agregado a la pila
+     * @return Devuelve la misma pila que llamo al método
      */
     @Override
     public IStack push(T item) {
