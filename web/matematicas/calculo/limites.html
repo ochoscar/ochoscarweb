@@ -1,242 +1,281 @@
 <!DOCTYPE html>
 <html lang="es-CO">
-<head id="head">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-109043245-1');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ochoscar - Matemáticas - Limites</title>
-    <link rel="icon" type="image/png" href="../../../resources/img/fav-icon.png">
-    <link rel="stylesheet" href="../../../resources/css/home/index.css" />
-    <link rel="stylesheet" href="../../../resources/css/matematicas/calculo/limites.css" />
-    <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</head>
-<body>
-<header>
-    Páginas Web de Ochoscar - Matemáticas - Limites
-</header>
-<nav id="navigator-bar"></nav>
-<article id="main-article">
-    <p align="justify"><center><strong><h1>Limites</h1></strong></center></p>
-    ====== Limites ======
+    <head id="head">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109043245-1');
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ochoscar - Matemáticas - Limites</title>
+        <link rel="icon" type="image/png" href="../../../resources/img/fav-icon.png">
+        <link rel="stylesheet" href="../../../resources/css/home/index.css" />
+        <link rel="stylesheet" href="../../../resources/css/matematicas/calculo/limites.css" />
+        <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    </head>
+    <body>
+        <header>
+            Páginas Web de Ochoscar - Matemáticas Generales - Límites
+        </header>
+        <nav id="navigator-bar"></nav>
+        <article id="main-article">
+            <p align="justify"><center><strong><h1>LÍMITES</h1></strong></center></p>
 
-    Los limites aparecen en muchos ejemplos, uno de los más representativos es el problema de la pendiente, en el cual se quiere hallar la recta tangente a un punto de una curva, para ello se seleccionan dos puntos muy cercanos de la curva y se calcula la pendiente de la recta que pasa por esos puntos.
+            <br/>
+            <h3>CONTENIDO</h3>
+            <a href="#T1">1. Definición</a><br/>
+            <a href="#T2">2. Límites laterales</a><br/>
+            <a href="#T3">3. Leyes de los límites</a><br/>
+            <a href="#T4">4. Propiedad de sustitución</a><br/>
+            <a href="#T5">5. Teorema de la compresión</a><br/>
+            <a href="#T6">6. Continuidad</a><br/>
+            <a href="#T7">7. Teoremas y propiedades</a><br/>
+            <a href="#T8">8. Límites en el infinito</a><br/>
+            <a href="#T9">8.1. Asíntota vertical</a><br/>
+            <a href="#T10">8.2. Asíntota horizontal</a><br/>
+            <a href="#T11">11. Resultados importantes</a><br/>
+            <a href="#T12">12. Regla de L'Hopital</a><br/>
+            <br/>
 
-    {{:matematicas:recta_tangente.png?200|}}
+            <strong><h2 id="T1">1. Definición</h2></strong>
 
-    Acercar los puntos cada vez más conlleva a los limites, que se puede escribir como:
+            Los límites aparecen en muchos ejemplos, uno de los más representativos es el problema de la pendiente, en el cual se quiere hallar la recta tangente a un punto de una curva, para ello se seleccionan dos puntos muy cercanos de la curva y se calcula la pendiente de la recta que pasa por esos puntos.
 
-    $$\lim_{Q \to P}m_{PQ}$$
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 1.</strong> Línea secante a una curva</figcaption><br/>
+                <img src="../../../resources/img/matematicas/limites/limite_secante.png" alt="Secante.png" height="250px">
+            </figure>
 
-    En forma más general el limite de una función $f(x)$ cuando $x$ tiende a $a$ es igual $L$ y se denota como:
+            Acercar los puntos cada vez más conlleva a los limites, que se puede escribir como:
 
-    $$\lim_{x \to a}f(x)=L$$
+            $$\lim_{Q \to P}m_{PQ}$$
 
-    Si podemos acercar arbitrariamente los valores de $f(x)$ a $L$ (tanto como deseemos) escogiendo una $x$ lo bastante cerca de $a$, pero no igual a $a$
+            En forma más general el limite de una función `f(x)` cuando `x` tiende a `a` es igual `L` y se denota como:
 
-    ===== Limites laterales =====
+            $$\lim_{x \to a}f(x)=L$$
 
-    Se escribe:
+            Si podemos acercar arbitrariamente los valores de `f(x)` a `L` (tanto como deseemos) escogiendo una `x` lo bastante cerca de `a`, pero no igual a `a`
 
-    $$\lim_{x \to a^-}f(x)=L$$
+            <strong><h2 id="T2">2. Límites laterales</h2></strong>
 
-    y se dice que el limite izquierdo de $f(x)$ cuando $x$ tiende a $a$ es igual a $L$, si se puede aproximar los valroes de $f(x)$ a $L$ tanto como queramos, escogiendo una $x$ lo bastante cerca de $a$ pero menor que $a$
+            Se escribe:
 
-    Similarmente el limite
+            $$\lim_{x \to a^-}f(x)=L$$
 
-    $$\lim_{x \to a^+}f(x)=L$$
+            y se dice que el limite izquierdo de `f(x)` cuando `x` tiende a `a` es igual a `L`, si se puede aproximar los valores de `f(x)` a `L` tanto como queramos, escogiendo una `x` lo bastante cerca de `a` pero menor que `a`
 
-    pero en esta ocasión escogiendo una $x$ lo bastante cerca de $a$ pero mayor que $a$.
+            Similarmente el limite
 
-    A los anteriores limites se les conoce como limites laterales. Como consecuencia de sus definiciones se tiene que:
+            $$\lim_{x \to a^+}f(x)=L$$
 
-    $$\lim_{x \to a}f(x)=L \text{ si y sólo si } \lim_{x \to a^-}f(x)=L \text{ y } \lim_{x \to a^+}f(x)=L$$
+            pero en esta ocasión escogiendo una `x` lo bastante cerca de `a` pero mayor que `a`.
 
-    ===== Leyes de los limites =====
+            A los anteriores limites se les conoce como limites laterales. Como consecuencia de sus definiciones se tiene que:
 
-    Algunas leyes de limites ayudan al cálculo de los mismos, a continuación se presentan estas leyes.
+            $$\lim_{x \to a}f(x)=L \text{ si y sólo si } \lim_{x \to a^-}f(x)=L \text{ y } \lim_{x \to a^+}f(x)=L$$
 
-    Suponiendo que $c$ es una constante y que $\lim_{x \to a}f(x)=L$ y $\lim_{x \to a}g(x)=L$ existen entonces:
+            <strong><h2 id="T3">3. Leyes de los límites</h2></strong>
 
-    - $$\lim_{x \to a}(f(x)+g(x))=\lim_{x \to a}f(x)+\lim_{x \to a}g(x)$$
-    - $$\lim_{x \to a}(f(x)-g(x))=\lim_{x \to a}f(x)-\lim_{x \to a}g(x)$$
-    - $$\lim_{x \to a}(cf(x))=c\lim_{x \to a}f(x)$$
-    - $$\lim_{x \to a}(f(x)g(x))=\lim_{x \to a}f(x)\cdot\lim_{x \to a}g(x)$$
-    - $$\lim_{x \to a}{\frac{f(x)}{g(x)}}=\frac{\lim_{x \to a}f(x)}{\lim_{x \to a}g(x)}\text{ si } \lim_{x \to a}f(x) \neq 0$$
-    - $$\lim_{x \to a}(f(x)^n)=\Bigl(\lim_{x \to a}f(x)\Bigr)^n$$
-    - $$\lim_{x \to a}c=c$$
-    - $$\lim_{x \to a}x=a$$
-    - $$\lim_{x \to a}x^n=a^n \text{ con }n\in\mathbb{Z}^+$$
-    - $$\lim_{x \to a}\sqrt[n]{f(x)}=\sqrt[n]{\lim_{x \to a}f(x)} \text{ con }n\in\mathbb{Z}^+$$
+            Algunas leyes de limites ayudan al cálculo de los mismos, a continuación se presentan estas leyes.
 
-    ==== Propiedad de sustitución ====
+            Suponiendo que `c` es una constante y que `\lim_{x \to a}f(x)=L` y `\lim_{x \to a}g(x)=L` existen entonces:
 
-    Si $f$ es un polinomio o una función racional y $a$ esta en el dominio de $f$, entonces:
+            <ul>
+                <li>`\lim_{x \to a}(f(x)+g(x))=\lim_{x \to a}f(x)+\lim_{x \to a}g(x)`</li>
+                <li>`\lim_{x \to a}(f(x)-g(x))=\lim_{x \to a}f(x)-\lim_{x \to a}g(x)`</li>
+                <li>`\lim_{x \to a}(cf(x))=c\lim_{x \to a}f(x)`</li>
+                <li>`\lim_{x \to a}(f(x)g(x))=\lim_{x \to a}f(x)\cdot\lim_{x \to a}g(x)`</li>
+                <li>`\lim_{x \to a}{\frac{f(x)}{g(x)}}=\frac{\lim_{x \to a}f(x)}{\lim_{x \to a}g(x)}\text{ si } \lim_{x \to a}f(x) \neq 0`</li>
+                <li>`\lim_{x \to a}(f(x)^n)=(\lim_{x \to a}f(x))^n`</li>
+                <li>`\lim_{x \to a}c=c`</li>
+                <li>`\lim_{x \to a}x=a`</li>
+                <li>`\lim_{x \to a}x^n=a^n \text{ con }n\in\mathbb{Z}^+`</li>
+                <li>`\lim_{x \to a}\sqrt[n]{f(x)}=\sqrt[n]{\lim_{x \to a}f(x)} \text{ con }n\in\mathbb{Z}^+`</li>
+            </ul>
 
-    $$\lim_{x \to a}f(x)=f(a)$$
+            <strong><h2 id="T4">4. Propiedad de sustitución</h2></strong>
 
-    Otra importante y útil hecho acerca de los limites expresa que en ocasiones no se puede hallar el limite de una función, pero tal vez se pueda simplificar y hallar el limite de la función mas sencilla, entonces
+            Si `f` es un polinomio o una función racional y `a` esta en el dominio de `f`, entonces:
 
-    Si $f(x)=g(x)$ cuando $x \neq a$ entonces $\lim_{x \to a}f(x)=\lim_{x \to a}g(x)$, en caso que exista el limite, esto sucede por que se considera el limite es cuando $x$ se aproxima a $a$ y no cuando $x$ en realidad es igual a $a$
+            $$\lim_{x \to a}f(x)=f(a)$$
 
-    ==== Teorema de la compresión ====
+            Otra importante y útil hecho acerca de los limites expresa que en ocasiones no se puede hallar el limite de una función, pero tal vez se pueda simplificar y hallar el limite de la función mas sencilla, entonces
 
-    Antes de definir el teorema de la compresión (el cual es muy útil) Considere el siguiente teorema:
+            Si `f(x)=g(x)` cuando `x \ne a` entonces `\lim_{x \to a}f(x)=\lim_{x \to a}g(x)`, en caso que exista el limite, esto sucede por que se considera el limite es cuando `x` se aproxima a `a` y no cuando `x` en realidad es igual a `a`
 
-    Si $f(x) \leq g(x)$, cuando $x$ está cerca de $a$ (excepto posiblemente en $a$), y los limites de $f$ y $g$ existen cuando $x$ tiende a $a$:
+            <strong><h2 id="T5">5. Teorema de la compresión</h2></strong>
 
-    $$\lim_{x \to a}f(x) \leq \lim_{x \to a}g(x)$$
+            Antes de definir el teorema de la compresión, el cual es muy útil, consideremos el siguiente teorema:
 
-    El teorema de la compresión entonces plantea que:
+            Si `f(x) \leq g(x)`, cuando `x` está cerca de `a` (excepto posiblemente en `a`), y los limites de `f` y `g` existen cuando `x` tiende a `a`:
 
-    Si $f(x) \leq g(x) \leq h(x)$, cuando $x$ está cerca de $a$ (excepto posiblemente en $a$), y los limites de $f$ y $h$ existen cuando $x$ tiende a $a$ y son iguales, es decir:
+            $$\lim_{x \to a}f(x) \leq \lim_{x \to a}g(x)$$
 
-    $$\lim_{x \to a}f(x) = \lim_{x \to a}h(x) = L$$
+            El teorema de la compresión entonces plantea que:
 
-    entonces:
+            Si `f(x) \leq g(x) \leq h(x)`, cuando `x` está cerca de `a` (excepto posiblemente en `a`), y los limites de `f` y `h` existen cuando `x` tiende a `a` y son iguales, es decir:
 
-    $$\lim_{x \to a}g(x)=L$$
+            $$\lim_{x \to a}f(x) = \lim_{x \to a}h(x) = L$$
 
-    ===== Continuidad =====
+            entonces:
 
-    Una función $f$ es continua en un número $a$ si:
+            $$\lim_{x \to a}g(x)=L$$
 
-    $$\lim_{x \to a}f(x)=f(a)$$
+            <strong><h2 id="T6">6. Continuidad</h2></strong>
 
-    La anterior definición requiere dos hechos cosas:
+            Una función `f` es continua en un número `a` si:
 
-    - $f(a)$ esta definido, es decir, $a\text{ }\in\text{ dominio de }f$
-    - $\lim_{x\to a}f(x)$ existe, de modo que $f$ debe estar definida en un intervalo abierto que contenga $a$
+            $$\lim_{x \to a}f(x)=f(a)$$
 
-    De forma similar se puede alterar un podo la definición y decir que $f$ es continua desde la derecha en un número $a$ si:
+            La anterior definición requiere dos hechos cosas:
 
-    $$\lim_{x \to a^+}f(x)=f(a)$$
+            <ul>
+                <li>`f(a)` esta definido, es decir, `a\in\text{dominio de}f`</li>
+                <li>`\lim_{x\to a}f(x)` existe, de modo que `f` debe estar definida en un intervalo abierto que contenga `a`</li>
+            </ul>
 
-    Y continua desde la izquierda en un número $a$ si:
+            De forma similar se puede alterar un podo la definición y decir que `f` es continua desde la derecha en un número `a` si:
 
-    $$\lim_{x \to a^-}f(x)=f(a)$$
+            $$\lim_{x \to a^+}f(x)=f(a)$$
 
-    La función $f$ es continua sobre un intervalo si es continua en todo número en el intervalo, entendiendo en lo puntos extremos del intervalo que la función es continua desde la derecha o continua desde la izquierda.
+            Y continua desde la izquierda en un número `a` si:
 
-    Las discontinuidades de una función pueden darse por varios hechos como son:
+            $$\lim_{x \to a^-}f(x)=f(a)$$
 
-    * Discontinuidad en el infinito, cuando la función presenta asintotas verticales
-    * Discontinuidad por salto, aquellas que son producto de por ejemplo funciones piso o techo
-    * Discontinuidad removible, aquellas que pueden solventarse redefininiendo la función.
+            La función `f` es continua sobre un intervalo si es continua en todo número en el intervalo, entendiendo en lo puntos extremos del intervalo que la función es continua desde la derecha o continua desde la izquierda.
 
-    ==== Teoremas y propiedades =====
+            Las discontinuidades de una función pueden darse por varios hechos como son:
 
-    Algunos resultados importantes de la continuidad de funciones se recopilan a continuación:
+            <ul>
+                <li>Discontinuidad en el infinito, cuando la función presenta asíntotas verticales</li>
+                <li>Discontinuidad por salto, aquellas que son producto de por ejemplo funciones piso o techo</li>
+                <li>Discontinuidad removible, aquellas que pueden solventarse redefininiendo la función.</li>
+            </ul>
 
-    Si $f$ y $g$ son continuas en $a$ y $c$ es una constante entonces:
+            <strong><h2 id="T7">7. Teoremas y propiedades</h2></strong>
 
-    - $f+g$ es continua
-    - $f-g$ es continua
-    - $cf$ es continua
-    - $fg$ es continua
-    - $\frac{f}{g}\text{ si }g(a)\neq0$ es continua
-    - Cualquier polinomio es continuo en $\mathbb R$
-    - Cualquier función racional es continua, siempre que este definida, es decir es continua en su dominio; sucede lo mismo con las funciones raiz, trigonometricas, trigonometricas inversas, exponenciales y logaritmica
+            Algunos resultados importantes de la continuidad de funciones se recopilan a continuación:
 
-    Si $f$ es continua en $b$ y $\lim_{x \to a}g(x)=b$, entonces, $\lim_{x\to a}f(g(x))=f(b)$ en otras palabras:
+            Si `f` y `g` son continuas en `a` y `c` es una constante entonces:
 
-    $$\lim_{x\to a}f(g(x))=f\Bigl(\lim_{x\to a}g(x)\Bigr)$$
+            <ul>
+                <li>`f+g` es continua</li>
+                <li>`f-g` es continua</li>
+                <li>`cf` es continua</li>
+                <li>`fg` es continua</li>
+                <li>`\frac{f}{g}\text{ si }g(a)\ne 0` es continua</li>
+                <li>Cualquier polinomio es continuo en `\mathbb R`</li>
+                <li>Cualquier función racional es continua, siempre que este definida, es decir es continua en su dominio; sucede lo mismo con las funciones raíz, trigonométricas, trigonométricas inversas, exponenciales y logarítmica</li>
+            </ul>
 
-    Si $g$ es continua en $a$ y $f$ es continua en $g(a)$, entonces la función compuesta $f\circ g(x)=f(g(x))$ es continua en $a$
+            Si `f` es continua en `b` y `\lim_{x \to a}g(x)=b`, entonces, `\lim_{x\to a}f(g(x))=f(b)` en otras palabras:
 
-    Finalmente se presenta el teorema del valor intermedio: suponga que $f$ es continua sobre el intervalo cerrado $[a,b]$ y sea $N$ cualquier número entre $f(a)$ y $f(b)$ donde $f(a)\neq f(b)$, etonces existe un número $c$ en $(a,b)$ tal que $f(c)=N$
+            $$\lim_{x\to a}f(g(x))=f(\lim_{x\to a}g(x))$$
 
-    ===== Límites en el infinito =====
+            Si `g` es continua en `a` y `f` es continua en `g(a)`, entonces la función compuesta `f\circ g(x)=f(g(x))` es continua en `a`
 
-    Una función como $f(x)=\frac{1}{x^2}$ presenta comportamientos como el que se muestra en la siguiente gráfica:
+            <br/>Finalmente se presenta el teorema del valor intermedio: suponga que `f` es continua sobre el intervalo cerrado `[a,b]` y sea `N` cualquier número entre `f(a)` y `f(b)` donde `f(a)\ne f(b)`, entonces existe un número `c` en `(a,b)` tal que `f(c)=N`
 
-    {{:matematicas:limiteinf.png?300|}}
+            <strong><h2 id="T8">8. Límites en el infinito</h2></strong>
 
-    Cuando la función se acerca a cero los valore se pueden hacer tan grandes como se desee. Lo anterior se representa como:
+            Una función como `f(x)=\frac{1}{x^2}` presenta comportamientos como el que se muestra en la siguiente gráfica:
 
-    $$\lim_{x \to a}f(x)=\infty$$
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 2.</strong> Gráfico de función</figcaption>
+                <img src="../../../resources/img/matematicas/limites/limite_funcion.png" alt="Funcion.png" height="220px">
+            </figure>
 
-    Quiere decir que la función puede tomar valores arbitrariamente grandes (tan grandes como se quiera) eligiendo una $x$ lo suficientemente cercana a $a$ pero no igual a $a$
+            Cuando la función se acerca a cero los valores se pueden hacer tan grandes como se desee. Lo anterior se representa como:
 
-    ==== Asíntota vertical ====
+            $$\lim_{x \to a}f(x)=\infty$$
 
-    La recta $x=a$ se conoce como asíntota vertical de la función $f(x)$ siremp re y cuando se cumpla por lo menos una de las siguientes proposiciones:
+            Quiere decir que la función puede tomar valores arbitrariamente grandes (tan grandes como se quiera) eligiendo una `x` lo suficientemente cercana a `a` pero no igual a `a`
 
-    - $\lim_{x \to a}f(x)=\infty$
-    - $\lim_{x \to a^-}f(x)=\infty$
-    - $\lim_{x \to a^+}f(x)=\infty$
-    - $\lim_{x \to a}f(x)=-\infty$
-    - $\lim_{x \to a^-}f(x)=-\infty$
-    - $\lim_{x \to a^+}f(x)=-\infty$
+            <strong><h2 id="T9">8.1. Asíntota vertical</h2></strong>
 
-    Otro caso importante de estudio consiste en la función $f(x)=\frac{x^2-1}{x^2+1}$ cuya gráfica se muestra a continuación:
+            La recta `x=a` se conoce como asíntota vertical de la función `f(x)` siempre y cuando se cumpla por lo menos una de las siguientes proposiciones:
 
-    {{:matematicas:limiteinf2.png?300|}}
+            <ul>
+                <li>`\lim_{x \to a}f(x)=\infty`</li>
+                <li>`\lim_{x \to a^-}f(x)=\infty`</li>
+                <li>`\lim_{x \to a^+}f(x)=\infty`</li>
+                <li>`\lim_{x \to a}f(x)=-\infty`</li>
+                <li>`\lim_{x \to a^-}f(x)=-\infty`</li>
+                <li>`\lim_{x \to a^+}f(x)=-\infty`</li>
+            </ul>
 
-    En esta función conforme los valores de $x$ crecen más (positiva y negativamente) el valor de la función se acerca más a 1. Por lo tanto se puede expresar que:
+            Otro caso importante de estudio consiste en la función `f(x)=\frac{x^2-1}{x^2+1}` cuya gráfica se muestra a continuación:
 
-    $$\lim_{x \to \infty}\frac{x^2-1}{x^2+1}=1$$
+            {{:matematicas:limiteinf2.png?300|}}
 
-    De manera que: sea una función $f$ definida en alguún intervalo $(a,\infty)$ entonces:
+            En esta función conforme los valores de `x` crecen más (positiva y negativamente) el valor de la función se acerca más a `1`. Por lo tanto se puede expresar que:
 
-    $$\lim_{x \to \infty}f(x)=L$$
+            $$\lim_{x \to \infty}\frac{x^2-1}{x^2+1}=1$$
 
-    ==== Asíntota horizontal ====
+            De manera que: sea una función `f` definida en algún intervalo `(a,\infty)` entonces:
 
-    Se llama asíntota horizontal de $f(x)$ a la recta $y=L$ siempre y cuando se cumpla alguna de las siguientes prepocisiones:
+            $$\lim_{x \to \infty}f(x)=L$$
 
-    - $\lim_{x \to \infty}f(x)=L$
-    - $\lim_{x \to -\infty}f(x)=L$
+            <strong><h2 id="T10">8.2. Asíntota horizontal</h2></strong>
 
-    ==== Resultados importantes ====
+            Se llama asíntota horizontal de `f(x)` a la recta `y=L` siempre y cuando se cumpla alguna de las siguientes prepocisiones:
 
-    Algunos resultados importantes que se obtienen en el estudio de límites en el infinito son los siguientes:
+            <ul>
+                <li>`\lim_{x \to \infty}f(x)=L`</li>
+                <li>`\lim_{x \to -\infty}f(x)=L`</li>
+            </ul>
 
-    - $$\lim_{x \to \infty}\frac{1}{x^n}=0$$
-    - $$\lim_{x \to -\infty}\frac{1}{x^n}=0$$
-    - $$\lim_{x \to -\infty}e^x=0$$ También es cierto para cualquier base $a$ con $a>0$
+            <strong><h2 id="T11">11. Resultados importantes</h2></strong>
 
-    ====== Regla de L'Hopital ======
+            Algunos resultados importantes que se obtienen en el estudio de límites en el infinito son los siguientes:
 
-    Esta regla permite calcular límites de forma fácil y para ello se hace uso de la derivación.
+            <ul>
+                <li>`\lim_{x \to \infty}\frac{1}{x^n}=0`</li>
+                <li>`\lim_{x \to -\infty}\frac{1}{x^n}=0`</li>
+                <li>`\lim_{x \to -\infty}e^x=0` También es cierto para cualquier base `a` con `a>0`</li>
+            </ul>
 
-    La regla funciona para las siguientes formas indeterminadas, es decir limites que arrojan resultados como:
+            <strong><h2 id="T12">12. Regla de L'Hopital</h2></strong>
 
-    $\frac{0}{0}$ o $\frac{\infty}{\infty}$ o $0 \cdot \infty$ o $\infty - \infty$ o $0^0$ o $\infty^\infty$ o $1^\infty$
+            Esta regla permite calcular límites de forma fácil y para ello se hace uso de la derivación.
 
-    La regla afirma que:
-    Suponga que $f$  y $g$ son derivables y que $g'(x) \ne 0$ cerca de $a$ excepto quizás en $a$. Suponga que:
+            La regla funciona para las siguientes formas indeterminadas, es decir limites que arrojan resultados como:
 
-    $$\lim_{x \to a}f(x)=0 \text{ y }\lim_{x \to a}g(x)=0$$
+            `\frac{0}{0}` o `\frac{\infty}{\infty}` o `0 \cdot \infty` o `\infty - \infty` o `0^0` o `\infty^\infty` o `1^\infty`
 
-    o que
+            La regla afirma que:
+            Suponga que `f`  y `g` son derivables y que `g'(x) \ne 0` cerca de `a` excepto quizás en `a`, Suponga que:
 
-    $$\lim_{x \to a}f(x)=\pm\infity \text{ y }\lim_{x \to a}g(x)=\pm\infty$$
+            $$\lim_{x \to a}f(x)=0 \text{ y }\lim_{x \to a}g(x)=0$$
 
-    En otras palabras se tiene la forma indeterminada $\frac{0}{0}$ o $\frac{\infty}{\infty}$ entonces:
+            o que
 
-    $$\lim_{x \to a}\frac{f(x)}{g(x)}=\frac{\lim_{x \to a}f'(x)}{\lim_{x \to a}g'(x)}$$
+            $$\lim_{x \to a}f(x)=\pm\infty \text{ y }\lim_{x \to a}g(x)=\pm\infty$$
 
-    En el caso del forma indeterminada del producto puede llevarse a una de las formas indeterminadas expresadas en la regla de L'Hopital si se recurre a la siguiente modificación:
+            En otras palabras se tiene la forma indeterminada `\frac{0}{0}` o `\frac{\infty}{\infty}` entonces:
 
-    $$fg=\frac{f}{\frac{1}{g}}$$
+            $$\lim_{x \to a}\frac{f(x)}{g(x)}=\frac{\lim_{x \to a}f'(x)}{\lim_{x \to a}g'(x)}$$
 
-    En el caso de las diferencias indeterminadas, también se debe recurrir alguna modificación, por ejemplo sacando algún factor común o racionalizando de manera que la forma indeterminada quede expresada en terminos de la regla de L'Hopital
+            En el caso del forma indeterminada del producto puede llevarse a una de las formas indeterminadas expresadas en la regla de L'Hopital si se recurre a la siguiente modificación:
 
-    Finalmente para el caso de las potencias indeterminadas puede recurrirse al logaritmo natural de forma que se lleve a una forma producto indeterminado, se proceda calculando el límite y finalmente tomando el exponencial del resultado.
-    ====== Definición formal de límites ======
-</article>
-<footer id="footer"></footer>
-</body>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-<script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
-<script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../" currentElement="#a_math_limites"></script>
+            $$fg=\frac{f}{\frac{1}{g}}$$
+
+            En el caso de las diferencias indeterminadas, también se debe recurrir alguna modificación, por ejemplo sacando algún factor común o racionalizando de manera que la forma indeterminada quede expresada en terminos de la regla de L'Hopital
+
+            Finalmente para el caso de las potencias indeterminadas puede recurrir al logaritmo natural de forma que se lleve a una forma producto indeterminado, se proceda calculando el límite y finalmente tomando el exponencial del resultado.
+
+        </article>
+        <footer id="footer"></footer>
+    </body>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../" currentElement="#a_math_limites"></script>
 </html>

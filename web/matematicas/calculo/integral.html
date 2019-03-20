@@ -1,414 +1,479 @@
 <!DOCTYPE html>
 <html lang="es-CO">
-<head id="head">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-109043245-1');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ochoscar - Matemáticas</title>
-    <link rel="icon" type="image/png" href="../../../resources/img/fav-icon.png">
-    <link rel="stylesheet" href="../../../resources/css/home/index.css" />
-    <link rel="stylesheet" href="../../../resources/css/matematicas/calculo/integral.css" />
-    <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</head>
-<body>
-<header>
-    Páginas Web de Ochoscar - Matemáticas
-</header>
-<nav id="navigator-bar"></nav>
-<article id="main-article">
-    <p align="justify"><center><strong><h1>MATEMÁTICAS</h1></strong></center></p>
-    <br/>
-    ====== Áreas ======
+    <head id="head">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109043245-1');
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ochoscar - Matemáticas</title>
+        <link rel="icon" type="image/png" href="../../../resources/img/fav-icon.png">
+        <link rel="stylesheet" href="../../../resources/css/home/index.css" />
+        <link rel="stylesheet" href="../../../resources/css/matematicas/calculo/integral.css" />
+        <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    </head>
+    <body>
+        <header>
+            Páginas Web de Ochoscar - Matemáticas Generales - Integrales
+        </header>
+        <nav id="navigator-bar"></nav>
+        <article id="main-article">
+            <p align="justify"><center><strong><h1>INTEGRALES</h1></strong></center></p>
+
+            <br/>
+            <h3>CONTENIDO</h3>
+            <a href="#T1">1. Áreas</a><br/>
+            <a href="#T2">2. Integrales</a><br/>
+            <a href="#T3">2.1. Integral definida</a><br/>
+            <a href="#T4">2.2 Regla del punto medio</a><br/>
+            <a href="#T5">2.3. Propiedades de las integrales</a><br/>
+            <a href="#T6">2.4. Teorema de evaluación</a><br/>
+            <a href="#T7">2.5. Integrales indefinidas</a><br/>
+            <a href="#T8">2.6. Teorema del cambio total</a><br/>
+            <a href="#T9">2.7. Teorema fundamental del cálculo</a><br/>
+            <a href="#T10">2.8. Técnicas de integración</a><br/>
+            <a href="#T11">2.9. Sustitución</a><br/>
+            <a href="#T12">2.10. Simetría</a><br/>
+            <a href="#T13">2.11. Integración por partes</a><br/>
+            <a href="#T14">2.12. Integración trigonométrica</a><br/>
+            <a href="#T15">2.13. Integración por fracciones parciales</a><br/>
+            <a href="#T16">2.14. Integrales impropias</a><br/>
+            <a href="#T17">2.15. Integrales impropias por intervalos infinitos</a><br/>
+            <a href="#T18">2.16. Integrales impropias por discontinuidades infinitas</a><br/>
+            <a href="#T19">2.17. Teorema de comparación</a><br/>
+            <a href="#T20">2.18. Aplicaciones de la integración</a><br/>
+            <a href="#T21">2.19. Áreas entre curvas</a><br/>
+            <a href="#T22">2.22. Volúmenes</a><br/>
+            <a href="#T23">2.23. Longitud de arco</a><br/>
+            <a href="#T24">2.24. Valor promedio de una función</a><br/>
+            <a href="#T25">2.25. Teorema del valor medio para las integrales</a><br/>
+            <br/>
 
-    El problema del área bajo la curva se puede resolver inscribiendo rectángulos de base fija $\Delta x=\frac{b-a}{n}$ donde $n$ es el número de rectángulos que se inscriben en el intervalo $[a,b]$ de esta forma el área se obtiene sumando el área a individual de cada rectángulo y haciendo que $n \to \infty$ los rectángulos incritos pueden tomarse con cualquier punto sobre la curva (puntos de muestra) por ejemplo se pueden tomar para que esten a la izquierda, a la derecha o en un punto medio.
+            <strong><h2 id="T1">1. Áreas</h2></strong>
 
-    El área bajo la curva se puede obtener entonces evaluando el siguiente límite:
+            El problema del área bajo la curva se puede resolver inscribiendo rectángulos de base fija `\Delta x=\frac{b-a}{n}` donde `n` es el número de rectángulos que se inscriben en el intervalo `[a,b]` de esta forma el área se obtiene sumando el área a individual de cada rectángulo y haciendo que `n \to \infty` los rectángulos inscritos pueden tomarse con cualquier punto sobre la curva (puntos de muestra) por ejemplo se pueden tomar para que esten a la izquierda, a la derecha o en un punto medio.
 
-    $$A=\lim_{n \to \infty}[f(x_1)\Delta x+f(x_2)\Delta x+\dotsm+f(x_n)\Delta x]$$
+            El área bajo la curva se puede obtener entonces evaluando el siguiente límite:
 
-    La siguiente gráfica ilustra este proceso:
+            $$A=\lim_{n \to \infty}[f(x_1)\Delta x+f(x_2)\Delta x+\dotsm+f(x_n)\Delta x]$$
 
-    {{:matematicas:integral-01.png?250|}}
+            La siguiente gráfica ilustra este proceso:
 
-    Note que para poder hallar esta área se requiere que la función sea continua.
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 1.</strong> Área bajo una curva</figcaption><br/>
+                <img src="../../../resources/img/matematicas/integrales/area.png" alt="Área bajo una curva.gif" height="250px">
+            </figure>
 
-    ====== Integrales ======
+            Note que para poder hallar esta área se requiere que la función sea continua.
 
-    ===== Integral definida =====
+            <strong><h2 id="T2">2. Integrales</h2></strong>
 
-    A continuación se presenta la definición de integral definida.
-    Si $f$ es una función continua definida para $a \le x \le b$, dividimos el intervalo $[a,b]$ en $n$ subintervalos de igual ancho $\Delta x=\frac{b-a}{n}$. Hacemos que $x_0(=a),x_1,x_2,\dotso,x_n(=b)$ seab los puntos extremos de estos subintervalos y elegimos $x_i^*$ se encuentre en el i-esimo subintervalo $[x_{i-1},x_{i}]$, entonces la **integral definida de** $f$ **desde** $a$ **hasta** $b$, es:
+            <strong><h2 id="T3">2.1. Integral definida</h2></strong>
 
-    $$\int_{a}^{b}f(x)dx=\lim_{n \to \infty}\sum_{i=1}^{n}f(x_i^*)\Delta x$$
+            A continuación se presenta la definición de integral definida.
+            Si `f` es una función continua definida para `a \le x \le b`, dividimos el intervalo `[a,b]` en `n` subintervalos de igual ancho `\Delta x=\frac{b-a}{n}`. Hacemos que `x_0(=a),x_1,x_2,\dotso,x_n(=b)` sean los puntos extremos de estos subintervalos y elegimos `x_i^*` se encuentre en el i-esimo subintervalo `[x_{i-1},x_{i}]`, entonces la <strong>integral definida de</strong> `f` desde `a` hasta `b`, es:
 
-    En la notación anterior se tiene los límites de la integral definida, la función y la variable que se quiere integrar $dx$, esta es la notación de Leibniz. De otra parte la sumatoria es conocida como Suma de Riemann.
-    Como se anoto antes este límite siempre existe y es independiente de la elección de los puntos de muestra siempre y cuando pertenezcan al subintervalo correspondiente. Este límite también se puede hallar si $f$ posee discontinuidades de tipo brinco, pero no de tipo infinito.
+            $$\int_{a}^{b}f(x)dx=\lim_{n \to \infty}\sum_{i=1}^{n}f(x_i^*)\Delta x$$
 
-    En caso que la función a integrar tome valores negativos (este por debajo del eje x), durante esos intervalos el área de la función será considerada como negativa y al tomar la integral sobre un intervalo mayor que abarque porciones de la función donde sea negativa y positiva, la integral definida al ser evaluada corresponderá a una diferencia de áreas y por lo tanto en estos casos no puede ser interpretado el resultado como un área.
+            En la notación anterior se tiene los límites de la integral definida, la función y la variable que se quiere integrar `dx`, esta es la notación de Leibniz. De otra parte la sumatoria es conocida como Suma de Riemann.
+            Como se anoto antes este límite siempre existe y es independiente de la elección de los puntos de muestra siempre y cuando pertenezcan al subintervalo correspondiente. Este límite también se puede hallar si `f` posee discontinuidades de tipo brinco, pero no de tipo infinito.
 
-    ==== Regla del punto medio ====
+            En caso que la función a integrar tome valores negativos (este por debajo del eje `x`), durante esos intervalos el área de la función será considerada como negativa y al tomar la integral sobre un intervalo mayor que abarque porciones de la función donde sea negativa y positiva, la integral definida al ser evaluada corresponderá a una diferencia de áreas y por lo tanto en estos casos no puede ser interpretado el resultado como un área.
 
-    Una forma de mejorar las aproximaciones obtenidas con la suma de Riemann consiste en utilizar los puntos medios de cada subintervalo, a este procedimiento se le conoce como regla del punto medio y establece que:
+            <strong><h2 id="T4">2.2 Regla del punto medio</h2></strong>
 
-    $$\int_a^bf(x)dx \approx \sum_{i=1}^nf(\overline{x_i})\Delta x$$
+            Una forma de mejorar las aproximaciones obtenidas con la suma de Riemann consiste en utilizar los puntos medios de cada subintervalo, a este procedimiento se le conoce como regla del punto medio y establece que:
 
-    Donde $\Delta x=\frac{b-a}{n}$ y $\overline{x_i}=\frac{1}{2}(x_{i-1}+x_i)$ es decir el punto medio del subintervalo $[x_{i-1},x_i]$
+            $$\int_a^bf(x)dx \approx \sum_{i=1}^nf(\overline{x_i})\Delta x$$
 
-    ==== Propiedades ====
+            Donde `\Delta x=\frac{b-a}{n}` y `\overline{x_i}=\frac{1}{2}(x_{i-1}+x_i)` es decir el punto medio del subintervalo `[x_{i-1},x_i]`
 
-    Supongamos que $f$ y $g$ son funciones continuas, entonces se cumplen las siguientes propiedades:
+            <strong><h2 id="T5">2.3. Propiedades de las integrales</h2></strong>
 
-    - $\int_b^af(x)dx=-\int_a^bf(x)dx$
-    - Si $a=b$ entonces $\Delta x=0$ y $\int_a^af(x)dx=0$
-    - $\int_a^bcdx=c(b-a)$
-    - $\int_a^b(f(x)+g(x))dx=\int_a^bf(x)dx+\int_a^bg(x)dx$
-    - $\int_a^bcf(x)dx=c\int_a^bf(x)dx$
-    - $\int_a^b(f(x)-g(x))dx=\int_a^bf(x)dx-\int_a^bg(x)dx$
-    - $\int_a^cf(x)dx+\int_c^bf(x))dx=\int_a^bf(x)dx$
-    - Si $f(x) \ge 0$ para $a \le x \le b$, entonces $\int_a^bf(x)dx \ge 0$
-    - Si $f(x) \ge g(x)$ para $a \le x \le b$, entonces $\int_a^bf(x)dx \ge \int_a^bg(x)dx$
-    - Si $m \le f(x) \le M$ para $a \le x \le b$, entonces $m(b-a) \le \int_a^bf(x)dx \le M(b-a)$
+            Supongamos que `f` y `g` son funciones continuas, entonces se cumplen las siguientes propiedades:
 
-    ==== Teorema de evaluación ====
+            <ul>
+                <li>`\int_b^af(x)dx=-\int_a^bf(x)dx`</li>
+                <li>Si `a=b` entonces `\Delta x=0` y `\int_a^af(x)dx=0`</li>
+                <li>`\int_a^bcdx=c(b-a)`</li>
+                <li>`\int_a^b(f(x)+g(x))dx=\int_a^bf(x)dx+\int_a^bg(x)dx`</li>
+                <li>`\int_a^bcf(x)dx=c\int_a^bf(x)dx`</li>
+                <li>`\int_a^b(f(x)-g(x))dx=\int_a^bf(x)dx-\int_a^bg(x)dx`</li>
+                <li>`\int_a^cf(x)dx+\int_c^bf(x))dx=\int_a^bf(x)dx`</li>
+                <li>Si `f(x) \ge 0` para `a \le x \le b`, entonces `\int_a^bf(x)dx \ge 0`</li>
+                <li>Si `f(x) \ge g(x)` para `a \le x \le b`, entonces `\int_a^bf(x)dx \ge \int_a^bg(x)dx`</li>
+                <li>Si `m \le f(x) \le M` para `a \le x \le b`, entonces `m(b-a) \le \int_a^bf(x)dx \le M(b-a)`</li>
+            </ul>
 
-    Si $f$ es continua sobre el intervalo $[a,b]$ entonces:
+            <strong><h2 id="T6">2.4. Teorema de evaluación</h2></strong>
 
-    $$\int_A^bf(x)dx=F(b)-F(a)$$
+            Si `f` es continua sobre el intervalo `[a,b]` entonces:
 
-    Donde $F$ es cualquier antiderivada de $f$, es decir, $F'=f$
+            $$\int_A^bf(x)dx=F(b)-F(a)$$
 
-    Esta expresión esta muy relacionada con el teorema fundamental del cálculo. Existen varias notaciones adicionales para expresar la evaluación de esta integral como la que se muestra a continuación:
+            Donde `F` es cualquier antiderivada de `f`, es decir, `F'=f$
 
-    $$\int_A^bf(x)dx=F(x)\biggr\rvert_a^b=F(x)\biggr]_a^b$$
+            Esta expresión esta muy relacionada con el teorema fundamental del cálculo. Existen varias notaciones adicionales para expresar la evaluación de esta integral como la que se muestra a continuación:
 
-    ===== Integrales indefinidas =====
+            $$\int_A^bf(x)dx=F(x)\biggr\rvert_a^b=F(x)\biggr]_a^b$$
 
-    La notación más conveniente para una antiderivada es una integral indefinida, que se escribe como:
+            <strong><h2 id="T7">2.5. Integrales indefinidas</h2></strong>
 
-    $$\int f(x)dx=F(x)$$
+            La notación más conveniente para una antiderivada es una integral indefinida, que se escribe como:
 
-    Significa que $F'(x)=f(x)$
+            $$\int f(x)dx=F(x)$$
 
-    Note que una integral indefinida es una familia de funciones mientras que una integral definida es un número. Las integrales definidas e indefinidas se pueden relacionar mediante el siguiente resultado:
+            Significa que `F'(x)=f(x)`
 
-    $$\int_a^bf(x)dx=\int f(x)dx\biggr\rvert_a^b$$
+            Note que una integral indefinida es una familia de funciones mientras que una integral definida es un número. Las integrales definidas e indefinidas se pueden relacionar mediante el siguiente resultado:
 
-    Las integrales indefinidas siguen las mismas propiedades de las integrales definidas, adicionalmente es conveniente contar con una breve tabla de integrales que indefinidas que permitan encontrar rapidamente las antiderivadas buscadas, a continuación se provee una breve tabla.
+            $$\int_a^bf(x)dx=\int f(x)dx\biggr\rvert_a^b$$
 
-    $$\int \biggl[f(x) \pm g(x)\biggr]dx=\int f(x)dx \pm \int g(x)dx$$
+            Las integrales indefinidas siguen las mismas propiedades de las integrales definidas, adicionalmente es conveniente contar con una breve tabla de integrales que indefinidas que permitan encontrar rápidamente las antiderivadas buscadas, a continuación se provee una breve tabla.
 
-    $$\int cf(x)dx=c\int f(x)dx$$
+            $$\int \biggl[f(x) \pm g(x)\biggr]dx=\int f(x)dx \pm \int g(x)dx$$
 
-    $$\int x^ndx=\frac{x^{n+1}}{n+a}+C \text{ con }n \ne -1$$
+            $$\int cf(x)dx=c\int f(x)dx$$
 
-    $$\int \frac{1}{x}dx=\ln |x|+C$$
+            $$\int x^ndx=\frac{x^{n+1}}{n+a}+C \text{ con }n \ne -1$$
 
-    $$\int e^xdx=e^x+C$$
+            $$\int \frac{1}{x}dx=\ln |x|+C$$
 
-    $$\int \sin x dx=-\cos x+C$$
+            $$\int e^xdx=e^x+C$$
 
-    $$\int \cos x dx=\sin x+C$$
+            $$\int \sin x dx=-\cos x+C$$
 
-    $$\int \sec^2xdx=\tan x+C$$
+            $$\int \cos x dx=\sin x+C$$
 
-    $$\int \csc^2xdx=-\cot x+C$$
+            $$\int \sec^2xdx=\tan x+C$$
 
-    $$\int \sec x \tan xdx=\sec x+C$$
+            $$\int \csc^2xdx=-\cot x+C$$
 
-    $$\int \csc x \cot xdx=-\csc x +C$$
+            $$\int \sec x \tan xdx=\sec x+C$$
 
-    $$\int \frac{1}{\sqrt{1-x^2}}dx=\sin ^{-1}x+C$$
+            $$\int \csc x \cot xdx=-\csc x +C$$
 
-    $$\int -\frac{1}{\sqrt{1-x^2}}dx=\cos ^{-1}x+C$$
+            $$\int \frac{1}{\sqrt{1-x^2}}dx=\sin ^{-1}x+C$$
 
-    $$\int \frac{1}{x^2+1}dx=\tan^{-1}x+C$$
+            $$\int -\frac{1}{\sqrt{1-x^2}}dx=\cos ^{-1}x+C$$
 
-    ==== Teorema del cambio total ====
+            $$\int \frac{1}{x^2+1}dx=\tan^{-1}x+C$$
 
-    De los resultados anteriores se puede escribir el siguiente teorema denominado teorema del cambio total:
+            <strong><h2 id="T8">2.6. Teorema del cambio total</h2></strong>
 
-    La integral de una razón de cambio es el cambio total:
+            De los resultados anteriores se puede escribir el siguiente teorema denominado teorema del cambio total:
 
-    $$\int_a^bF'(x)dx=F(b)-F(a)$$
+            La integral de una razón de cambio es el cambio total:
 
-    ====== Teorema fundamental del cálculo ======
+            $$\int_a^bF'(x)dx=F(b)-F(a)$$
 
-    El teorema fundamental del cálculo relaciona los dos ramas del cálculo, cálculo diferencial y cálculo integral y muestra como el proceso de integración es contrario o inverso al proceso de derivación y viceversa.
+            <strong><h2 id="T9">2.7. Teorema fundamental del cálculo</h2></strong>
 
-    Para expresar este hecho con una formulación matemática se puede plantear de la siguiente manera:
+            El teorema fundamental del cálculo relaciona los dos ramas del cálculo, cálculo diferencial y cálculo integral y muestra como el proceso de integración es contrario o inverso al proceso de derivación y viceversa.
 
-    Sea $f$ una función continua sobre el intervalo cerrado $[a,b]$, luego la función definida por:
+            Para expresar este hecho con una formulación matemática se puede plantear de la siguiente manera:
 
-    $$A(x)=\int_a^xf(t)dt\text{ con }a\le x \le b$$
+            Sea `f` una función continua sobre el intervalo cerrado `[a,b]`, luego la función definida por:
 
-    Es una antiderivada de $f$, es decir, $A'(x)=f(x)$
+            $$A(x)=\int_a^xf(t)dt\text{ con }a\le x \le b$$
 
-    De forma alternativa se puede utilizar la notación de Leibniz:
+            Es una antiderivada de `f`, es decir, `A'(x)=f(x)`
 
-    $$\frac{d}{dx}\int_a^xf(t)dt=f(x)$$
+            De forma alternativa se puede utilizar la notación de Leibniz:
 
-    Adicionalmente el teorema fundamental del cálculo establece que:
+            $$\frac{d}{dx}\int_a^xf(t)dt=f(x)$$
 
-    $$\int_a^bf(x)dx=F(b)-F(a)$$
+            Adicionalmente el teorema fundamental del cálculo establece que:
 
-    Donde $F$ es cualquier antiderivada de $f$.
-    Lo anterior implica que el teorema de evaluación esta incluido en el Teorema Fundamental del Cálculo.
+            $$\int_a^bf(x)dx=F(b)-F(a)$$
 
-    La siguiente imagen ilustra la función $A$ (función de acumulación).
+            Donde `F` es cualquier antiderivada de `f`.
+            Lo anterior implica que el teorema de evaluación esta incluido en el Teorema Fundamental del Cálculo.
 
-    {{:matematicas:tfc.png?300|}}
+            La siguiente imagen ilustra la función `A` (función de acumulación).
 
-    ====== Técnicas de integración ======
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 2.</strong> Función de acumulación</figcaption><br/>
+                <img src="../../../resources/img/matematicas/integrales/acumulacion.png" alt="Acumulación.png" height="250px">
+            </figure>
 
-    A continuación se presentan una serie de técnicas que permiten realizar el proceso de integración, de integrales complejas que no se encuentran relacionadas en las integraciones de funciones básicas definidas al principio de esta página.
+            <strong><h2 id="T10">2.8. Técnicas de integración</h2></strong>
 
-    ===== Sustitución =====
+            A continuación se presentan una serie de técnicas que permiten realizar el proceso de integración, de integrales complejas que no se encuentran relacionadas en las integraciones de funciones básicas definidas al principio de esta página.
 
-    La regla de sustitución es muy versátil y aplica en muchos casos, esta regla es correspondiente a la regla de la cadena para la derivación y establece de forma general lo siguiente:
-    Si $u=g(x)$ es una función derivable cuyo rango es un intervalo $I$ y $f$ es continua sobre $I$, entonces:
+            <strong><h2 id="T11">2.9. Sustitución</h2></strong>
 
-    $$\int f(g(x))g'(x)dx=\int f(u)du$$
+            La regla de sustitución es muy versátil y aplica en muchos casos, esta regla es correspondiente a la regla de la cadena para la derivación y establece de forma general lo siguiente:
+            Si `u=g(x)` es una función derivable cuyo rango es un intervalo `I` y `f` es continua sobre `I`, entonces:
 
-    La regla de la sustitución también funciona para la evaluación de integrales definidas, en este caso la regla establece lo siguiente:
+            $$\int f(g(x))g'(x)dx=\int f(u)du$$
 
-    $$\int_a^b f(g(x))g'(x)dx=\int_{g(a)}^{g(b)} f(u)du=F(g(x))\biggr\rvert_a^b=F(u)\biggr\rvert_{g(a)}^{g(b)}$$
+            La regla de la sustitución también funciona para la evaluación de integrales definidas, en este caso la regla establece lo siguiente:
 
-    Un ejemplo de la aplicación de esta regla se da a continuación:
+            $$\int_a^b f(g(x))g'(x)dx=\int_{g(a)}^{g(b)} f(u)du=F(g(x))\biggr\rvert_a^b=F(u)\biggr\rvert_{g(a)}^{g(b)}$$
 
-    Integrar $\int x^3\cos (x^4+2)dx$, para este caso hagamos $u=x^4+2$, de tal forma que $du=4x^3dx$ o lo que es lo mismo $x^3dx=\frac{du}{4}$, la integral original queda de la forma: $\int \frac{\cos(u)}{4}du=\sin(u)$, finalmente reemplazamos de nuevo para volver a la variable original $x$ de esta manera la respuesta a la integral es: $\sin(x^4+2)$ lo cual se puede corroborar mediante derivación.
+            Un ejemplo de la aplicación de esta regla se da a continuación:
 
-    ===== Simetría =====
+            Integrar `\int x^3\cos (x^4+2)dx`, para este caso hagamos `u=x^4+2`, de tal forma que `du=4x^3dx` o lo que es lo mismo `x^3dx=\frac{du}{4}`, la integral original queda de la forma: `\int \frac{\cos(u)}{4}du=\sin(u)`, finalmente reemplazamos de nuevo para volver a la variable original `x` de esta manera la respuesta a la integral es: `\sin(x^4+2)` lo cual se puede corroborar mediante derivación.
 
-    Se puede aplicar simetría para evaluar funciones definidas si estas son pares o impares de la siguiente manera:
+            <strong><h2 id="T12">2.10. Simetría</h2></strong>
 
-    - Si una función es par $f(x)=f(-x)$ entonces la integral $\int_{-a}^af(x)dx=2\int_0^af(x)dx$
-    - Si una función es impar $f(-x)=-f(x)$ entonces la integral $\int_{-a}^af(x)dx=0$
+            Se puede aplicar simetría para evaluar funciones definidas si estas son pares o impares de la siguiente manera:
 
-    ===== Integración por partes =====
+            <ul>
+                <li>Si una función es par `f(x)=f(-x)` entonces la integral `\int_{-a}^af(x)dx=2\int_0^af(x)dx`</li>
+                <li>Si una función es impar `f(-x)=-f(x)` entonces la integral `\int_{-a}^af(x)dx=0`</li>
+            </ul>
 
-    La integración por partes hace uso de la regla del producto para derivación a fin de simplificar la integral y obtener una integral más sencilla. En terminos generales se puede escribir la regla de integración por partes de la siguiente manera:
+            <strong><h2 id="T13">2.11. Integración por partes</h2></strong>
 
-    $$\int udv = uv-\int vdu$$
+            La integración por partes hace uso de la regla del producto para derivación a fin de simplificar la integral y obtener una integral más sencilla. En terminos generales se puede escribir la regla de integración por partes de la siguiente manera:
 
-    Se debe elegir en la integral original $u$ y $v$ de manera que $u$ sea fácil de derivar y sea fácil obtener $v$ integrando $dv$.
-    A continuación se muestra un ejemplo de aplicación de esta regla.
+            $$\int udv = uv-\int vdu$$
 
-    Integrar $\int e^x\sin x dx$
+            Se debe elegir en la integral original `u` y `v` de manera que `u` sea fácil de derivar y sea fácil obtener `v` integrando `dv`.
+            A continuación se muestra un ejemplo de aplicación de esta regla.
 
-    Elegimos:
+            Integrar `\int e^x\sin x dx`
 
-    $u=e^x$ de forma que $du=e^xdx$ \\
-    $dv=\sin x dx$ de forma que $v=-\cos x$ \\
+            Elegimos:
 
-    Reemplazando en la fórmula de integración por partes se obtiene:
+            <br/>`u=e^x` de forma que `du=e^xdx`
+            <br/>`dv=\sin x dx` de forma que `v=-\cos x`
 
-    $$\int e^x\sin x dx=-e^x\cos x-\int (-\cos x)e^xdx$$
+            <br/>Reemplazando en la fórmula de integración por partes se obtiene:
 
-    En este caso debemos volver a integrar por partes pues la segunda integral es igual de compleja que la original.
-    En este nuevo caso tenemos que resolver la integral $\int e^x\cos xdx$
+            $$\int e^x\sin x dx=-e^x\cos x-\int (-\cos x)e^xdx$$
 
-    Elegimos
+            En este caso debemos volver a integrar por partes pues la segunda integral es igual de compleja que la original.
+            En este nuevo caso tenemos que resolver la integral `\int e^x\cos xdx$
 
-    $u=e^x$ de forma que $du=e^xdx$ \\
-    $dv=\cos xdx$ de forma que $v=\sin x$ \\
+            Elegimos
 
-    Reemplazando en la fórmula de integración por partes se obtiene:
+            <br/>`u=e^x` de forma que `du=e^xdx`
+            <br/>`dv=\cos xdx` de forma que `v=\sin x`
 
-    $$\int e^x\cos xdx=e^x\sin x - \int e^x\sin xdx$$
+            <br/>Reemplazando en la fórmula de integración por partes se obtiene:
 
-    Ahora se reemplaza este resultado en la primera integral por partes obteniendo:
+            $$\int e^x\cos xdx=e^x\sin x - \int e^x\sin xdx$$
 
-    $$\int e^x\sin x dx=-e^x\cos x + e^x\sin x - \int e^x\sin xdx$$
+            Ahora se reemplaza este resultado en la primera integral por partes obteniendo:
 
-    Para finalmente despejar y obtener la solución:
+            $$\int e^x\sin x dx=-e^x\cos x + e^x\sin x - \int e^x\sin xdx$$
 
-    $$\int e^x\sin x dx=\frac{-e^x\cos x + e^x\sin x}{2}$$
+            Para finalmente despejar y obtener la solución:
 
-    ===== Integración trigonométrica =====
+            $$\int e^x\sin x dx=\frac{-e^x\cos x + e^x\sin x}{2}$$
 
-    La sustitución trigonométrica es útil cuando se tiene integrales que impliquen raíces. Las siguientes sustituciones pueden ser útiles:
+            <strong><h2 id="T14">2.12. Integración trigonométrica</h2></strong>
 
-    - Un factor de la forma $\sqrt{a^2-x^2}$ puede tratarse con la sustitución $x=a\sin \theta$
-    - Un factor de la forma $\sqrt{a^2+x^2}$ puede tratarse con la sustitución $x=a\tan \theta$
-    - Un factor de la forma $\sqrt{x^2-a^2}$ puede tratarse con la sustitución $x=a\sec \theta$
+            La sustitución trigonométrica es útil cuando se tiene integrales que impliquen raíces. Las siguientes sustituciones pueden ser útiles:
 
-    A continuación se muestra un ejemplo del uso de esta técnica.
+            <ul>
+                <li>Un factor de la forma `\sqrt{a^2-x^2}` puede tratarse con la sustitución `x=a\sin \theta`</li>
+                <li>Un factor de la forma `\sqrt{a^2+x^2}` puede tratarse con la sustitución `x=a\tan \theta`</li>
+                <li>Un factor de la forma `\sqrt{x^2-a^2}` puede tratarse con la sustitución `x=a\sec \theta`</li>
+            </ul>
 
-    Integrar $\int \sqrt{r^2-x^2}dx$ usamos la sustitución:
+            A continuación se muestra un ejemplo del uso de esta técnica.
 
-    $x=r\sin\theta$ lo que equivale a $\theta=\sin^{-1}\frac{x}{r}$
+            Integrar `\int \sqrt{r^2-x^2}dx` usamos la sustitución:
 
-    Y por lo tanto $dx=r\cos\theta d\theta$
+            `x=r\sin\theta` lo que equivale a `\theta=\sin^{-1}\frac{x}{r}`
 
-    La integral original es ahora:
+            Y por lo tanto `dx=r\cos\theta d\theta$
 
-    $$\int \sqrt{r^2-x^2}dx=r\int \sqrt{r^2-r^2\sin\theta}\cos\theta d\theta=\int\sqrt{r^2\cos^2\theta}\cos\theta d\theta=r^2\int\cos^2\theta d\theta$$
+            La integral original es ahora:
 
-    Para resolver esta nueva integral recurrimos a las fórmulas de ángulo doble:
+            $$\int \sqrt{r^2-x^2}dx=r\int \sqrt{r^2-r^2\sin\theta}\cos\theta d\theta=\int\sqrt{r^2\cos^2\theta}\cos\theta d\theta=r^2\int\cos^2\theta d\theta$$
 
-    $$\cos^2\theta=\frac{1}{2}(1+\cos{2\theta})$$
+            Para resolver esta nueva integral recurrimos a las fórmulas de ángulo doble:
 
-    Convirtiendo nuevamente esta integral trigonométrica en:
+            $$\cos^2\theta=\frac{1}{2}(1+\cos{2\theta})$$
 
-    $$r^2\int\cos^2\theta d\theta=r^2\int \frac{1}{2}(1+\cos{2\theta})=r^2\biggl(\frac{\theta}{2}+\frac{\sin{2\theta}}{4}\biggl)$$
+            Convirtiendo nuevamente esta integral trigonométrica en:
 
-    Al volver a la variable original se obtiene:
+            $$r^2\int\cos^2\theta d\theta=r^2\int \frac{1}{2}(1+\cos{2\theta})=r^2\biggl(\frac{\theta}{2}+\frac{\sin{2\theta}}{4}\biggl)$$
 
-    $$\int \sqrt{r^2-x^2}dx=r^2\biggl(\frac{\sin^{-1}\frac{x}{r}}{2}+\frac{\sin{(2\sin^{-1}\frac{x}{r}})}{4}\biggl)$$
+            Al volver a la variable original se obtiene:
 
-    ===== Integración por fracciones parciales =====
+            $$\int \sqrt{r^2-x^2}dx=r^2\biggl(\frac{\sin^{-1}\frac{x}{r}}{2}+\frac{\sin{(2\sin^{-1}\frac{x}{r}})}{4}\biggl)$$
 
-    La técnica de fracciones parciales permite reducir una fracción dada en forma de cociente de polinomios a una forma más sencilla en términos de fracciones simples que pueden integrarse fácilmente.
+            <strong><h2 id="T15">2.13. Integración por fracciones parciales</h2></strong>
 
-    Por ejemplo la integral:
+            La técnica de fracciones parciales permite reducir una fracción dada en forma de cociente de polinomios a una forma más sencilla en términos de fracciones simples que pueden integrarse fácilmente.
 
-    $$\int \frac{5x-4}{2x^2+x-1}dx$$
+            Por ejemplo la integral:
 
-    Puede simplificarse notablemente si se aplica fracciones parciales:
+            $$\int \frac{5x-4}{2x^2+x-1}dx$$
 
-    $$\int \biggl( \frac{3}{x+1}-\frac{1}{2x-1} \biggr)dx$$
+            Puede simplificarse notablemente si se aplica fracciones parciales:
 
-    Esta última integral es muy fácil de resolver aplicando sustituciones
+            $$\int \biggl( \frac{3}{x+1}-\frac{1}{2x-1} \biggr)dx$$
 
-    ===== Integrales impropias =====
+            Esta última integral es muy fácil de resolver aplicando sustituciones
 
-    Algo muy importante cuando se tienen integrales definidas es si estas se evaluan sobre un intervalo que o bien es infinito o bien la función tiene una discontinuidad infinita, en ambos casos la integral recibe el nombre de integral impropia y debe evaluarse utilizando limites.
+            <strong><h2 id="T16">2.14. Integrales impropias</h2></strong>
 
-    A continuación se muestran las diferentes formas en las que una integral impropia debe evaluarse.
+            Algo muy importante cuando se tienen integrales definidas es si estas se evalúan sobre un intervalo que o bien es infinito o bien la función tiene una discontinuidad infinita, en ambos casos la integral recibe el nombre de integral impropia y debe evaluarse utilizando limites.
 
-    ==== Integrales impropias por intervalos infinitos ====
+            A continuación se muestran las diferentes formas en las que una integral impropia debe evaluarse.
 
-    Esta integral es comúnmente conocida como integral impropia de tipo 1 y presenta tres casos.
+            <strong><h2 id="T17">2.15. Integrales impropias por intervalos infinitos</h2></strong>
 
-    * Si $\int_a^tf(x)dx$ existe para todo número $t \ge a$ entonces
+            Esta integral es comúnmente conocida como integral impropia de tipo 1 y presenta tres casos.
 
-    $$\int_a^\infty f(x)dx=\lim_{t \to \infty}\int_a^tf(x)dx$$
+            <ul>
+                <li>Si `\int_a^tf(x)dx` existe para todo número `t \ge a` entonces</li>
+            </ul>
 
-    * Si $\int_t^bf(x)dx$ existe para todo número $t \le a$ entonces
+            $$\int_a^\infty f(x)dx=\lim_{t \to \infty}\int_a^tf(x)dx$$
 
-    $$\int_{-\infty}^b f(x)dx=\lim_{t \to -\infty}\int_t^bf(x)dx$$
+            <ul>
+                <li>Si `\int_t^bf(x)dx` existe para todo número `t \le a` entonces</li>
+            </ul>
 
-    Siempre y cuando el límite exista.
+            $$\int_{-\infty}^b f(x)dx=\lim_{t \to -\infty}\int_t^bf(x)dx$$
 
-    Se dice que las integrales impropias son **convergentes** si el límite existe y **divergentes** si el límite no existe.
+            Siempre y cuando el límite exista.
 
-    * Si tanto $\int_a^{\infty}f(x)dx$ como $\int_{-\infty}^bf(x)dx$ son convergentes, entonces definimos
+            Se dice que las integrales impropias son <strong>convergentes</strong> si el límite existe y <strong>divergentes</strong> si el límite no existe.
 
-    $$\int_{-\infty}^{\infty}f(x)dx=\int_{-\infty}^af(x)dx+\int_a^{\infty}f(x)dx$$
+            <ul>
+                <li>Si tanto `\int_a^{\infty}f(x)dx` como `\int_{-\infty}^bf(x)dx` son convergentes, entonces definimos</li>
+            </ul>
 
-    Donde $a$ es cualquier número real.
+            $$\int_{-\infty}^{\infty}f(x)dx=\int_{-\infty}^af(x)dx+\int_a^{\infty}f(x)dx$$
 
-    Es importante realizar varias observaciones con este tipo de integrales. La primera de ellas consiste en que no se puede obviar las fórmulas dadas y estas integrales deben evaluarse a través del uso de límites para obtener resultados correctos. Otro resultado importante es el siguiente:
+            Donde `a` es cualquier número real.
 
-    $$\int_1^{\infty}\frac{1}{x}dx\text{ es divergente}$$
-    $$\int_1^{\infty}\frac{1}{x^2}dx\text{ es convergente}$$
+            Es importante realizar varias observaciones con este tipo de integrales. La primera de ellas consiste en que no se puede obviar las fórmulas dadas y estas integrales deben evaluarse a través del uso de límites para obtener resultados correctos. Otro resultado importante es el siguiente:
 
-    La siguiente gráfica muestra la función $f(x)=\frac{1}{x^2}$
+            $$\int_1^{\infty}\frac{1}{x}dx\text{ es divergente}$$
+            $$\int_1^{\infty}\frac{1}{x^2}dx\text{ es convergente}$$
 
-    {{:matematicas:impropia.png?300|}}
+            La siguiente gráfica muestra la función `f(x)=\frac{1}{x^2}$$
 
-    En términos generales se puede escribir:
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 3.</strong> Función `\frac{1}{x^2}`</figcaption><br/>
+                <img src="../../../resources/img/matematicas/integrales/funcion1x2.png" alt="Función.png" height="250px">
+            </figure>
 
-    $$\int_1^{\infty}\frac{1}{x^p}dx\text{ converge si }p>1\text{ y diverge si }p \le 1$$
+            En términos generales se puede escribir:
 
-    ==== Integrales impropias por discontinuidades infinitas ====
+            $$\int_1^{\infty}\frac{1}{x^p}dx\text{ converge si }p>1\text{ y diverge si }p \le 1$$
 
-    Esta integral es comúnmente conocida como integral impropia de tipo 2 y presenta tres casos.
+            <strong><h2 id="T18">2.16. Integrales impropias por discontinuidades infinitas</h2></strong>
 
-    * Si $f$ es continua en $[a,b)$ y discontinua (infinitamente) en $b$ entonces
+            Esta integral es comúnmente conocida como integral impropia de tipo 2 y presenta tres casos.
 
-    $$\int_a^bf(x)dx=\lim_{t \to b^-}\int_a^tf(x)dx$$
+            <ul>
+                <li>Si `f` es continua en `[a,b)` y discontinua (infinitamente) en `b` entonces</li>
+            </ul>
 
-    Si este limite existe.
+            $$\int_a^bf(x)dx=\lim_{t \to b^-}\int_a^tf(x)dx$$
 
-    * Si $f$ es continua sobre $(a,b]$ y discontinua (infinitamente) en $a$ entonces
+            Si este limite existe.
 
-    $$\int_a^bf(x)dx=\lim_{t \to a^+}\int_t^bf(x)dx$$
+            <ul>
+                <li>Si `f` es continua sobre `(a,b]` y discontinua (infinitamente) en `a` entonces</li>
+            </ul>
 
-    Si este límite existe
+            $$\int_a^bf(x)dx=\lim_{t \to a^+}\int_t^bf(x)dx$$
 
-    Se dice que las integrales impropias son **convergentes** si el límite existe y **divergentes** si el límite no existe.
+            Si este límite existe.<br/><br/>
 
-    * Si $f$ tiene un discontinuidad infinita en $c$ donde $a<c<b$ y tanto $\int_a^cf(c)dx$ como $\int_c^bf(x)dx$ son convergentes, entonces definimos
+            Se dice que las integrales impropias son <strong>convergentes</strong> si el límite existe y <strong>divergentes</strong> si el límite no existe.
 
-    $$\int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bf(x)dx$$
+            <ul>
+                <li>Si `f` tiene un discontinuidad infinita en `c` donde `a \lt c \lt b` y tanto `\int_a^cf(c)dx` como `\int_c^bf(x)dx` son convergentes, entonces definimos</li>
+            </ul>
 
-    ==== Teorema de comparación ====
+            $$\int_a^bf(x)dx=\int_a^cf(x)dx+\int_c^bf(x)dx$$
 
-    Este teorema es útil cuando no se puede calcular la integral impropia, pero se desea saber si es convergente o divergente, establece lo siguiente.
+            <strong><h2 id="T19">2.17. Teorema de comparación</h2></strong>
 
-    Suponga que $f$ y $g$ son funciones continuas $f(x) \ge g(x) \ge 0$ para $x \ge a$
+            Este teorema es útil cuando no se puede calcular la integral impropia, pero se desea saber si es convergente o divergente, establece lo siguiente.
 
-    * Si $\int_a^{\infty}f(x)dx$ es convergente, entonces $\int_a^{\infty}g(x)dx$ también lo es.
-    * Si $\int_a^{\infty}g(x)dx$ es divergente, entonces $\int_a^{\infty}f(x)dx$ también lo es.
+            Suponga que `f` y `g` son funciones continuas `f(x) \ge g(x) \ge 0` para `x \ge a`
 
-    ====== Aplicaciones de la Integración ======
+            <ul>
+                <li>Si `\int_a^{\infty}f(x)dx` es convergente, entonces `\int_a^{\infty}g(x)dx` también lo es.</li>
+                <li>Si `\int_a^{\infty}g(x)dx` es divergente, entonces `\int_a^{\infty}f(x)dx` también lo es.</li>
+            </ul>
 
-    ===== Áreas entre curvas =====
+            <strong><h2 id="T20">2.18. Aplicaciones de la integración</h2></strong>
 
-    El área de una región $A$ limitada por las curvas $y=f(x)$ y $y=g(x)$ y las rectas $x=a$ y $x=b$, donde $f$ y $g$ son continuas en el intervalo $[a,b]$ y $f(x) \ge g(x)$ para toda $x$ en el intervalo, es:
+            <strong><h2 id="T21">2.19. Áreas entre curvas</h2></strong>
 
-    $$A=\int_a^b \biggl( f(x)-g(x) \biggr)dx$$
+            El área de una región `A` limitada por las curvas `y=f(x)` y `y=g(x)` y las rectas `x=a` y `x=b`, donde `f` y `g` son continuas en el intervalo `[a,b]` y `f(x) \ge g(x)` para toda `x` en el intervalo, es:
 
-    {{:matematicas:areacurvas.png?250|}}
+            $$A=\int_a^b \biggl( f(x)-g(x) \biggr)dx$$
 
-    En ocasiones es más fácil hallar estas áreas si expresamos las curvas en términos de $y$, de forma equivalente y para casos específicos el área se puede calcular como:
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 4.</strong> Área en una región</figcaption><br/>
+                <img src="../../../resources/img/matematicas/integrales/area_region.png" alt="Área región.gif" height="250px">
+            </figure>
 
-    $$A=\int_c^d \biggl( f(y)-g(y) \biggr)dy$$
+            En ocasiones es más fácil hallar estas áreas si expresamos las curvas en términos de `y`, de forma equivalente y para casos específicos el área se puede calcular como:
 
-    Para el caso de curvas parametricas se puede calcular el área bajo las curvas utilizando la siguiente relación.
-    Sea una curva parametrica definida por las ecuaciones $x=f(t)$ y $y=g(t)$ entonces:
+            $$A=\int_c^d \biggl( f(y)-g(y) \biggr)dy$$
 
-    $$A=\int_a^bydx=\int_{\alpha}^{\beta}g(t)f'(t)dt$$
+            Para el caso de curvas paramétricas se puede calcular el área bajo las curvas utilizando la siguiente relación.
+            Sea una curva paramétrica definida por las ecuaciones `x=f(t)` y `y=g(t)` entonces:
 
-    ===== Volumenes =====
+            $$A=\int_a^bydx=\int_{\alpha}^{\beta}g(t)f'(t)dt$$
 
-    El caso de calcular un volumen es similar a calcular un área, en este caso necesitamos una función que describa el área y como esta varia según una variable dependiente.
+            <strong><h2 id="T22">2.22. Volúmenes</h2></strong>
 
-    Sea $S$ un sólido que se encuentra entre $x=a$ y $x=b$ Si el área de la sección transversal de $S$ en el plano $P$, quepasa por $x$ y es perpendicular al eje $x$, es $A(x)$, donde $A$ es una función continua, entonces el volumen de $S$ es:
+            El caso de calcular un volumen es similar a calcular un área, en este caso necesitamos una función que describa el área y como esta varia según una variable dependiente.
 
-    $$V=\lim_{n \to \infty}{\sum_{i=1}^nA(x_i*)\Delta x}=\int_a^bA(x)dx$$
+            Sea `S` un sólido que se encuentra entre `x=a` y `x=b` Si el área de la sección transversal de `S` en el plano `P`, quepasa por `x` y es perpendicular al eje `x`, es `A(x)`, donde `A` es una función continua, entonces el volumen de `S` es:
 
-    ===== Longitud de arco =====
+            $$V=\lim_{n \to \infty}{\sum_{i=1}^nA(x_i*)\Delta x}=\int_a^bA(x)dx$$
 
-    Si una curva suave con ecuaciones paramétricas $x=f(t)$ y $y=g(t)$ con $a \lg t \lg b$ se recorre exactamente una vez cuando $t$ aumenta de $a$ a $b$, entonces la longitud de archo es:
+            <strong><h2 id="T23">2.23. Longitud de arco</h2></strong>
 
-    $$L=\int_a^b\sqrt{ \biggl(\frac{dx}{dt}\biggr)^2 + \biggl(\frac{dy}{dt}\biggr)^2}dt$$
+            Si una curva suave con ecuaciones paramétricas `x=f(t)` y `y=g(t)` con `a \lt t \lt b` se recorre exactamente una vez cuando `t` aumenta de `a` a `b`, entonces la longitud de arco es:
 
-    En caso de contar con las ecuacion es de la curva $y=f(x)$ con $a \lg x \lg b$ entonces se puede considerar $x$ como un parámetro y tener las ecuaciones $x=x$ y $y=f(x)$ por lo tanto la fórmula anterior se convierte en:
+            $$L=\int_a^b\sqrt{ \biggl(\frac{dx}{dt}\biggr)^2 + \biggl(\frac{dy}{dt}\biggr)^2}dt$$
 
-    $$L=\int_a^b\sqrt{1+\biggl(\frac{dy}{dx}\biggr)^2}dx$$
+            En caso de contar con las ecuacion es de la curva `y=f(x)` con `a \lt x \lt b` entonces se puede considerar `x` como un parámetro y tener las ecuaciones `x=x` y `y=f(x)` por lo tanto la fórmula anterior se convierte en:
 
-    ===== Valor promedio de una función =====
+            $$L=\int_a^b\sqrt{1+\biggl(\frac{dy}{dx}\biggr)^2}dx$$
 
-    Para calcular el valor promedio de una función es suficiente tomar elementos representativos, sumarlos y dividir por el total de elementos tomados. de esa forma se puede llevar al límite y obtener una integral para el calculo del valor promedio de la siguiente manera
+            <strong><h2 id="T24">2.24. Valor promedio de una función</h2></strong>
 
-    $$f(c)=f_{prom}=\frac{1}{b-a}\int_a^bf(x)dx$$
+            Para calcular el valor promedio de una función es suficiente tomar elementos representativos, sumarlos y dividir por el total de elementos tomados. de esa forma se puede llevar al límite y obtener una integral para el calculo del valor promedio de la siguiente manera
 
-    Donde $a$ y $b$ representan los valores extremos del intervalo cerrado donde se quiere calcular el valor promedio de la función.
+            $$f(c)=f_{prom}=\frac{1}{b-a}\int_a^bf(x)dx$$
 
-    ===== Teorema del valor medio para las integrales =====
+            Donde `a` y `b` representan los valores extremos del intervalo cerrado donde se quiere calcular el valor promedio de la función.
 
-    Si $f$ es continua en $[a,b]$, entonces existe un número $c$ en $[a,b]$ tal que:
+            <strong><h2 id="T25">2.25. Teorema del valor medio para las integrales</h2></strong>
 
-    $$f(c)=f_{prom}=\frac{1}{b-a}\int_a^bf(x)dx$$
+            Si `f` es continua en `[a,b]`, entonces existe un número `c` en `[a,b]` tal que:
 
-    es decir:
+            $$f(c)=f_{prom}=\frac{1}{b-a}\int_a^bf(x)dx$$
 
-    $$\int_a^bf(x)dx=f(c)(b-a)$$
-</article>
-<footer id="footer"></footer>
-</body>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-<script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
-<script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../" currentElement="#a_math_integral"></script>
+            es decir:
+
+            $$\int_a^bf(x)dx=f(c)(b-a)$$
+        </article>
+        <footer id="footer"></footer>
+    </body>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../" currentElement="#a_math_integral"></script>
 </html>

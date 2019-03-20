@@ -1,399 +1,492 @@
 <!DOCTYPE html>
 <html lang="es-CO">
-<head id="head">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-109043245-1');
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ochoscar - Matemáticas</title>
-    <link rel="icon" type="image/png" href="../../../resources/img/fav-icon.png">
-    <link rel="stylesheet" href="../../../resources/css/home/index.css" />
-    <link rel="stylesheet" href="../../../resources/css/matematicas/calculo/derivadas.css" />
-    <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
-</head>
-<body>
-<header>
-    Páginas Web de Ochoscar - Matemáticas
-</header>
-<nav id="navigator-bar"></nav>
-<article id="main-article">
-    <p align="justify"><center><strong><h1>MATEMÁTICAS</h1></strong></center></p>
-    <br/>
-    ====== Tangentes y razones de cambio ======
+    <head id="head">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109043245-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109043245-1');
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ochoscar - Matemáticas</title>
+        <link rel="icon" type="image/png" href="../../../resources/img/fav-icon.png">
+        <link rel="stylesheet" href="../../../resources/css/home/index.css" />
+        <link rel="stylesheet" href="../../../resources/css/matematicas/calculo/derivadas.css" />
+        <link rel="stylesheet" href="../../../resources/script/libs/google-code-prettify/prettify.css" />
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+    </head>
+    <body>
+        <header>
+            Páginas Web de Ochoscar - Matemáticas Generales - Derivadas
+        </header>
+        <nav id="navigator-bar"></nav>
+        <article id="main-article">
+            <p align="justify"><center><strong><h1>DERIVADAS</h1></strong></center></p>
+
+            <br/>
+            <h3>CONTENIDO</h3>
+            <a href="#T1">1. Tangentes y razones de cambio</a><br/>
+            <a href="#T2">1.1. Tangentes</a><br/>
+            <a href="#T3">1.2. Razones de cambio</a><br/>
+            <a href="#T4">2. Derivadas</a><br/>
+            <a href="#T5">3. Derivada como una función</a><br/>
+            <a href="#T6">4. Funciones derivables y no derivables</a><br/>
+            <a href="#T7">5. Derivadas superiores</a><br/>
+            <a href="#T8">6. Interpretación alternativa de las derivadas</a><br/>
+            <a href="#T9">7. Reglas de derivación</a><br/>
+            <a href="#T10">7.1. Derivada de una función constante</a><br/>
+            <a href="#T11">7.2. Derivada de la función potencia</a><br/>
+            <a href="#T12">7.3. Regla del múltiplo constante</a><br/>
+            <a href="#T13">7.4. Regla de la suma y la diferencia</a><br/>
+            <a href="#T14">7.5. Definición del número `e`</a><br/>
+            <a href="#T15">7.6. Derivada de la función exponencial natural</a><br/>
+            <a href="#T16">7.7. Derivada de la función exponencial</a><br/>
+            <a href="#T17">7.8. Regla del producto y del cociente</a><br/>
+            <a href="#T18">7.9. Derivadas de funciones trigonométricas</a><br/>
+            <a href="#T19">7.10. Regla de la cadena</a><br/>
+            <a href="#T20">7.11. Tangentes a curvas paramétricas</a><br/>
+            <a href="#T21">7.12. Derivación implícita</a><br/>
+            <a href="#T22">7.13. Trayectorias ortogonales</a><br/>
+            <a href="#T23">7.14. Derivadas de funciones trigonométricas inversas</a><br/>
+            <a href="#T24">7.15. Derivadas de funciones logarítmicas</a><br/>
+            <a href="#T25">7.16. Derivación logarítmica</a><br/>
+            <a href="#T26">7.17. Aproximaciones lineales</a><br/>
+            <a href="#T27">8. Aplicaciones de la derivación</a><br/>
+            <a href="#T28">8.1. Máximos y mínimos</a><br/>
+            <a href="#T29">8.2. Teorema del valor extremo</a><br/>
+            <a href="#T30">8.3. Teorema de Fermat</a><br/>
+            <a href="#T31">8.4. Números críticos</a><br/>
+            <a href="#T32">8.5. Método del intervalo cerrado</a><br/>
+            <a href="#T33">8.6. Teorema del valor medio</a><br/>
+            <a href="#T34">8.7. Prueba de la primera derivada</a><br/>
+            <a href="#T35">8.8. Prueba de la segunda derivada</a><br/>
+            <br/>
 
-    ===== Tangentes =====
+            <strong><h2 id="T1">1. Tangentes y razones de cambio</h2></strong>
 
-    En una curva se puede trazar una recta secante que corte la curva en dos puntos, así las cosas la pendiente de esta recta esta dada por:
+            <strong><h2 id="T2">1.1. Tangentes</h2></strong>
 
-    $$m_{PQ}=\frac{f(p)-f(q)}{p-q}$$
+            En una curva se puede trazar una recta secante que corte la curva en dos puntos, así las cosas la pendiente de esta recta esta dada por:
 
-    En el caso en que el punto $P$ se haga acercar al punto $Q$ de forma que la recta se transforme en tangente (toque la curva en un solo punto) se tendrá el siguiente cálculo de la pendiente de la recta:
+            $$m_{PQ}=\frac{f(p)-f(q)}{p-q}$$
 
-    $$m=\lim_{x \to a}\frac{f(x)-f(a)}{x-a}$$
+            En el caso en que el punto `P` se haga acercar al punto `Q` de forma que la recta se transforme en tangente (toque la curva en un solo punto) se tendrá el siguiente cálculo de la pendiente de la recta:
 
-    Es importante advertir que este limite puede no existir en punto $x=a$ determinado
-    La siguiente gráfica ilustra ambas rectas:
+            $$m=\lim_{x \to a}\frac{f(x)-f(a)}{x-a}$$
 
-    {{:matematicas:recta_tangente.png?300|}}
+            Es importante advertir que este limite puede no existir en punto `x=a` determinado
+            La siguiente gráfica ilustra ambas rectas:
 
-    La expresión para calcular la recta anterior se pude reescribir de la siguiente manera:
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 1.</strong> Línea secante y tangente a una curva</figcaption><br/>
+                <img src="../../../resources/img/matematicas/derivadas/tangente_secante.gif" alt="Tangente y secante.gif" height="250px">
+            </figure>
 
-    $$\text{Sea }h=x-a \text{ y } x=a+h$$
+            La expresión para calcular la recta anterior se pude reescribir de la siguiente manera:
 
-    Entonces:
+            $$\text{Sea }h=x-a \text{ y } x=a+h$$
 
-    $$m=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}$$
+            Entonces:
 
-    ===== Razones de cambio =====
+            $$m=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}$$
 
-    Suponga que $y$ es una cantidad que depende de otra $x$. Por tanto, $y=f(x)$. Si $x$ cambia de $x_1$ a $x_2$ entonces se conoce como incremento a la cantidad representada por:
+            <strong><h2 id="T3">1.2. Razones de cambio</h2></strong>
 
-    $$\Delta x = x_1-x_2$$
+            Suponga que `y` es una cantidad que depende de otra `x`, Por tanto, `y=f(x)`, Si `x` cambia de `x_1` a `x_2` entonces se conoce como incremento a la cantidad representada por:
 
-    Se llama **razón promedio de cambio de y con respecto a x** sobre el intervalo $[x_1,x_2]$ al cociente de las diferencias:
+            $$\Delta x = x_1-x_2$$
 
-    $$\text{razón promedio de cambio}=\frac{\Delta y}{\Delta x}=\frac{f(x_2)-f(x_1)}{x_2-x_1}$$
+            Se llama <strong>razón promedio de cambio de y con respecto a x</strong> sobre el intervalo `[x_1,x_2]` al cociente de las diferencias:
 
-    Este se puede interpretar como la pendiente de la recta secante a $PQ$
+            $$\text{razón promedio de cambio}=\frac{\Delta y}{\Delta x}=\frac{f(x_2)-f(x_1)}{x_2-x_1}$$
 
-    De forma similar, si se toma el límite de la expresión anterior se obtiene la **razón instantánea de cambio de y respecto a x** así:
+            Este se puede interpretar como la pendiente de la recta secante a `PQ`
 
-    $$\text{razón instantánea de cambio}=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{x_2 \to x_1}\frac{f(x_2)-f(x_1)}{x_2-x_1}$$
+            De forma similar, si se toma el límite de la expresión anterior se obtiene la <strong>razón instantánea de cambio de y respecto a x</strong> así:
 
-    ====== Derivadas ======
+            $$\text{razón instantánea de cambio}=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}=\lim_{x_2 \to x_1}\frac{f(x_2)-f(x_1)}{x_2-x_1}$$
 
-    Tal como se vio en las sección anterior sobre el cálculo de pendientes de rectas tangentes, y usando ese resultado se define:
+            <strong><h2 id="T4">2. Derivadas</h2></strong>
 
-    La derivada de una función $f$ en un punto $a$ y denotada $f'(a)$ como:
+            Tal como se vio en las sección anterior sobre el cálculo de pendientes de rectas tangentes, y usando ese resultado se define:
 
-    $$f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}$$
+            La derivada de una función `f` en un punto `a` y denotada `f'(a)` como:
 
-    Si el límite existe. Alternativamente se puede escribir:
+            $$f'(a)=\lim_{h \to 0}\frac{f(a+h)-f(a)}{h}$$
 
-    $$f'(a)=\lim_{x \to a}\frac{f(x)-f(a)}{x-a}$$
+            Si el límite existe. Alternativamente se puede escribir:
 
-    De esta forma la derivada puede interpretarse de las siguiente formas:
+            $$f'(a)=\lim_{x \to a}\frac{f(x)-f(a)}{x-a}$$
 
-    - La pendiente de la recta tangente de la función $f$ en el punto $a$
-    - La razón instantanea de cambio de $f(x)$ con respecto a $x$ cuando $x=a$
+            De esta forma la derivada puede interpretarse de las siguiente formas:
 
-    ===== Derivada como una función =====
+            <ul>
+                <li>La pendiente de la recta tangente de la función `f` en el punto `a`</li>
+                <li>La razón instantánea de cambio de `f(x)` con respecto a `x` cuando `x=a`</li>
+            </ul>
 
-    Si bien es posible calcular la derivada de una función en un punto determinado también se puede calcular en cualquier punto $x$ y de esta forma obtener una nueva función denominada derivada de $f$, esta función esta determinada por:
+            <strong><h2 id="T5">3. Derivada como una función</h2></strong>
 
-    $$f'(x)=\lim_{h \to 0}\frac{f(x+h)-f(x)}{h}$$
+            Si bien es posible calcular la derivada de una función en un punto determinado también se puede calcular en cualquier punto `x` y de esta forma obtener una nueva función denominada derivada de `f`, esta función esta determinada por:
 
-    A continuación se muestra gráficamente una función (rojo) y su correspondiente derivada (azul). Es importante observar que cuando la gráfica de la función tiene pendiente cero, la gráfica de la derivada corta el eje x.
+            $$f'(x)=\lim_{h \to 0}\frac{f(x+h)-f(x)}{h}$$
 
-    {{:matematicas:pendientes.png?300|}}
+            A continuación se muestra gráficamente una función (rojo) y su correspondiente derivada (azul). Es importante observar que cuando la gráfica de la función tiene pendiente cero, la gráfica de la derivada corta el eje `x`.
 
-    Algunas notaciones alternativas para representar la deriva se muestran a continuación:
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 2.</strong> La derivada como función</figcaption><br/>
+                <img src="../../../resources/img/matematicas/derivadas/derivada.gif" alt="Derivada.gif" height="250px">
+            </figure>
 
-    $$f'(x)=y'=\frac{dy}{dx}=\frac{df}{dx}=\frac{d}{dx}f(x)=Df(x)=D_Xf(x)=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$$
+            Algunas notaciones alternativas para representar la deriva se muestran a continuación:
 
-    ===== Funciones derivables y no derivables =====
+            $$f'(x)=y'=\frac{dy}{dx}=\frac{df}{dx}=\frac{d}{dx}f(x)=Df(x)=D_Xf(x)=\lim_{\Delta x \to 0}\frac{\Delta y}{\Delta x}$$
 
-    Una función es derivable en $a$ si $f'(a)$ existe, también puede ser derivable en un intervalo abierto o cerrado si es derivable en todo numero perteneciente al intervalo.
+            <strong><h2 id="T6">4. Funciones derivables y no derivables</h2></strong>
 
-    ** Teorema **
-    Si $f$ es derivable en $a$, $f$ es continua en $a$. Note que el reciproco de este teorema es falso, es decir que una función sea continua no implica que esta sea derivable.
+            Una función es derivable en `a` si `f'(a)` existe, también puede ser derivable en un intervalo abierto o cerrado si es derivable en todo numero perteneciente al intervalo.
 
-    En general una función no es derivable cuando presenta picos, o su recta tangente tiene una pendiente infinita, veamos un caso y para ello trate de calcular la derivada de la función valor absoluto:
+            <br/><strong>Teorema</strong>
+            Si `f` es derivable en `a`, `f` es continua en `a`, Note que el reciproco de este teorema es falso, es decir que una función sea continua no implica que esta sea derivable.
 
-    $$f(x)=|x|$$
+            En general una función no es derivable cuando presenta picos, o su recta tangente tiene una pendiente infinita, veamos un caso y para ello trate de calcular la derivada de la función valor absoluto:
 
-    Cuya gráfica se presenta a continuación:
+            $$f(x)=|x|$$
 
-    {{:matematicas:absx.png?300|}}
+            Cuya gráfica se presenta a continuación:
 
-    En este caso:
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 3.</strong> Gráfica del valor absoluto</figcaption><br/>
+                <img src="../../../resources/img/matematicas/derivadas/valor_absoluto.gif" alt="Valor absoluto.gif" height="250px">
+            </figure>
 
-    $$f'(x)=1 \text{ si } x>0 \text{ y }f'(x)=-1 \text{ si } x<0 $$
+            En este caso:
 
-    Por lo tanto no se tiene una recta pendiente para esta función en $x=0$
+            $$f'(x)=1 \text{ si } x>0 \text{ y }f'(x)=-1 \text{ si } x<0 $$
 
-    En resumen un función no es derivable en un punto $a$ si:
-    - El límite de la definición de derivada no existe
-    - La función no es continua en un punto $a$
-    - La gráfica presenta picos en el punto $a$
-    - La función presenta pendiente vertical en el punto $a$
-    ===== Derivadas superiores ======
+            Por lo tanto no se tiene una recta pendiente para esta función en `x=0`
 
-    Si $f$ es una función derivable, entonces su derivada $f'$ también es una función, y por lo tanto $f'$ puede tener una derivada que se denota como:
+            En resumen un función no es derivable en un punto `a` si:
 
-    $$(f')'=f''=\frac{d}{dx}\biggl(\frac{dy}{dx}\biggr)=\frac{d^2y}{dx^2}$$
+            <ul>
+                <li>El límite de la definición de derivada no existe</li>
+                <li>La función no es continua en un punto `a`</li>
+                <li>La gráfica presenta picos en el punto `a`</li>
+                <li>La función presenta pendiente vertical en el punto `a`</li>
+            </ul>
 
-    Se llama **segunda derivada** de $f$
+            <strong><h2 id="T7">5. Derivadas superiores</h2></strong>
 
-    De forma similar se puede extender el concepto a terceras derivadas o n-esimas derivadas de una función.
-    ===== Interpretación alternativa de las derivadas =====
+            Si `f` es una función derivable, entonces su derivada `f'` también es una función, y por lo tanto `f'` puede tener una derivada que se denota como:
 
-    La primera derivada expresa la pendiente de la curva $f(x)$ por lo tanto podemos concluir que:
+            $$(f')'=f''=\frac{d}{dx}\biggl(\frac{dy}{dx}\biggr)=\frac{d^2y}{dx^2}$$
 
-    - Si la primera derivada es cero la funcion $f(x)$ tiene pendiente cero
-    - Si la primera derivada es positiva en un intervalo, $f(x)$ es creciente en ese intervalo
-    - Si la primera derivada es negativa en un intervalo, $f(x)$ es decreciente en ese intervalo
+            Se llama <strong>segunda derivada</strong> de `f`
 
-    La siguiente gráfica aclara este concepto:
+            De forma similar se puede extender el concepto a terceras derivadas o n-esimas derivadas de una función.
 
-    {{:matematicas:primeraderivada.gif?400|}}
+            <strong><h2 id="T8">6. Interpretación alternativa de las derivadas</h2></strong>
 
-    Note que en los puntos marcados como a y b la pendiente de la función (primera derivada) es cero.
+            La primera derivada expresa la pendiente de la curva `f(x)` por lo tanto podemos concluir que:
 
-    La segunda derivada también aporta información importante acerca de $f(x)$
+            <ul>
+                <li>Si la primera derivada es cero la función `f(x)` tiene pendiente cero</li>
+                <li>Si la primera derivada es positiva en un intervalo, `f(x)` es creciente en ese intervalo</li>
+                <li>Si la primera derivada es negativa en un intervalo, `f(x)` es decreciente en ese intervalo</li>
+            </ul>
 
-    - Si la segunda derivada es cero existe en ese punto, un **punto de inflexión** para $f(x)$, es decir, un punto donde la concavidad de $f(x)$ cambia
-    - Si la segunda derivada es positiva en un intervalo, la concavidad de $f(x)$ es hacia arriba en ese intervalo
-    - Si la segunda derivada es negativa en un intervalo, la concavidad de $f(x)$ es hacia abajo en ese intervalo
+            La siguiente gráfica aclara este concepto:
 
-    La siguiente gráfica aclara este concepto:
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 4.</strong> Primera derivada</figcaption><br/>
+                <img src="../../../resources/img/matematicas/derivadas/criterio_primera_derivada.jpg" alt="Primera derivada.gif" height="250px">
+            </figure>
 
-    {{:matematicas:concavidades.jpg?350|}}
+            Note que en los puntos marcados como a y b la pendiente de la función (primera derivada) es cero.
 
-    Note que la segunda derivada indica si la primera derivada es creciente o decreciente.
+            La segunda derivada también aporta información importante acerca de `f(x)`
 
-    ====== Reglas de derivación ======
+            <ul>
+                <li>Si la segunda derivada es cero existe en ese punto, un <strong>punto de inflexión</strong> para `f(x)`, es decir, un punto donde la concavidad de `f(x)` cambia</li>
+                <li>Si la segunda derivada es positiva en un intervalo, la concavidad de `f(x)` es hacia arriba en ese intervalo</li>
+                <li>Si la segunda derivada es negativa en un intervalo, la concavidad de `f(x)` es hacia abajo en ese intervalo</li>
+            </ul>
 
-    Dado que el cálculo de derivadas con límites es un poco engorroso se tiene la posibilidad de calcular derivadas con unas sencillas reglas. Los resultados que se resumen a continuación se entregan sin demostración.
+            La siguiente gráfica aclara este concepto:
 
-    ===== Derivada de una función constante =====
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 5.</strong> Segunda derivada</figcaption><br/>
+                <img src="../../../resources/img/matematicas/derivadas/punto_inflexion.gif" alt="Punto de inflexión.gif" height="250px">
+            </figure>
 
-    La derivada de esta función es:
+            Note que la segunda derivada indica si la primera derivada es creciente o decreciente.
 
-    $$\frac{d}{dx}\biggl(c\biggr)=0$$
-    ===== Derivada de la función potencia =====
+            <strong><h2 id="T9">7. Reglas de derivación</h2></strong>
 
-    Sea la función:
+            Dado que el cálculo de derivadas con límites es un poco engorroso se tiene la posibilidad de calcular derivadas con unas sencillas reglas. Los resultados que se resumen a continuación se entregan sin demostración.
 
-    $$f(x)=x^n \text{ ; } n\in \mathbb R$$
+            <strong><h2 id="T10">7.1. Derivada de una función constante</h2></strong>
 
-    Su derivada es:
+            La derivada de esta función es:
 
-    $$\frac{d}{dx}\biggl(x^n\biggr)=nx^{n-1}$$
-    ===== Regla del múltiplo constante =====
+            $$\frac{d}{dx}\biggl(c\biggr)=0$$
 
-    Sea la función $f(x)$ diferenciable y $c$ una constante que no depende de $x$ entonces su derivada es:
+            <strong><h2 id="T11">7.2. Derivada de la función potencia</h2></strong>
 
-    $$\frac{d}{dx}\biggl(cf(x)\biggr)=c\frac{d}{dx}g(x)$$
-    ===== Regla de la suma y diferencia =====
+            Sea la función:
 
-    Sea las funciones $f(x)$ y $g(x)$ ambas diferenciable entonces se cumple que:
+            $$f(x)=x^n \text{ ; } n\in \mathbb R$$
 
-    $$\frac{d}{dx}\biggl(f(x)+g(x)\biggr)=\frac{d}{dx}f(x)+\frac{d}{dx}g(x)$$
+            Su derivada es:
 
-    $$\frac{d}{dx}\biggl(f(x)-g(x)\biggr)=\frac{d}{dx}f(x)-\frac{d}{dx}g(x)$$
-    ===== Definición del número e =====
+            $$\frac{d}{dx}\biggl(x^n\biggr)=nx^{n-1}$$
 
-    Para una función exponencial $f(x)=a^x$ donde el número $a$ se conoce como base, existe un número para el cual la pendiente de la función exponencial en $x=0$ es 1. Es decir, una función exponencial donde la pendiente de su recta tangente vale lo mismo que la función, este número se conoce como $e$ y se trata de un número irracional.
+            <strong><h2 id="T12">7.3. Regla del múltiplo constante</h2></strong>
 
-    {{:matematicas:numeroe.png?200|}}
+            Sea la función `f(x)` diferenciable y `c` una constante que no depende de `x` entonces su derivada es:
 
-    Formalmente el número e se puede definir como el número tal que:
+            $$\frac{d}{dx}\biggl(cf(x)\biggr)=c\frac{d}{dx}g(x)$$
 
-    $$\lim_{h \to 0}\frac{e^h-1}{h}=1$$
+            <strong><h2 id="T13">7.4. Regla de la suma y la diferencia</h2></strong>
 
-    El valor de este número se aproxima a:
+            Sea las funciones `f(x)` y `g(x)` ambas diferenciable entonces se cumple que:
 
-    $e \approx 2.71828$
+            $$\frac{d}{dx}\biggl(f(x)+g(x)\biggr)=\frac{d}{dx}f(x)+\frac{d}{dx}g(x)$$
 
-    Utilizando estos hechos y la definición de derivada se puede expresar el número $e$ con los siguientes límites alternativos:
+            $$\frac{d}{dx}\biggl(f(x)-g(x)\biggr)=\frac{d}{dx}f(x)-\frac{d}{dx}g(x)$$
 
-    $$e=\lim_{x \to 0}(1+x)^{\frac{1}{x}}=\lim_{n \to \infty}\biggl(1+\frac{1}{n}\biggr)^n$$
-    ===== Derivada de la función exponencial natural =====
+            <strong><h2 id="T14">7.5. Definición del número `e`</h2></strong>
 
-    La derivada de esta función es:
+            Para una función exponencial `f(x)=a^x` donde el número `a` se conoce como base, existe un número para el cual la pendiente de la función exponencial en `x=0` es 1. Es decir, una función exponencial donde la pendiente de su recta tangente vale lo mismo que la función, este número se conoce como `e` y se trata de un número irracional.
 
-    $$\frac{d}{dx}\biggl(e^x\biggr)=e^x$$
-    ===== Derivada de la función exponencial =====
+            <br/>
+            <figure class="centerText">
+                <figcaption><strong>Figura 6.</strong> Función exponencial</figcaption><br/>
+                <img src="../../../resources/img/matematicas/derivadas/exponencial.gif" alt="Exponencial.gif" height="250px">
+            </figure>
 
-    La derivada de esta función en la cual el exponente varia y la base es un número real es:
+            Formalmente el número e se puede definir como el número tal que:
 
-    $$\frac{d}{dx}\biggl(a^x\biggr)=a^x\ln a$$
-    ===== Regla del producto y del cociente =====
+            $$\lim_{h \to 0}\frac{e^h-1}{h}=1$$
 
-    En general, la derivada del producto no es el producto de las derivadas, similarmente ocurre con la división. A continuación se muestran las fórmulas correctas para calcular estas derivadas.
-    En primer lugar se muestra la fórmula para el producto. Si tanto $f$ como $g$ son diferenciables, entonces:
+            El valor de este número se aproxima a:
 
-    $$\frac{d}{dx}\biggl[f(x)g(x)\biggr]=f(x)\frac{d}{dx}\biggl[g(x)\biggr]+g(x)\frac{d}{dx}\biggl[f(x)\biggr]$$
+            `e \approx 2.71828`
 
-    En segundo lugar se muestra la fórmula para el cociente. Si tanto $f$ como $g$ son diferenciables, entonces:
+            Utilizando estos hechos y la definición de derivada se puede expresar el número `e` con los siguientes límites alternativos:
 
-    $$\frac{d}{dx}\biggl[\frac{f(x)}{g(x)}\biggr]=\frac{g(x)\frac{d}{dx}[f(x)]-f(x)\frac{d}{dx}[g(x)]}{[g(x)]^2}$$
-    ===== Derivadas de funciones trigonométricas =====
+            $$e=\lim_{x \to 0}(1+x)^{\frac{1}{x}}=\lim_{n \to \infty}\biggl(1+\frac{1}{n}\biggr)^n$$
 
-    Antes de mostrar las derivadas de las funciones trigonométricas es importante contar con dos resultados en cuando a límites trigonométricos comunes:
+            <strong><h2 id="T15">7.6. Derivada de la función exponencial natural</h2></strong>
 
-    $$\lim_{\theta \to 0}\frac{\sin\theta}{\theta}=1$$
+            La derivada de esta función es:
 
-    $$\lim_{\theta \to 0}\frac{\cos\theta-1}{\theta}=0$$
+            $$\frac{d}{dx}\biggl(e^x\biggr)=e^x$$
 
-    Los límites anteriores que se pueden obtener con argumentos geométricos y con ayuda del teorema de la compresión sirven para calcular las siguientes derivadas de funciones trigonométricas.
+            <strong><h2 id="T16">7.7. Derivada de la función exponencial</h2></strong>
 
-    //Derivada del seno//
+            La derivada de esta función en la cual el exponente varia y la base es un número real es:
 
-    $$\frac{d}{dx}\biggl(\sin x\biggr)=\cos x$$
+            $$\frac{d}{dx}\biggl(a^x\biggr)=a^x\ln a$$
 
-    //Derivada del coseno//
+            <strong><h2 id="T17">7.8. Regla del producto y del cociente</h2></strong>
 
-    $$\frac{d}{dx}\biggl(\cos x\biggr)=-\sin x$$
+            En general, la derivada del producto no es el producto de las derivadas, similarmente ocurre con la división. A continuación se muestran las fórmulas correctas para calcular estas derivadas.
+            En primer lugar se muestra la fórmula para el producto. Si tanto `f` como `g` son diferenciables, entonces:
 
-    //Derivada de la tangente//
+            $$\frac{d}{dx}\biggl[f(x)g(x)\biggr]=f(x)\frac{d}{dx}\biggl[g(x)\biggr]+g(x)\frac{d}{dx}\biggl[f(x)\biggr]$$
 
-    $$\frac{d}{dx}\biggl(\tan x\biggr)=\sec^2 x$$
+            En segundo lugar se muestra la fórmula para el cociente. Si tanto `f` como `g` son diferenciables, entonces:
 
-    // Derivada de la cosecante//
+            $$\frac{d}{dx}\biggl[\frac{f(x)}{g(x)}\biggr]=\frac{g(x)\frac{d}{dx}[f(x)]-f(x)\frac{d}{dx}[g(x)]}{[g(x)]^2}$$
 
-    $$\frac{d}{dx}\biggl(\csc x\biggr)=-\csc x \cot x$$
+            <strong><h2 id="T18">7.9. Derivadas de funciones trigonométricas</h2></strong>
 
-    //Derivada de la secante//
+            Antes de mostrar las derivadas de las funciones trigonométricas es importante contar con dos resultados en cuando a límites trigonométricos comunes:
 
-    $$\frac{d}{dx}\biggl(\sec x\biggr)=\sec x \tan x$$
+            $$\lim_{\theta \to 0}\frac{\sin\theta}{\theta}=1$$
 
-    //Derivada de la cotangente//
+            $$\lim_{\theta \to 0}\frac{\cos\theta-1}{\theta}=0$$
 
-    $$\frac{d}{dx}\biggl(\cot x\biggr)=-csc^2 x$$
-    ===== Regla de la cadena =====
+            Los límites anteriores que se pueden obtener con argumentos geométricos y con ayuda del teorema de la compresión sirven para calcular las siguientes derivadas de funciones trigonométricas.
 
-    Esta regla permite derivar funciones compuestas que son funciones más complejas que las funciones sencillas anteriormente relacionadas.
+            <br/><i>Derivada del seno</i>
 
-    Si $g$ es derivable en $x$ y $f$ es derivable en $g(x)$, entonces la función compuesta $F=f \circ g$ definida por $F(x)=f(g(x))$ es derivable en $x$ y $F'$ está dada por el producto
+            $$\frac{d}{dx}\biggl(\sin x\biggr)=\cos x$$
 
-    $$F'(x)=f'(g(x)) \cdot g'(x)$$
+            <br/><i>Derivada del coseno</i>
 
-    En la notación de Leibniz, si tanto $y=f(u)$ como $u=g(x)$ son funciones diferenciables entonces:
+            $$\frac{d}{dx}\biggl(\cos x\biggr)=-\sin x$$
 
-    $$\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}$$
+            <br/><i>Derivada de la tangente</i>
 
-    ==== Tangentes a curvas paramétricas ====
+            $$\frac{d}{dx}\biggl(\tan x\biggr)=\sec^2 x$$
 
-    Si se tienen las ecuaciones de una curva paramétricas de la forma:
+            <br/><i>Derivada de la cosecante</i>
 
-    $$x=f(t) \text{ y } y=g(t)$$
+            $$\frac{d}{dx}\biggl(\csc x\biggr)=-\csc x \cot x$$
 
-    Donde el parámetro $t$ varia, se puede calcular la pendiente de esta curva sin necesidad de eliminar el parámetro $t$ con la siguiente aplicación de la regla de la cadena.
+            <br/><i>Derivada de la secante</i>
 
-    $$\frac{dy}{dx}=\frac{\frac{dy}{dx}}{\frac{dx}{dt}}$$
+            $$\frac{d}{dx}\biggl(\sec x\biggr)=\sec x \tan x$$
 
-    ==== Derivación implícita =====
+            <br/><i>Derivada de la cotangente</i>
 
-    Algunas ecuaciones son imposibles de resolver en términos de $y$, de forma que se puede hallar la derivada de una ecuación (como la de un circulo) sin necesidad de resolver la ecuación para $y$ derivando ambos lados de la ecuación y utilizando la regla de la cadena, este tipo de solución puede ahorrar mucho trabajo, pero es importante tener en cuenta la regla de la cadena.
+            $$\frac{d}{dx}\biggl(\cot x\biggr)=-csc^2 x$$
 
-    ==== Trayectorias ortogonales ====
+            <strong><h2 id="T19">7.10. Regla de la cadena</h2></strong>
 
-    Dos funciones (o familias de funciones) pueden ser ortogonales si en cada punto de intersección las pendientes de las rectas tangentes en esos puntos son perpendiculares.
-    Recuerde que dos rectas son perpendiculares siempre y cuando sus pendientes multiplicadas den -1
+            Esta regla permite derivar funciones compuestas que son funciones más complejas que las funciones sencillas anteriormente relacionadas.
 
-    ===== Derivadas de funciones trigonométricas inversas =====
+            Si `g` es derivable en `x` y `f` es derivable en `g(x)`, entonces la función compuesta `F=f \circ g` definida por `F(x)=f(g(x))` es derivable en `x` y `F'` está dada por el producto
 
-    // Derivada de seno inverso //
+            $$F'(x)=f'(g(x)) \cdot g'(x)$$
 
-    $$\frac{d}{dx}\biggl(\sin ^{-1}x\biggr)=\frac{1}{\sqrt{1-x^2}}$$
+            En la notación de Leibniz, si tanto `y=f(u)` como `u=g(x)` son funciones diferenciables entonces:
 
-    // Derivada de coseno inverso //
+            $$\frac{dy}{dx}=\frac{dy}{du}\frac{du}{dx}$$
 
-    $$\frac{d}{dx}\biggl(\cos ^{-1}x\biggr)=-\frac{1}{{\sqrt{1-x^2}}}$$
+            <strong><h2 id="T20">7.11. Tangentes a curvas paramétricas</h2></strong>
 
-    // Derivada de tangente inversa //
+            Si se tienen las ecuaciones de una curva paramétricas de la forma:
 
-    $$\frac{d}{dx}\biggl(\tan ^{-1}x\biggr)=\frac{1}{{1+x^2}}$$
-    ===== Derivadas de funciones logarítmicas =====
+            $$x=f(t) \text{ y } y=g(t)$$
 
-    La derivada de la función logaritmo en base $a$ es:
+            Donde el parámetro `t` varia, se puede calcular la pendiente de esta curva sin necesidad de eliminar el parámetro `t` con la siguiente aplicación de la regla de la cadena.
 
-    $$\frac{d}{dx}\biggl(\log_a x\biggr)=\frac{1}{x\ln a}$$
+            $$\frac{dy}{dx}=\frac{\frac{dy}{dx}}{\frac{dx}{dt}}$$
 
-    Similarmente la derivada de la función logaritmo natural es:
+            <strong><h2 id="T21">7.12. Derivación implícita</h2></strong>
 
-    $$\frac{d}{dx}\biggl(\ln x\biggr)=\frac{1}{x}$$
-    ==== Derivación logarítmica ====
+            Algunas ecuaciones son imposibles de resolver en términos de `y`, de forma que se puede hallar la derivada de una ecuación (como la de un circulo) sin necesidad de resolver la ecuación para `y` derivando ambos lados de la ecuación y utilizando la regla de la cadena, este tipo de solución puede ahorrar mucho trabajo, pero es importante tener en cuenta la regla de la cadena.
 
-    En ocasiones se tienen funciones difíciles de derivar por su complejidad operativa, por ejemplo funciones que incluyan muchas raíces y fracciones. Una forma fácil de derivar estas funciones consiste en utilizar el método denominado derivación logarítmica el cual se aplica siguiendo los siguientes tres pasos:
+            <strong><h2 id="T22">7.13. Trayectorias ortogonales</h2></strong>
 
-    - Tome el logaritmo natural en ambos miembros de $y=f(x)$ esto convertira las potencias en multiplicaciones, las divisiones en restas y las multiplicaciones en sumas utilizando leyes de logaritmos.
-    - Derive implicitamente respecto a $x$
-    - Despeje en la ecuación resultante $y'$
+            Dos funciones (o familias de funciones) pueden ser ortogonales si en cada punto de intersección las pendientes de las rectas tangentes en esos puntos son perpendiculares.
+            Recuerde que dos rectas son perpendiculares siempre y cuando sus pendientes multiplicadas den `-1`
 
-    ===== Aproximaciones lineales =====
+            <strong><h2 id="T23">7.14. Derivadas de funciones trigonométricas inversas</h2></strong>
 
-    En ocasiones es conveniente trabajar con aproximaciones de funciones en lugar de la función como tal, esto se puede hacer por que la recta tangente en un punto $a$ es muy similar a la función cerca del punto $a$. Se conoce como **linealización de** $f$ **en** $a$ a la ecuación de la recta tangente en ese punto. La linealización de una curva $f$ en $a$ se denota como $L$ y se puede obtener así:
+            <br/><i>Derivada de seno inverso</i>
 
-    $$L=f(a)+f'(a)(x-a)$$
+            $$\frac{d}{dx}\biggl(\sin ^{-1}x\biggr)=\frac{1}{\sqrt{1-x^2}}$$
 
-    ====== Aplicaciones de la derivación ======
+            <br/><i>Derivada de coseno inverso</i>
 
-    ===== Máximos y mínimos =====
+            $$\frac{d}{dx}\biggl(\cos ^{-1}x\biggr)=-\frac{1}{{\sqrt{1-x^2}}}$$
 
-    Una función $f$ tiene un máximo absoluto (o máximo global) en $c$ si $f(c) \ge f(x) \forall x \in D$, donde $D$ es el dominio de $f$. El número $f(c)$ se llama valor máximo de $f$ en $D$. De manera análoga, $f$ tiene un mínimo absoluto en $c$ si $f(c) \le f(x) \forall x \in D$; el número $f(c)$ se denomina valor mínimo de $f$ en $D$. los valores máximo y mínimo de $f$ se conocen como valores extremos de $f$.
+            <br/><i>Derivada de tangente inversa</i>
 
-    Una función $f$ posee un máximo local (o mñaximo relativo) en $c$ si $f(c) \ge f(x)$ cuando $x$ esta cercano a $c$ o alternativamente para todo $x$ en un intervalo abierto que contiene a $c$. De manera analoga, $f$ tiene un mínimo local en $c$ si $f(c) \le f(x)$ cuando $x$ esta cerca de $c$.
+            $$\frac{d}{dx}\biggl(\tan ^{-1}x\biggr)=\frac{1}{{1+x^2}}$$
 
-    ===== Teorema del valor extremo =====
+            <strong><h2 id="T24">7.15. Derivadas de funciones logarítmicas</h2></strong>
 
-    Si $f$ es continua sobre un intervalo cerrado $[a,b]$, entonces $f$ alcanza un valor máximo absoluto $f(c)$ y un valor mínimo absoluto $f(d)$ en algunos números $c$ y $d$ en $[a,b]$
+            La derivada de la función logaritmo en base `a` es:
 
-    ===== Teorema de Fermat =====
+            $$\frac{d}{dx}\biggl(\log_a x\biggr)=\frac{1}{x\ln a}$$
 
-    Si $f$ tiene un máximo o un mínimo locales en $c$ y si $f'(c)$ existe, entonces $f'(c)=0$
+            Similarmente la derivada de la función logaritmo natural es:
 
-    Es importante anotar respecto de este teorema que dice que los máximos o mínimos cumplen una condición y no que en los puntos en los cuales $f'(c)=0$ sea necesariamente un máximo o un mínimo; en otras palabras el teorema de Fermat da los puntos en los cuales se podría comenzar a buscar máximos y mínimos.
+            $$\frac{d}{dx}\biggl(\ln x\biggr)=\frac{1}{x}$$
 
-    ===== Números críticos =====
+            <strong><h2 id="T25">7.16. Derivación logarítmica</h2></strong>
 
-    Un número crítico de una función $f$ es un número $c$ en el dominio de $f$ tal que $f'(c)=0$ o $f'(c)$ no existe.
+            En ocasiones se tienen funciones difíciles de derivar por su complejidad operativa, por ejemplo funciones que incluyan muchas raíces y fracciones. Una forma fácil de derivar estas funciones consiste en utilizar el método denominado derivación logarítmica el cual se aplica siguiendo los siguientes tres pasos:
 
-    Con esta definición se podría reescribir el teorema de Fermat de la siguiente manera:
-    Si $f$ tiene un extremo local en $c$, entonces $c$ es un número crítico de $f$
+            <ul>
+                <li>Tome el logaritmo natural en ambos miembros de `y=f(x)` esto convertirá las potencias en multiplicaciones, las divisiones en restas y las multiplicaciones en sumas utilizando leyes de logaritmos.</li>
+                <li>Derive implícitamente respecto a `x`</li>
+                <li>Despeje en la ecuación resultante `y'`</li>
+            </ul>
 
-    ===== Método del intervalo cerrado =====
+            <strong><h2 id="T26">7.17. Aproximaciones lineales</h2></strong>
 
-    El siguiente método permite hallar los máximos y mínimos absolutos de una función continua sobre un intervalo cerrado:
+            En ocasiones es conveniente trabajar con aproximaciones de funciones en lugar de la función como tal, esto se puede hacer por que la recta tangente en un punto `a` es muy similar a la función cerca del punto `a`, Se conoce como <strong>linealización de</strong> `f` en `a` a la ecuación de la recta tangente en ese punto. La linealización de una curva `f` en `a` se denota como `L` y se puede obtener así:
 
-    Para hallar los valores máximos y mínimos absolutos de una función $f$ sobre un intervalo cerraado $[a,b]$:
+            $$L=f(a)+f'(a)(x-a)$$
 
-    - Encuentre los valores de $f$ en los números críticos de $f$ en $(a,b)$
-    - Halle los valores de $f$ en los puntos extremos del intervalo
-    - El más grande de los valores de los pasos anteriores es el valor máximo absoluto, el valor más pequeño es el valor mínimo absoluto.
+            <strong><h2 id="T27">8. Aplicaciones de la derivación</h2></strong>
 
-    ===== Teorema del valor medio =====
+            <strong><h2 id="T28">8.1. Máximos y mínimos</h2></strong>
 
-    Si es una función derivable sobre el intervalo $[a,b]$ entonces existe un número $c$ entre $a$ y $b$ tal que:
+            Una función `f` tiene un máximo absoluto (o máximo global) en `c` si `f(c) \ge f(x) \forall x \in D`, donde `D` es el dominio de `f`, El número `f(c)` se llama valor máximo de `f` en `D`, De manera análoga, `f` tiene un mínimo absoluto en `c` si `f(c) \le f(x) \forall x \in D`; el número `f(c)` se denomina valor mínimo de `f` en `D`, los valores máximo y mínimo de `f` se conocen como valores extremos de `f`,
 
-    $$f'(c)=\frac{f(b)-f(a)}{b-a}$$
+            Una función `f` posee un máximo local (o máximo relativo) en `c` si `f(c) \ge f(x)` cuando `x` esta cercano a `c` o alternativamente para todo `x` en un intervalo abierto que contiene a `c`, De manera análoga, `f` tiene un mínimo local en `c` si `f(c) \le f(x)` cuando `x` esta cerca de `c`,
 
-    o lo que equivale a:
+            <strong><h2 id="T29">8.2. Teorema del valor extremo</h2></strong>
 
-    $$f(b)-f(a)=f'(c)(b-a)$$
+            Si `f` es continua sobre un intervalo cerrado `[a,b]`, entonces `f` alcanza un valor máximo absoluto `f(c)` y un valor mínimo absoluto `f(d)` en algunos números `c` y `d` en `[a,b]`
 
-    En palabras lo que este teorema dice es entre el punto $a$ y $b$ se puede trazar una recta cuya pendiente es igual a la pendiente de la recta tangente en algún punto del recorrido que la función $f$ realiza de $a$ a $b$.
+            <strong><h2 id="T30">8.3. Teorema de Fermat</h2></strong>
 
-    ===== Prueba de la primera derivada =====
+            Si `f` tiene un máximo o un mínimo locales en `c` y si `f'(c)` existe, entonces `f'(c)=0`
 
-    Esta prueba permite determinar los máximos y mínimos locales de una función. La prueba afirma lo siguiente:
-    Suponga que $c$ es un número crítico de una función continua $f$
+            Es importante anotar respecto de este teorema que dice que los máximos o mínimos cumplen una condición y no que en los puntos en los cuales `f'(c)=0` sea necesariamente un máximo o un mínimo; en otras palabras el teorema de Fermat da los puntos en los cuales se podría comenzar a buscar máximos y mínimos.
 
-    - Si $f'$ cambia de positiva a negativa en $c$ entonces $f$ tiene un máximo local en $c$
-    - Si $f'$ cambia de negativa a positiva en $c$ entonces $f$ tiene un mínimo local en $c$
-    - Si $f'$ no cambia de signo en $c$ entonces $f$ no tiene ni máximos ni mínimos locales en $c$
+            <strong><h2 id="T31">8.4. Números críticos</h2></strong>
 
-    ===== Prueba de la segunda derivada =====
+            Un número crítico de una función `f` es un número `c` en el dominio de `f` tal que `f'(c)=0` o `f'(c)` no existe.
 
-    Esta prueba permite determinar los máximos y mínimos locales de una función. La prueba afirma lo siguiente:
-    Suponga que $f''$ es continua cerca de $c$
+            Con esta definición se podría reescribir el teorema de Fermat de la siguiente manera:
+            Si `f` tiene un extremo local en `c`, entonces `c` es un número crítico de `f`
 
-    - Si $f'(c)=0$ y $f''(c)>0$ entonces $f$ tiene un mínimo local en $c$
-    - Si $f'(c)=0$ y $f''(c)<0$ entonces $f$ tiene un máximo local en $c$
-</article>
-<footer id="footer"></footer>
-</body>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-<script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
-<script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../" currentElement="#a_math_derivadas"></script>
+            <strong><h2 id="T32">8.5. Método del intervalo cerrado</h2></strong>
+
+            El siguiente método permite hallar los máximos y mínimos absolutos de una función continua sobre un intervalo cerrado:
+
+            Para hallar los valores máximos y mínimos absolutos de una función `f` sobre un intervalo cerrado `[a,b]`:
+
+            <ul>
+                <li>Encuentre los valores de `f` en los números críticos de `f` en `(a,b)`</li>
+                <li>Halle los valores de `f` en los puntos extremos del intervalo</li>
+                <li>El más grande de los valores de los pasos anteriores es el valor máximo absoluto, el valor más pequeño es el valor mínimo absoluto.</li>
+            </ul>
+
+            <strong><h2 id="T33">8.6. Teorema del valor medio</h2></strong>
+
+            Si es una función derivable sobre el intervalo `[a,b]` entonces existe un número `c` entre `a` y `b` tal que:
+
+            $$f'(c)=\frac{f(b)-f(a)}{b-a}$$
+
+            o lo que equivale a:
+
+            $$f(b)-f(a)=f'(c)(b-a)$$
+
+            En palabras lo que este teorema dice es entre el punto `a` y `b` se puede trazar una recta cuya pendiente es igual a la pendiente de la recta tangente en algún punto del recorrido que la función `f` realiza de `a` a `b`,
+
+            <strong><h2 id="T34">8.7. Prueba de la primera derivada</h2></strong>
+
+            Esta prueba permite determinar los máximos y mínimos locales de una función. La prueba afirma lo siguiente:
+            Suponga que `c` es un número crítico de una función continua `f`
+
+            <ul>
+                <li>Si `f'` cambia de positiva a negativa en `c` entonces `f` tiene un máximo local en `c`</li>
+                <li>Si `f'` cambia de negativa a positiva en `c` entonces `f` tiene un mínimo local en `c`</li>
+                <li>Si `f'` no cambia de signo en `c` entonces `f` no tiene ni máximos ni mínimos locales en `c`</li>
+            </ul>
+
+            <strong><h2 id="T35">8.8. Prueba de la segunda derivada</h2></strong>
+
+            Esta prueba permite determinar los máximos y mínimos locales de una función. La prueba afirma lo siguiente:
+            Suponga que `f''` es continua cerca de `c`
+
+            <ul>
+                <li>Si `f'(c)=0` y `f''(c)>0` entonces `f` tiene un mínimo local en `c`</li>
+                <li>Si `f'(c)=0` y `f''(c)<0` entonces `f` tiene un máximo local en `c`</li>
+            </ul>
+        </article>
+        <footer id="footer"></footer>
+    </body>
+    <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+    <script type="text/javascript" src="../../../resources/script/libs/jquery/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="../../../resources/script/libs/google-code-prettify/prettify.js"></script>
+    <script type="text/javascript" src="../../../resources/script/home/template.js" relative="../../../" currentElement="#a_math_derivadas"></script>
 </html>

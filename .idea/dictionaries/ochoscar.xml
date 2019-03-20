@@ -2,6 +2,7 @@
   <dictionary name="ochoscar">
     <words>
       <w>algebraicamente</w>
+      <w>antiderivada</w>
       <w>autoreferencia</w>
       <w>autoreferenciada</w>
       <w>autoreferenciadas</w>
@@ -13,11 +14,13 @@
       <w>cramer</w>
       <w>desapilan</w>
       <w>desapilar</w>
+      <w>diferenciable</w>
       <w>empaquetamiento</w>
       <w>encapsulamiento</w>
       <w>enviroment</w>
       <w>esimo</w>
       <w>factorización</w>
+      <w>hopital</w>
       <w>intelli</w>
       <w>interseca</w>
       <w>intersecan</w>
@@ -36,6 +39,8 @@
       <w>seteo</w>
       <w>sobreyectiva</w>
       <w>sobreyectivas</w>
+      <w>subintervalo</w>
+      <w>subintervalos</w>
       <w>subpaquetes</w>
       <w>sumatoria</w>
       <w>terminos</w>
